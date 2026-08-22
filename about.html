@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>璁よ瘑鍗氫富 | 钀嶈釜渚犲奖褰?路 鏋楃偝闆?/title>
+<meta name="description" content="璁よ瘑鏋楃偝闆勨€斺€旈娓淇畾鍒跺崥涓伙紝8骞磋妤稉椹楋紝鐢ㄦ晠浜嬪悓宸ヨ棟杩炴帴姣忎竴鍊嬪銆?>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "PingFang HK","Heiti TC","Noto Sans TC","Microsoft JhengHei",sans-serif; color: #2c2c2c; background: #faf9f7; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 5vw; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; }
+  .logo span { font-weight: 400; font-size: 0.8rem; color: #888; margin-left: 6px; }
+  .nav-links a { margin-left: 20px; font-size: 0.88rem; color: #555; }
+  .nav-links a:hover { color: #8b5e3c; }
+  .hero { padding: 60px 5vw 40px; text-align: center; background: linear-gradient(180deg, #f5f0eb 0%, #faf9f7 100%); }
+  .hero .avatar { width: 120px; height: 120px; border-radius: 50%; background: #ddd; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #999; overflow: hidden; }
+  .hero h1 { font-size: 1.7rem; font-weight: 700; margin-bottom: 12px; }
+  .hero p { color: #666; font-size: 1rem; max-width: 520px; margin: 0 auto 24px; }
+  .tagline { color: #8b5e3c; font-size: 0.88rem; margin-bottom: 20px; }
+  section { padding: 40px 5vw; }
+  .section-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: "鈻?; color: #8b5e3c; }
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+  .about-card { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 28px; }
+  .about-card h3 { font-size: 1.05rem; margin-bottom: 12px; color: #8b5e3c; }
+  .about-card p { font-size: 0.9rem; color: #555; line-height: 1.8; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 600px; margin: 0 auto; text-align: center; }
+  .stat-item { background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 24px; }
+  .stat-item .num { font-size: 2rem; font-weight: 700; color: #8b5e3c; }
+  .stat-item .label { font-size: 0.85rem; color: #888; margin-top: 4px; }
+  .timeline { max-width: 700px; margin: 0 auto; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 24px; }
+  .timeline-item .year { min-width: 80px; font-weight: 600; color: #8b5e3c; font-size: 0.95rem; }
+  .timeline-item .body { flex: 1; }
+  .timeline-item .body h4 { font-size: 1rem; margin-bottom: 4px; }
+  .timeline-item .body p { font-size: 0.88rem; color: #666; }
+  .cta { background: #2c2c2c; color: #fff; padding: 24px; border-radius: 8px; text-align: center; margin: 32px 5vw; }
+  .cta h3 { font-size: 1.1rem; margin-bottom: 12px; }
+  .cta a { display: inline-block; padding: 12px 28px; background: #8b5e3c; color: #fff; border-radius: 4px; margin-top: 8px; }
+  footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 480px) { .hero h1 { font-size: 1.35rem; } .stats { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">钀嶈釜渚犲奖褰?<span>鏋楃偝闆?/span></div>
+  <div class="nav-links">
+    <a href="index.html">棣栭爜</a>
+    <a href="diary.html">鍗氫富璎涘彜</a>
+    <a href="live.html">鐩存挱闂?/a>
+    <a href="about.html">璁よ瘑鍗氫富</a>
+    <a href="cases.html">妗堜緥</a>
+    <a href="contact.html">鑱公</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="avatar">馃懁</div>
+  <h1>鏋楃偝闆?/h1>
+  <p>棣欐腐瑁濅慨瀹氬埗鍗氫富锛?骞磋妤稉椹椼€傚皥鍋氬叕灞嬨€佸眳灞嬨€佸姀鎴裤€佺妯撳畾鍒舵珒楂斻€傚伐寤犻爯瑁斤紝涓婇杸鍗宠鍗崇敤銆?/p>
+  <p class="tagline">銆岀敤鏁呬簨鍚屽伐钘濓紝閫ｆ帴姣忎竴鍊嬪銆?/p>
+</section>
+
+<section>
+  <h2 class="section-title">鏁告摎涓€瑕?/h2>
+  <div class="stats">
+    <div class="stat-item">
+      <div class="num">8+</div>
+      <div class="label">骞磋妤稉椹?/div>
+    </div>
+    <div class="stat-item">
+      <div class="num">500+</div>
+      <div class="label">瀹屾垚闋呯洰</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">50+</div>
+      <div class="label">鍗氫富璎涘彜鏂囩珷</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <h2 class="section-title">闂滄柤鎴?/h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>馃幆 灏堟キ瀹氫綅</h3>
+      <p>灏堟敞棣欐腐灏忔埗鍨嬭淇畾鍒讹紝鍏眿銆佸眳灞嬨€佸姀鎴裤€佺妯撲竴姊濋緧鏈嶅嫏銆傚伐寤犻爯瑁芥珒楂旓紝鐝惧牬鐒″〉瀹夎锛屽崐鏃ヨ嚦涓€鏃ュ畬宸ャ€?/p>
+    </div>
+    <div class="about-card">
+      <h3>馃摉 鏂囧寲杓稿嚭</h3>
+      <p>銆屽崥涓昏瑳鍙ゃ€嶆瑒鐩閷勯娓淇晫鍢呯湡瀵︽晠浜嬧€斺€斿斧鍌呭偝鎵裤€佽妤畩閬枫€佸鎴朵汉鐢熺櫨鎱嬨€傜敤鏁呬簨寤虹珛淇′换锛岀敤灏堟キ璐忓緱鍙ｇ銆?/p>
+    </div>
+    <div class="about-card">
+      <h3>馃帴 鐩存挱浜掑嫊</h3>
+      <p>姣忛€变笁銆佸叚鏅氬叓榛炵洿鎾紝甯惰鐪剧洿鎿婂伐寤犮€佸伐鍦扮従鍫淬€傝瑳瑙ｅ伐钘濈窗绡€銆佽В绛旇淇枒鍟忋€佸垎浜妤収骞曘€?/p>
+    </div>
+    <div class="about-card">
+      <h3>馃彮 宸ュ粻鍎嫝</h3>
+      <p>鏃鸿鑷嚐宸ュ粻锛屽緸闁嬫枡鍒板皝閭婂叏娴佺▼鎺屾帶銆傚毚閬稿灞ゅ鏈ㄥぞ鏉匡紝寰峰湅浜旈噾閰嶄欢锛屼簲骞翠繚椁婃壙璜俱€?/p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">鐧煎睍姝风▼</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">2018骞?/div>
+      <div class="body">
+        <h4>鍓电珛鏈ㄧ爺鑸?/h4>
+        <p>鍠烘椇瑙掗枊瑷涓€闁撳伐浣滃锛屽皥鍋氬畾鍒跺鍏枫€傚垵鏈熷彧鏈夊叐鍊嬪斧鍌咃紝涓€杓涜波杌娿€?/p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2020骞?/div>
+      <div class="body">
+        <h4>寤虹珛鑷嚐宸ュ粻</h4>
+        <p>鎼叆鍗冨憥宸ュ粻锛屽紩鍏NC鍒囧壊姗熷悓鑷嫊灏侀倞姗熴€傚鐝俱€屽伐寤犻爯瑁姐€佷笂闁€鍗宠銆嶆ā寮忋€?/p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2022骞?/div>
+      <div class="body">
+        <h4>闁嬭ō銆屽崥涓昏瑳鍙ゃ€?/h4>
+        <p>闁嬪瑷橀寗琛屾キ鏁呬簨锛屽緸甯倕鍌虫壙鍒板鎴剁櫨鎱嬨€傜敤鏂囧寲杓稿嚭寤虹珛鍝佺墝宸暟鍖栥€?/p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2024骞?/div>
+      <div class="body">
+        <h4>鐩存挱浣堝眬</h4>
+        <p>鍏ラ鎶栭煶銆佸皬绱呮浉銆佸井淇¤闋昏櫉銆傛瘡閫卞浐瀹氱洿鎾紝绱绮夌挡瓒呴亷鍗佽惉銆?/p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2026骞?/div>
+      <div class="body">
+        <h4>鍝佺墝鍗囩礆</h4>
+        <p>銆岃悕韪緺褰卞綍銆嶅搧鐗屽叏闈㈠崌绱氾紝寰炶淇湇鍕欏晢杞夊瀷鐐鸿妤枃鍖栬几鍑哄钩鍙般€?/p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <h3>鎯冲悓鎴戝偩鍚擄紵</h3>
+  <p>鐒¤珫淇傝淇挩瑭㈠畾淇傚悎浣滈個绱勶紝姝¤繋闅ㄦ檪鑱公</p>
+  <a href="https://wa.me/85251902328" target="_blank">馃摫 WhatsApp 鏋楃偝闆?/a>
+</div>
+
+<footer>
+  <p>漏 钀嶈釜渚犲奖褰?路 鏋楃偝闆?路 <a href="https://wa.me/85251902328" target="_blank">WhatsApp 鍫卞児</a> 路 棣欐腐涔濋緧鏃鸿鑿滃湌琛?/p>
+</footer>
+
+</body>
+</html>
