@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯繫我們 — 木研舍 Wood Atelier</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang HK", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    color: #2c2c2c; background: #faf9f7; line-height: 1.7;
+  }
+  a { text-decoration: none; color: inherit; }
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 6vw; background: #fff; border-bottom: 1px solid #eee;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: 1px; }
+  .logo span { font-weight: 400; font-size: 0.9rem; color: #888; margin-left: 8px; }
+  .nav-links a { margin-left: 28px; font-size: 0.95rem; color: #555; }
+  .nav-links a:hover { color: #8b5e3c; }
+
+  .page-title { text-align: center; padding: 60px 6vw 20px; }
+  .page-title h1 { font-size: 1.6rem; margin-bottom: 8px; }
+  .page-title p { color: #777; font-size: 0.95rem; }
+
+  .contact-wrap {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px; padding: 0 6vw 60px; max-width: 900px; margin: 0 auto;
+  }
+
+  .info-card {
+    background: #fff; padding: 28px; border-radius: 8px;
+    border: 1px solid #eee;
+  }
+  .info-card h3 { font-size: 1.05rem; margin-bottom: 16px; }
+  .info-card p { font-size: 0.9rem; color: #555; margin-bottom: 10px; }
+  .info-card a { color: #8b5e3c; }
+
+  .form-card {
+    background: #fff; padding: 28px; border-radius: 8px;
+    border: 1px solid #eee;
+  }
+  .form-card h3 { font-size: 1.05rem; margin-bottom: 20px; }
+  label { display: block; font-size: 0.9rem; margin-bottom: 6px; color: #555; }
+  input, select, textarea {
+    width: 100%; padding: 12px; margin-bottom: 16px;
+    border: 1px solid #ddd; border-radius: 4px; font-size: 0.95rem; font-family: inherit;
+  }
+  textarea { min-height: 100px; resize: vertical; }
+  .btn {
+    display: inline-block; padding: 14px 36px; background: #8b5e3c;
+    color: #fff; border-radius: 4px; font-size: 0.95rem; border: none; cursor: pointer;
+    width: 100%;
+  }
+  .btn:hover { opacity: 0.88; }
+
+  .map {
+    padding: 0 6vw 60px; max-width: 900px; margin: 0 auto;
+  }
+  .map-placeholder {
+    background: #e5e5e5; border-radius: 8px; height: 300px;
+    display: flex; align-items: center; justify-content: center; color: #999;
+    font-size: 0.9rem; border: 1px dashed #ccc;
+  }
+
+  footer {
+    text-align: center; padding: 28px 6vw; font-size: 0.85rem;
+    color: #999; border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    nav { flex-direction: column; gap: 10px; }
+    .nav-links a { margin: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">木研舍 <span>Wood Atelier</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫我們</a>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1>聯繫我們</h1>
+  <p>預約免費度尺，或查詢設計學院課程</p>
+</div>
+
+<div class="contact-wrap">
+  <div class="info-card">
+    <h3>聯繫方式</h3>
+    <p>📱 WhatsApp / 電話：<a href="tel:+85291234567">+852 9123 4567</a></p>
+    <p>📧 電郵：<a href="mailto:hello@woodatelier.hk">hello@woodatelier.hk</a></p>
+    <p>📍 陳列室：香港九龍觀塘成業街12號 </p>
+    <p>🕐 營業時間：星期一至六 10:00–19:00</p>
+  </div>
+
+  <div class="form-card">
+    <h3>預約表單</h3>
+    <form action="mailto:hello@woodatelier.hk" method="post" enctype="text/plain">
+      <label>姓名</label>
+      <input type="text" name="name" placeholder="你的姓名" required>
+
+      <label>電話</label>
+      <input type="tel" name="phone" placeholder="+852" required>
+
+      <label>需求類型</label>
+      <select name="type" required>
+        <option value="">請選擇</option>
+        <option>全屋家具定制</option>
+        <option>裝修設計工程</option>
+        <option>設計學院課程</option>
+        <option>其他查詢</option>
+      </select>
+
+      <label>備註</label>
+      <textarea name="note" placeholder="簡單描述你的需求或單位面積..."></textarea>
+
+      <button type="submit" class="btn">提交預約</button>
+    </form>
+  </div>
+</div>
+
+<div class="map">
+  <div class="map-placeholder">Google Maps 位置（請替換為實際地圖嵌入碼）</div>
+</div>
+
+<footer>
+  © 木研舍 Wood Atelier · 香港全屋家具定制
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例 — 木研舍 Wood Atelier</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang HK", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    color: #2c2c2c; background: #faf9f7; line-height: 1.7;
+  }
+  a { text-decoration: none; color: inherit; }
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 6vw; background: #fff; border-bottom: 1px solid #eee;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: 1px; }
+  .logo span { font-weight: 400; font-size: 0.9rem; color: #888; margin-left: 8px; }
+  .nav-links a { margin-left: 28px; font-size: 0.95rem; color: #555; }
+  .nav-links a:hover { color: #8b5e3c; }
+
+  .page-title { text-align: center; padding: 60px 6vw 20px; }
+  .page-title h1 { font-size: 1.6rem; margin-bottom: 8px; }
+  .page-title p { color: #777; font-size: 0.95rem; }
+
+  .filter { text-align: center; margin-bottom: 28px; }
+  .filter button {
+    padding: 8px 20px; margin: 4px; border: 1px solid #ddd;
+    background: #fff; border-radius: 20px; font-size: 0.9rem; cursor: pointer;
+    font-family: inherit;
+  }
+  .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
+
+  .case-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; padding: 0 6vw 60px; max-width: 1100px; margin: 0 auto;
+  }
+  .case-item {
+    position: relative; overflow: hidden; border-radius: 6px;
+    aspect-ratio: 4/3; background: #ddd; cursor: pointer;
+  }
+  .case-item .overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.45); color: #fff;
+    padding: 16px; font-size: 0.95rem;
+  }
+  .case-item .tag {
+    position: absolute; top: 12px; left: 12px;
+    background: rgba(255,255,255,0.9); color: #333;
+    padding: 4px 12px; font-size: 0.75rem; border-radius: 4px;
+  }
+
+  footer {
+    text-align: center; padding: 28px 6vw; font-size: 0.85rem;
+    color: #999; border-top: 1px solid #eee;
+  }
+  @media (max-width: 600px) {
+    nav { flex-direction: column; gap: 10px; }
+    .nav-links a { margin: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">木研舍 <span>Wood Atelier</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫我們</a>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1>精選案例</h1>
+  <p>真實香港單位，從設計到落地的完整呈現</p>
+</div>
+
+<div class="filter">
+  <button class="active">全部</button>
+  <button>客廳</button>
+  <button>睡房</button>
+  <button>廚房/廁所</button>
+  <button>商業空間</button>
+</div>
+
+<div class="case-grid">
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80') center/cover;">
+    <span class="tag">客廳</span>
+    <div class="overlay">太古城 · 電視櫃連儲物</div>
+  </div>
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80') center/cover;">
+    <span class="tag">睡房</span>
+    <div class="overlay">西半山 · 衣帽間系統</div>
+  </div>
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80') center/cover;">
+    <span class="tag">廚房</span>
+    <div class="overlay">將軍澳 · 開放式廚房</div>
+  </div>
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80') center/cover;">
+    <span class="tag">睡房</span>
+    <div class="overlay">紅磡 · 地台床連書枱</div>
+  </div>
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80') center/cover;">
+    <span class="tag">商業</span>
+    <div class="overlay">中環 · 咖啡吧枱陳列</div>
+  </div>
+  <div class="case-item" style="background:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80') center/cover;">
+    <span class="tag">廚房</span>
+    <div class="overlay">荃灣 · 浴室鏡櫃收納</div>
+  </div>
+</div>
+
+<footer>
+  © 木研舍 Wood Atelier · 香港全屋家具定制
+</footer>
+
+</body>
+</html>

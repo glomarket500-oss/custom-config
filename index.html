@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>木研舍 Wood Atelier — 香港全屋家具定制</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang HK", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    color: #2c2c2c;
+    background: #faf9f7;
+    line-height: 1.7;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; border-radius: 4px; }
+
+  /* Nav */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 6vw; background: #fff; border-bottom: 1px solid #eee;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: 1px; }
+  .logo span { font-weight: 400; font-size: 0.9rem; color: #888; margin-left: 8px; }
+  .nav-links a { margin-left: 28px; font-size: 0.95rem; color: #555; }
+  .nav-links a:hover { color: #8b5e3c; }
+
+  /* Hero */
+  .hero {
+    text-align: center; padding: 100px 6vw 80px;
+    background: linear-gradient(180deg, #f5f0eb 0%, #faf9f7 100%);
+  }
+  .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 14px; letter-spacing: 2px; }
+  .hero p { font-size: 1.05rem; color: #666; max-width: 560px; margin: 0 auto 32px; }
+  .btn {
+    display: inline-block; padding: 14px 36px; background: #8b5e3c;
+    color: #fff; border-radius: 4px; font-size: 0.95rem; letter-spacing: 1px;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.88; }
+
+  /* Services */
+  .services { padding: 60px 6vw; }
+  .section-title { text-align: center; font-size: 1.4rem; margin-bottom: 40px; font-weight: 600; }
+  .service-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px; max-width: 1000px; margin: 0 auto;
+  }
+  .service-card {
+    background: #fff; padding: 32px 24px; border-radius: 8px;
+    border: 1px solid #eee; text-align: center;
+  }
+  .service-card h3 { font-size: 1.1rem; margin: 16px 0 10px; }
+  .service-card p { font-size: 0.9rem; color: #777; }
+  .icon { font-size: 2rem; }
+
+  /* Cases preview */
+  .cases { padding: 60px 6vw; background: #fff; }
+  .case-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; max-width: 1000px; margin: 0 auto 32px;
+  }
+  .case-item {
+    position: relative; overflow: hidden; border-radius: 6px;
+    aspect-ratio: 4/3; background: #ddd;
+  }
+  .case-item .overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.45); color: #fff;
+    padding: 16px; font-size: 0.95rem;
+  }
+  .center { text-align: center; }
+
+  /* Academy banner */
+  .academy {
+    padding: 48px 6vw; text-align: center;
+    background: #2c2c2c; color: #fff;
+  }
+  .academy h3 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 500; }
+  .academy p { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; }
+  .btn-outline {
+    display: inline-block; padding: 12px 30px;
+    border: 1px solid #fff; color: #fff; border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .btn-outline:hover { background: #fff; color: #2c2c2c; }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 28px 6vw; font-size: 0.85rem;
+    color: #999; border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6rem; }
+    nav { flex-direction: column; gap: 10px; }
+    .nav-links a { margin: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">木研舍 <span>Wood Atelier</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫我們</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>全屋定制 × 香港裝修 × 設計學院</h1>
+  <p>為你量身打造，有溫度的家。從設計到落地，一條龍服務，讓每一寸空間都剛剛好。</p>
+  <a href="contact.html" class="btn">立即預約免費度尺</a>
+</section>
+
+<section class="services">
+  <h2 class="section-title">三大服務</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="icon">🪑</div>
+      <h3>全屋家具定制</h3>
+      <p>客廳、睡房、廚房、書房，按空間與生活習慣度身設計，嚴選板材五金。</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🔨</div>
+      <h3>裝修設計工程</h3>
+      <p>室內設計連裝修工程一條龍，持牌師傅、清晰報價、準時完工。</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🎓</div>
+      <h3>設計學院課程</h3>
+      <p>室內設計入門、軟裝搭配、木工實作，小班教學，適合興趣或轉職進修。</p>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <h2 class="section-title">精選案例</h2>
+  <div class="case-grid">
+    <div class="case-item" style="background:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80') center/cover;">
+      <div class="overlay">太古城 · 客廳電視櫃</div>
+    </div>
+    <div class="case-item" style="background:url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80') center/cover;">
+      <div class="overlay">西半山 · 睡房衣帽間</div>
+    </div>
+    <div class="case-item" style="background:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80') center/cover;">
+      <div class="overlay">將軍澳 · 開放式廚房</div>
+    </div>
+  </div>
+  <div class="center"><a href="cases.html" class="btn">查看全部案例</a></div>
+</section>
+
+<section class="academy">
+  <h3>設計學院 — 下一期開課：9月15日</h3>
+  <p>《小空間大利用：香港蝸居收納設計》小班教學，剩餘名額 4 位</p>
+  <a href="contact.html" class="btn-outline">了解課程與報名</a>
+</section>
+
+<footer>
+  © 木研舍 Wood Atelier · 香港全屋家具定制
+</footer>
+
+</body>
+</html>
