@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>裝修日記列表 | 香港公屋居屋小戶型裝修全過程 | 张丹枫、云蕾</title>
+<meta name="description" content="香港裝修日記全紀錄：公屋、居屋、劏房、私樓改造實錄。真實價錢、工期、師傅評價，幫你避開裝修陷阱。">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "PingFang HK","Heiti TC","Noto Sans TC","Microsoft JhengHei",sans-serif; color: #2c2c2c; background: #faf9f7; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 5vw; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; }
+  .logo span { font-weight: 400; font-size: 0.8rem; color: #888; margin-left: 6px; }
+  .nav-links a { margin-left: 20px; font-size: 0.88rem; color: #555; }
+  .nav-links a:hover { color: #8b5e3c; }
+  .page-title { padding: 40px 5vw 20px; text-align: center; }
+  .page-title h1 { font-size: 1.5rem; margin-bottom: 8px; }
+  .page-title p { color: #777; font-size: 0.9rem; }
+  .filter { text-align: center; margin-bottom: 24px; }
+  .filter button { padding: 6px 16px; margin: 4px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+  .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
+  .diary-list { padding: 0 5vw 40px; max-width: 800px; margin: 0 auto; }
+  .diary-row { display: flex; gap: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-bottom: 14px; transition: box-shadow 0.2s; }
+  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.75rem; }
+  .diary-row .body { flex: 1; }
+  .diary-row .date { font-size: 0.78rem; color: #999; margin-bottom: 4px; }
+  .diary-row h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
+  .diary-row p { font-size: 0.85rem; color: #666; margin-bottom: 8px; }
+  .diary-row .meta { display: flex; gap: 10px; font-size: 0.75rem; color: #999; }
+  .diary-row .meta span { background: #f5f0eb; padding: 2px 10px; border-radius: 12px; }
+  footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 480px) { .diary-row { flex-direction: column; } .diary-row .thumb { width: 100%; height: 140px; } .nav-links a { margin: 0 8px; font-size: 0.82rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">萍踪侠影录 <span>张丹枫、云蕾</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="diary.html">裝修日記</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫</a>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1>裝修日記</h1>
+  <p>真实单位、真实价钱、真实工期 · 帮你避开装修陷阱</p>
+</div>
+
+<div class="filter">
+  <button class="active">全部</button>
+  <button>公屋</button>
+  <button>居屋</button>
+  <button>劏房</button>
+  <button>私樓</button>
+</div>
+
+<div class="diary-list">
+  <a href="post-004.html">
+    <div class="diary-row">
+      <div class="thumb">Before/After</div>
+      <div class="body">
+        <div class="date">2026年5月 · 太古城 · 私樓 · 作者：云蕾</div>
+        <h3>500呎私樓打通廳房，變出開放式書房兼客房</h3>
+        <p>業主係一個freelance designer，需要一個可以拍片、開會、同埋有客人瞓得嘅空間...</p>
+        <div class="meta"><span>💰 $55,000</span><span>⏱ 2日</span><span>🏷 書枱·摺疊床·儲物</span></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="post-001.html">
+    <div class="diary-row">
+      <div class="thumb">Before/After</div>
+      <div class="body">
+        <div class="date">2026年8月 · 將軍澳 · 公屋 · 作者：张丹枫</div>
+        <h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃，師傅上門即裝即用</h3>
+        <p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日...</p>
+        <div class="meta"><span>💰 $30,000</span><span>⏱ 半日</span><span>🏷 電視櫃·鞋櫃·地台床</span></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="post-002.html">
+    <div class="diary-row">
+      <div class="thumb">Before/After</div>
+      <div class="body">
+        <div class="date">2026年7月 · 荃灣 · 居屋 · 作者：云蕾</div>
+        <h3>居屋廚房改造：原本冇位切菜，改造後多咗1.5米工作枱</h3>
+        <p>業主話煮飯係佢最減壓嘅事，但廚房細到轉身都難。我哋重新規劃動線...</p>
+        <div class="meta"><span>💰 $18,000</span><span>⏱ 1日</span><span>🏷 L型櫃·吊櫃·抽屜</span></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="post-003.html">
+    <div class="diary-row">
+      <div class="thumb">Before/After</div>
+      <div class="body">
+        <div class="date">2026年6月 · 深水埗 · 劏房 · 作者：张丹枫</div>
+        <h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3>
+        <p>業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺...</p>
+        <div class="meta"><span>💰 $12,000</span><span>⏱ 4小時</span><span>🏷 地台床·衣櫃·鞋櫃</span></div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<footer>
+  <p>© 萍踪侠影录 · 张丹枫、云蕾 · <a href="https://wa.me/85251902328" target="_blank">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
+</footer>
+
+</body>
+</html>
