@@ -24,7 +24,8 @@
   .case-card { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s; }
   .case-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
   .case-card .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 180px; }
-  .case-card .ba .before, .case-card .ba .after { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.85rem; }
+  .case-card .ba .before, .case-card .ba .after { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.85rem; overflow: hidden; height: 100%; }
+  .case-card .ba .before img, .case-card .ba .after img { width: 100%; height: 100%; object-fit: cover; }
   .case-card .ba .before { background: #bbb; }
   .case-card .ba .after { background: #ddd; color: #777; }
   .case-card .body { padding: 18px; }
@@ -64,7 +65,7 @@
 
 <div class="case-grid">
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before1.jpg" alt="Before"></div><div class="after"><img src="images/after1.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">公屋 · 將軍澳</span>
       <h3>300呎公屋全屋定制櫃</h3>
@@ -74,7 +75,7 @@
   </div>
 
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before2.jpg" alt="Before"></div><div class="after"><img src="images/after2.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">居屋 · 荃灣</span>
       <h3>廚房L型櫃改造</h3>
@@ -84,7 +85,7 @@
   </div>
 
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before3.jpg" alt="Before"></div><div class="after"><img src="images/after3.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">劏房 · 深水埗</span>
       <h3>150呎劏房地台床</h3>
@@ -94,7 +95,7 @@
   </div>
 
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before1.jpg" alt="Before"></div><div class="after"><img src="images/after1.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">私樓 · 太古城</span>
       <h3>500呎私樓廳房改造</h3>
@@ -104,7 +105,7 @@
   </div>
 
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before2.jpg" alt="Before"></div><div class="after"><img src="images/after2.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">居屋 · 沙田</span>
       <h3>全屋翻新連拆舊</h3>
@@ -114,7 +115,7 @@
   </div>
 
   <div class="case-card">
-    <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+    <div class="ba"><div class="before"><img src="images/before3.jpg" alt="Before"></div><div class="after"><img src="images/after3.jpg" alt="After"></div></div>
     <div class="body">
       <span class="tag">公屋 · 觀塘</span>
       <h3>細廁所鏡櫃改造</h3>

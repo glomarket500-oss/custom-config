@@ -51,7 +51,8 @@
   .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
   .case-item { background: #fff; border: 1px solid #eee; border-radius: 6px; overflow: hidden; }
   .case-item .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; height: 140px; }
-  .case-item .ba .before, .case-item .ba .after { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; }
+  .case-item .ba .before, .case-item .ba .after { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; overflow: hidden; height: 100%; }
+  .case-item .ba .before img, .case-item .ba .after img { width: 100%; height: 100%; object-fit: cover; }
   .case-item .ba .before { background: #bbb; }
   .case-item .ba .after { background: #ddd; color: #777; }
   .case-item .body { padding: 14px; }
@@ -99,7 +100,7 @@
   <div class="diary-grid">
     <div class="diary-card">
       <a href="post-004.html">
-        <div class="thumb">Before / After 圖片</div>
+        <div class="thumb"><img src="images/living1.jpg" alt="500呎私樓改造"></div>
         <div class="body">
           <div class="date">2026年5月 · 太古城</div>
           <h3>500呎私樓打通廳房，變出開放式書房兼客房</h3>
@@ -110,7 +111,7 @@
     </div>
     <div class="diary-card">
       <a href="post-001.html">
-        <div class="thumb">Before / After 圖片</div>
+        <div class="thumb"><img src="images/room1.jpg" alt="300呎公屋改造"></div>
         <div class="body">
           <div class="date">2026年8月 · 將軍澳</div>
           <h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃，師傅上門即裝即用</h3>
@@ -121,7 +122,7 @@
     </div>
     <div class="diary-card">
       <a href="post-002.html">
-        <div class="thumb">Before / After 圖片</div>
+        <div class="thumb"><img src="images/kitchen1.jpg" alt="居屋廚房改造"></div>
         <div class="body">
           <div class="date">2026年7月 · 荃灣</div>
           <h3>居屋廚房改造：原本冇位切菜，改造後多咗1.5米工作枱</h3>
@@ -132,7 +133,7 @@
     </div>
     <div class="diary-card">
       <a href="post-003.html">
-        <div class="thumb">Before / After 圖片</div>
+        <div class="thumb"><img src="images/room2.jpg" alt="劏房變身"></div>
         <div class="body">
           <div class="date">2026年6月 · 深水埗</div>
           <h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3>
@@ -148,15 +149,15 @@
   <h2 class="section-title">真實案例 Before → After</h2>
   <div class="case-grid">
     <div class="case-item">
-      <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+      <div class="ba"><div class="before"><img src="images/before1.jpg" alt="Before"></div><div class="after"><img src="images/after1.jpg" alt="After"></div></div>
       <div class="body"><h4>太古城 · 客廳電視櫃</h4><div class="cost">💰 $22,000 · ⏱ 1日</div></div>
     </div>
     <div class="case-item">
-      <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+      <div class="ba"><div class="before"><img src="images/before2.jpg" alt="Before"></div><div class="after"><img src="images/after2.jpg" alt="After"></div></div>
       <div class="body"><h4>西半山 · 睡房衣帽間</h4><div class="cost">💰 $28,000 · ⏱ 1日</div></div>
     </div>
     <div class="case-item">
-      <div class="ba"><div class="before">Before</div><div class="after">After</div></div>
+      <div class="ba"><div class="before"><img src="images/before3.jpg" alt="Before"></div><div class="after"><img src="images/after3.jpg" alt="After"></div></div>
       <div class="body"><h4>將軍澳 · 廚房L型櫃</h4><div class="cost">💰 $18,000 · ⏱ 半日</div></div>
     </div>
   </div>
