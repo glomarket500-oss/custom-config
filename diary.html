@@ -30,10 +30,10 @@
   .filter { text-align: center; margin-bottom: 24px; }
   .filter button { padding: 6px 16px; margin: 4px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
   .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
-  .diary-list { padding: 0 5vw 40px; max-width: 800px; margin: 0 auto; }
-  .diary-row { display: flex; gap: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-bottom: 14px; transition: box-shadow 0.2s; }
-  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: linear-gradient(135deg, #8b5e3c 0%, #6b4423 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: 600; position: relative; overflow: hidden; } .thumb::before { content: "📖"; font-size: 2rem; position: absolute; opacity: 0.15; }
+  .diary-list { padding: 0 5vw 40px; max-width: 100%; margin: 0 auto; display: flex; gap: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 20px; } .diary-list::-webkit-scrollbar { display: none; }
+  .diary-row { display: flex; flex-direction: column; gap: 8px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 0; min-width: 280px; max-width: 280px; flex-shrink: 0; transition: box-shadow 0.2s; overflow: hidden; }
+  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); } .diary-row .thumb { width: 100%; height: 160px; min-width: auto; border-radius: 6px 6px 0 0; } .diary-row .body { padding: 12px; }
+  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: linear-gradient(135deg, #f8f6f3 0%, #f0ece6 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #8b5e3c; font-size: 0.75rem; font-weight: 600; position: relative; overflow: hidden; border: 1px solid #e8e4df; } .thumb::before { content: "📖"; font-size: 2rem; position: absolute; opacity: 0.08; }
   .diary-row .body { flex: 1; }
   .diary-row .date { font-size: 0.78rem; color: #999; margin-bottom: 4px; }
   .diary-row h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
@@ -43,7 +43,7 @@
   .new-badge { display: inline-block; background: #e74c3c; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle; }
   footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
   footer a { color: #8b5e3c; }
-  @media (max-width: 480px) { .diary-row { flex-direction: column;  nav { flex-direction: column; align-items: center; padding: 10px 5vw; text-align: center; } .logo { font-size: 1.15rem; margin-bottom: 2px; } .logo span { display: block; margin-left: 0; margin-top: 2px; font-size: 0.75rem; } .nav-links { justify-content: center; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; flex-wrap: nowrap; padding-bottom: 4px; scrollbar-width: none; } .nav-links::-webkit-scrollbar { display: none; } .nav-links a { margin: 0 10px; font-size: 0.82rem; flex-shrink: 0; }} .diary-row .thumb { width: 100%; height: 140px; } .nav-links a { margin: 0 8px; font-size: 0.82rem; } }
+  @media (max-width: 480px) { nav { flex-direction: column; align-items: center; padding: 10px 5vw; text-align: center; } .logo { font-size: 1.15rem; margin-bottom: 2px; } .logo span { display: block; margin-left: 0; margin-top: 2px; font-size: 0.75rem; } .nav-links { justify-content: center; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; flex-wrap: nowrap; padding-bottom: 4px; scrollbar-width: none; } .nav-links::-webkit-scrollbar { display: none; } .nav-links a { margin: 0 10px; font-size: 0.82rem; flex-shrink: 0; } .diary-list { padding: 0 16px 20px; gap: 12px; } .diary-row { min-width: 240px; max-width: 240px; } .diary-row .thumb { width: 100%; height: 140px; }} a { margin: 0 8px; font-size: 0.82rem; } }
 </style>
 <meta name="author" content="張丹楓">
 <meta property="og:title" content="博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾">
