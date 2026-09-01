@@ -35,17 +35,12 @@
   .btn { display: inline-block; padding: 12px 28px; background: #8b5e3c; color: #fff; border-radius: 4px; font-size: 0.9rem; }
   .btn:hover { opacity: 0.88; }
   .btn-outline { display: inline-block; padding: 12px 28px; border: 1px solid #8b5e3c; color: #8b5e3c; border-radius: 4px; font-size: 0.9rem; }
-  .testimonials { margin-top: 24px; overflow: hidden; background: #f8f6f3; border-radius: 8px; padding: 12px 0; border: 1px solid #e8e4df; }
-  .testimonials-track { display: flex; gap: 20px; animation: scroll-left 30s linear infinite; white-space: nowrap; padding: 0 10px; }
-  .testimonial-item { flex-shrink: 0; background: #fff; padding: 10px 20px; border-radius: 20px; font-size: 0.82rem; color: #555; border: 1px solid #eee; }
-  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  @media (max-width: 480px) { .testimonials-track { animation-duration: 20s; } .testimonial-item { font-size: 0.75rem; padding: 8px 14px; } }
   section { padding: 40px 5vw; }
   .section-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
   .section-title::before { content: "▎"; color: #8b5e3c; }
   .diary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; max-width: 900px; margin: 0 auto; }
-  .diary-card { background: #fff; border: 1px solid #d5ccc0; border-radius: 8px; overflow: hidden; }
-  .diary-card .thumb { height: 160px; background: #f8f6f3 url(images/book.svg) center center no-repeat; background-size: 60px; display: flex; align-items: center; justify-content: center; border-radius: 6px 6px 0 0; border: 1px solid #e8e4df; }
+  .diary-card { background: #fff; border: 1px solid #eee; border-radius: 6px; overflow: hidden; }
+  .diary-card .thumb { height: 160px; background: #ddd; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; }
   .diary-card .body { padding: 16px; }
   .diary-card .date { font-size: 0.78rem; color: #999; margin-bottom: 6px; }
   .diary-card h3 { font-size: 1rem; margin-bottom: 8px; font-weight: 600; }
@@ -73,7 +68,7 @@
   .badge { background: #fff; border: 1px solid #eee; border-radius: 20px; padding: 8px 20px; font-size: 0.85rem; color: #555; }
   footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
   footer a { color: #8b5e3c; }
-  @media (max-width: 480px) { .hero h1 { font-size: 1.35rem; } nav { flex-direction: column; align-items: center; padding: 10px 5vw; text-align: center; } .logo { font-size: 1.15rem; margin-bottom: 2px; } .logo span { display: block; margin-left: 0; margin-top: 2px; font-size: 0.75rem; } .nav-links { justify-content: center; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; flex-wrap: nowrap; padding-bottom: 4px; scrollbar-width: none; } .nav-links::-webkit-scrollbar { display: none; } .nav-links a { margin: 0 10px; font-size: 0.82rem; flex-shrink: 0; } .cta-row { flex-direction: column; align-items: center; } }
+  @media (max-width: 480px) { .hero h1 { font-size: 1.35rem; } nav { flex-direction: column; align-items: flex-start; padding: 12px 5vw; } .logo { font-size: 1rem; margin-bottom: 8px; } .logo span { font-size: 0.75rem; } .nav-links { justify-content: flex-start; width: 100%; } .nav-links a { margin: 0 14px 0 0; font-size: 0.82rem; } .cta-row { flex-direction: column; align-items: center; } }
 </style>
 <meta property="og:title" content="萍踪侠影录 | 張丹楓與雲蕾的博主講古 | 香港小戶型定制家具">
 <meta property="og:description" content="張丹楓、雲蕾分享香港小戶型裝修實錄。工廠預製櫃體，上門即裝即用。真實價錢、工期、材料全公開。">
@@ -164,139 +159,34 @@
   <p class="tagline">📍 九龍旺角菜園街 · 服務全香港 · WhatsApp 免費報價</p>
   <div class="cta-row">
     <a href="https://wa.me/85251902328" class="btn" target="_blank">📱 WhatsApp 免費報價</a>
-  </div>
-
-  <!-- 客人反饋滾動 -->
-  <div class="testimonials">
-    <div class="testimonials-track">
-      <div class="testimonial-item">💬 陳太：「張師傅做嘅櫃真係靚，收口好完美！」</div>
-      <div class="testimonial-item">💬 李生：「公屋細單位做到咁靚，真係估唔到。」</div>
-      <div class="testimonial-item">💬 王小姐：「由量尺到裝好，三日搞掂，快靚正！」</div>
-      <div class="testimonial-item">💬 劉太：「師傅好細心，幫我慳咗好多空間。」</div>
-      <div class="testimonial-item">💬 陳生：「價錢公道，手藝一流，會再幫襯！」</div>
-      <div class="testimonial-item">💬 黃小姐：「地台床同書櫃一體，屋企大咗好多！」</div>
-      <div class="testimonial-item">💬 張太：「師傅好準時，乾淨企理，推介！」</div>
-      <div class="testimonial-item">💬 何生：「全屋定制一次搞掂，省心！」</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">📖 睇博主講古</div>
-  <div class="diary-grid">
-    <!-- post-009: NEW -->
-    <div class="diary-card">
-      <a href="post-009.html">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="date">2026年8月26日 10:00:00 · 元朗 · 行业讲古</div>
-          <h3>北都新机遇·老师傅讲全屋定制：张丹枫嘅廿八年 <span style="background:#e74c3c;color:#fff;padding:1px 6px;border-radius:4px;font-size:0.7rem;margin-left:4px;">NEW</span></h3>
-          <p>六大企业合资10.3亿夺北都首个片区项目。张丹枫师傅讲廿八年故事。</p>
-          <div class="meta"><span>📖 北都机遇</span><span>🏷 全屋定制·老师傅</span></div>
-        </div>
-      </a>
-    </div>
-
-<a href="diary.html" class="btn-outline">📖 睇博主講古</a>
+    <a href="diary.html" class="btn-outline">📖 睇博主講古</a>
   </div>
 </section>
 
 <section>
   <h2 class="section-title">最新博主講古</h2>
   <div class="diary-grid">
-    <!-- post-008: NEW -->
-    <div class="diary-card">
-      <a href="post-008.html">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="date">2026年8月25日 21:08:39 · 旺角 · 行業講古</div>
-          <h3>打風前嘅全屋定製——紫檀逼近，我哋趕喺八號波之前交貨 <span style="background:#e74c3c;color:#fff;padding:1px 6px;border-radius:4px;font-size:0.7rem;margin-left:4px;">NEW</span></h3>
-          <p>陳太屋企櫃板裂開，紫檀逼近前廿分鐘搶修。茶餐廳講古：二〇〇八年黑格比按住玻璃到天光。工廠徹夜檢查，二十七年習慣唔放心。</p>
-          <div class="meta"><span>📖 打風搶修</span><span>🏷 紫檀·師傅故事·責任</span></div>
-        </div>
-      </a>
-    </div>
+<div class="diary-card"><a href="post-010.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月26日 20:44:05 · 行業講古</div><h3>旺角舊樓改造：四十年唐樓煥發第二春 <span class="new-badge">NEW</span></h3><p>張丹楓走進560呎油麻地唐樓，記錄舊樓如何靠精準量尺、嵌入式收納和香港手藝，重新變成一家人的家。</p></div></a></div>
 
-    <!-- post-007: NEW -->
-    <div class="diary-card">
-      <a href="post-007.html">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="date">2026年8月24日 21:08:39 · 旺角 · 預算管理</div>
-          <h3>2026年8月24日｜裝修唔一定要貴，最怕預算失控 <span style="background:#e74c3c;color:#fff;padding:1px 6px;border-radius:4px;font-size:0.7rem;margin-left:4px;">NEW</span></h3>
-          <p>香港細單位裝修預算怎樣分？先解決住得唔舒服嘅地方，再處理望落靚唔靚。附公屋師傅故事。</p>
-          <div class="meta"><span>📖 預算管理</span><span>🏷 公屋·動線·收納</span></div>
-        </div>
-      </a>
-    </div>
+<div class="diary-card"><a href="post-009.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月26日 10:00:00 · 行業講古</div><h3>北都新機遇·老師傅講全屋定制：張丹楓嘅廿八年 <span class="new-badge">NEW</span></h3><p>六大企業合資10.3億奪北都首個片區項目。張丹楓師傅講香港全屋定制廿八年故事。</p></div></a></div>
 
-    <div class="diary-card">
-      <a href="post-006.html">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="date">2026年8月23日 · 深水埗・將軍澳・大角咀 · 行業講古</div>
-          <h3>颱風「紫檀」逼近之夜：一個香港老師傅嘅趕工、救急與二十七年手藝</h3>
-          <p>由朝早七點工廠開工，到夜晚九點返工廠檢查；講伸縮縫、矽酮密封膠、飾面板防水，亦講一個老師傅點樣面對風雨。</p>
-          <div class="meta"><span>📖 香港師傅故事</span><span>🏷 伸縮縫・防水・颱風</span></div>
-        </div>
-      </a>
-    </div>
-    <div class="diary-card">
-      <a href="post-005.html">
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="date">2026年8月23日 · 旺角辦公室 · 行業講古</div>
-          <h3>香港裝修第一代人：從內地到香港嘅故事</h3>
-          <p>1972年，一個佛山木工，半個世紀前過大海，點樣帶起成個行業？辦公室裡嘅真實講古...</p>
-          <div class="meta"><span>📖 行業歷史</span><span>🏷 1972·師傅傳承</span></div>
-        </div>
-      </a>
-    </div>
-    <div class="diary-card">
-      <a href="post-004.html">
-        <div class="thumb"><img src="images/living1.jpg" alt="500呎私樓改造"></div>
-        <div class="body">
-          <div class="date">2026年5月 · 太古城</div>
-          <h3>500呎私樓打通廳房，變出開放式書房兼客房</h3>
-          <p>業主係一個freelance designer，需要一個可以拍片、開會、同埋有客人瞓得嘅空間...</p>
-          <div class="meta"><span>💰 $55,000</span><span>⏱ 2日</span><span>🏠 私樓</span></div>
-        </div>
-      </a>
-    </div>
-    <div class="diary-card">
-      <a href="post-001.html">
-        <div class="thumb"><img src="images/room1.jpg" alt="300呎公屋改造"></div>
-        <div class="body">
-          <div class="date">2026年8月 · 將軍澳</div>
-          <h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃，師傅上門即裝即用</h3>
-          <p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日...</p>
-          <div class="meta"><span>💰 $30,000</span><span>⏱ 半日</span><span>🏠 公屋</span></div>
-        </div>
-      </a>
-    </div>
-    <div class="diary-card">
-      <a href="post-002.html">
-        <div class="thumb"><img src="images/kitchen1.jpg" alt="居屋廚房改造"></div>
-        <div class="body">
-          <div class="date">2026年7月 · 荃灣</div>
-          <h3>居屋廚房改造：原本冇位切菜，改造後多咗1.5米工作枱</h3>
-          <p>業主話煮飯係佢最減壓嘅事，但廚房細到轉身都難。我哋重新規劃動線...</p>
-          <div class="meta"><span>💰 $18,000</span><span>⏱ 1日</span><span>🏠 居屋</span></div>
-        </div>
-      </a>
-    </div>
-    <div class="diary-card">
-      <a href="post-003.html">
-        <div class="thumb"><img src="images/room2.jpg" alt="劏房變身"></div>
-        <div class="body">
-          <div class="date">2026年6月 · 深水埗</div>
-          <h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3>
-          <p>業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺...</p>
-          <div class="meta"><span>💰 $12,000</span><span>⏱ 4小時</span><span>🏠 劏房</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
+<div class="diary-card"><a href="post-008.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月25日 21:08:39 · 行業講古</div><h3>打風前嘅全屋定製——紫檀逼近，我哋趕喺八號波之前交貨</h3><p>紫檀逼近，我哋喺八號波前廿分鐘完成交貨。陳太話：「真係估唔到你哋趕得切！」</p></div></a></div>
+
+<div class="diary-card"><a href="post-007.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月10日 · 行業講古</div><h3>北都新小區探訪：張師傅帶你睇未來香港家居設計新趨勢</h3><p>北都首個片區即將入夥，我哋幫發展商做首批定制櫃。今次帶你睇下未來家居設計有啲咩新趨勢。</p></div></a></div>
+
+<div class="diary-card"><a href="post-001.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月 · 行業講古</div><h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃</h3><p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日。</p></div></a></div>
+
+<div class="diary-card"><a href="post-006.html"><div class="thumb"></div><div class="body"><div class="date">2026年8月1日 · 行業講古</div><h3>40年唐樓重新裝修——張師傅教你如何在舊樓牆身唔好嘅情況下整出完美櫃體</h3><p>唐樓牆身唔係完全垂直，訂造櫃係最穩陣嘅方法，但係要點樣度尺，先至可以避免到牆身斜嘅問題？</p></div></a></div>
+
+<div class="diary-card"><a href="post-005.html"><div class="thumb"></div><div class="body"><div class="date">2026年7月18日 · 行業講古</div><h3>張師傅同你拆解香港定制傢俬嘅內幕</h3><p>同一個櫃，點解有人做 $5000 呎，有人做 $1500 呎？張師傅教你點樣分辨邊樣嘢值錢。</p></div></a></div>
+
+<div class="diary-card"><a href="post-004.html"><div class="thumb"></div><div class="body"><div class="date">2026年7月 · 行業講古</div><h3>500呎私樓打通廳房，變出開放式書房兼客房</h3><p>業主係一個freelance designer，需要一個可以拍片、開會、同時有客人瞓得嘅空間。</p></div></a></div>
+
+<div class="diary-card"><a href="post-003.html"><div class="thumb"></div><div class="body"><div class="date">2026年6月 · 行業講古</div><h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3><p>業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺，但係間屋細到連個衣櫃都放唔落。</p></div></a></div>
+
+<div class="diary-card"><a href="post-002.html"><div class="thumb"></div><div class="body"><div class="date">2026年4月 · 行業講古</div><h3>居屋客廳一分為二：我哋幫陳生喺廳中間加咗道隱形門</h3><p>陳生話想要間書房，但係廳本來已經唔大。我哋用隱形門做間隔，平時睇唔到，但係打開又有獨立空間。</p></div></a></div>
+
+</div>
 </section>
 
 <section style="background:#fff;">
@@ -338,6 +228,4 @@
 </footer>
 
 </body>
-</html>< ! - -   r e d e p l o y   t r i g g e r   - - > 
- 
- 
+</html>
