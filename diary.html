@@ -30,10 +30,10 @@
   .filter { text-align: center; margin-bottom: 24px; }
   .filter button { padding: 6px 16px; margin: 4px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
   .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
-  .diary-list { padding: 0 5vw 40px; max-width: 800px; margin: 0 auto; }
-  .diary-row { display: flex; gap: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-bottom: 14px; transition: box-shadow 0.2s; }
-  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: #e8e4df; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.75rem; }
+  .diary-list { padding: 0 5vw 40px; max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .diary-row { display: flex; flex-direction: column; gap: 8px; background: #fff; border: 1px solid #d5ccc0; border-radius: 8px; padding: 0; transition: box-shadow 0.2s; overflow: hidden; }
+  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); } .diary-row .thumb { width: 100%; height: 160px; min-width: auto; border-radius: 8px 8px 0 0; } .diary-row .body { padding: 14px; }
+  .diary-row .thumb { width: 100%; height: 160px; background: #f8f6f3 url(images/book.svg) center center no-repeat; background-size: 50px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #e8e4df; }
   .diary-row .body { flex: 1; }
   .diary-row .date { font-size: 0.78rem; color: #999; margin-bottom: 4px; }
   .diary-row h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
@@ -43,7 +43,7 @@
   .new-badge { display: inline-block; background: #e74c3c; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle; }
   footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
   footer a { color: #8b5e3c; }
-  @media (max-width: 480px) { .diary-row { flex-direction: column;  nav { flex-direction: column; align-items: flex-start; padding: 12px 5vw; } .logo { font-size: 1rem; margin-bottom: 8px; } .logo span { font-size: 0.75rem; } .nav-links { justify-content: flex-start; width: 100%; } .nav-links a { margin: 0 14px 0 0; font-size: 0.82rem; }} .diary-row .thumb { width: 100%; height: 140px; } .nav-links a { margin: 0 8px; font-size: 0.82rem; } }
+  @media (max-width: 480px) { nav { flex-direction: column; align-items: center; padding: 10px 5vw; text-align: center; } .logo { font-size: 1.15rem; margin-bottom: 2px; } .logo span { display: block; margin-left: 0; margin-top: 2px; font-size: 0.75rem; } .nav-links { justify-content: center; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; flex-wrap: nowrap; padding-bottom: 4px; scrollbar-width: none; } .nav-links::-webkit-scrollbar { display: none; } .nav-links a { margin: 0 10px; font-size: 0.82rem; flex-shrink: 0; } .diary-list { padding: 0 16px 20px; grid-template-columns: 1fr; } .diary-row .thumb { width: 100%; height: 140px; }} a { margin: 0 8px; font-size: 0.82rem; } }
 </style>
 <meta name="author" content="張丹楓">
 <meta property="og:title" content="博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾">
@@ -103,9 +103,60 @@
 
 <div class="diary-list">
 
+
+
+    <a href="post-009.html">
+    <div class="diary-row">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="date">2026年8月26日 10:00:00 · 元朗 · 行业讲古 · 作者：张丹枫 <span class="new-badge">NEW</span></div>
+        <h3>北都新机遇·老师傅讲全屋定制：张丹枫嘅廿八年</h3>
+        <p>六大企业合资10.3亿夺北都首个片区项目。张丹枫师傅讲香港全屋定制廿八年故事——耐心、细心、良心。</p>
+        <div class="meta"><span>📖 北都机遇</span><span>🏷 全屋定制·老师傅·工匠精神</span></div>
+      </div>
+    </div>
+  </a>
+
+<a href="post-008.html">
+    <div class="diary-row">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="date">2026年8月25日 21:08:39 · 旺角 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div>
+        <h3>打風前嘅全屋定製——紫檀逼近，我哋趕喺八號波之前交貨</h3>
+        <p>陳太屋企櫃板裂開，紫檀逼近前廿分鐘搶修。茶餐廳講古：二〇〇八年黑格比按住玻璃到天光。工廠徹夜檢查，二十七年習慣唔放心。</p>
+        <div class="meta"><span>📖 打風搶修</span><span>🏷 紫檀·師傅故事·責任</span></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="post-007.html">
+    <div class="diary-row">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="date">2026年8月24日 21:08:39 · 旺角 · 公屋 · 預算管理 · 作者：張丹楓 <span class="new-badge">NEW</span></div>
+        <h3>2026年8月24日｜裝修唔一定要貴，最怕預算失控</h3>
+        <p>香港細單位裝修預算怎樣分？先解決住得唔舒服嘅地方，再處理望落靚唔靚。附公屋師傅故事：一個櫃，救回一條走廊。</p>
+        <div class="meta"><span>📖 預算管理</span><span>🏷 公屋·動線·收納</span></div>
+      </div>
+    </div>
+  </a>
+
+  <a hre
+  <a href="post-006.html">
+    <div class="diary-row">
+      <div class="thumb"></div>
+      <div class="body">
+        <div class="date">2026年8月23日 · 深水埗・將軍澳・大角咀 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div>
+        <h3>颱風「紫檀」逼近之夜：一個香港老師傅嘅趕工、救急與二十七年手藝</h3>
+        <p>由朝早七點深水埗工廠開工，到夜晚九點返工廠檢查；講伸縮縫、矽酮密封膠、飾面板防水，亦講一個老師傅點樣面對風雨。</p>
+        <div class="meta"><span>📖 香港師傅故事</span><span>🏷 伸縮縫・防水・颱風</span></div>
+      </div>
+    </div>
+  </a>
+
   <a href="post-005.html">
     <div class="diary-row">
-      <div class="thumb">行業講古</div>
+      <div class="thumb"></div>
       <div class="body">
         <div class="date">2026年8月23日 · 旺角辦公室 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div>
         <h3>香港裝修第一代人：從內地到香港嘅故事</h3>
@@ -117,9 +168,9 @@
 
   <a href="post-001.html">
     <div class="diary-row">
-      <div class="thumb">公屋改造</div>
+      <div class="thumb"></div>
       <div class="body">
-        <div class="date">2026年8月 · 將軍澳 · 公屋 · 作者：張丹楓 <span class="new-badge">NEW</span></div>
+        <div class="date">2026年8月 · 將軍澳 · 公屋 · 作者：張丹楓</div>
         <h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃，師傅上門即裝即用</h3>
         <p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日...</p>
         <div class="meta"><span>💰 $30,000</span><span>⏱ 半日</span><span>🏷 電視櫃·鞋櫃·地台床</span></div>
@@ -129,7 +180,7 @@
 
   <a href="post-002.html">
     <div class="diary-row">
-      <div class="thumb">居屋改造</div>
+      <div class="thumb"></div>
       <div class="body">
         <div class="date">2026年7月 · 荃灣 · 居屋 · 作者：雲蕾</div>
         <h3>居屋廚房改造：原本冇位切菜，改造後多咗1.5米工作枱</h3>
@@ -141,7 +192,7 @@
 
   <a href="post-003.html">
     <div class="diary-row">
-      <div class="thumb">劏房改造</div>
+      <div class="thumb"></div>
       <div class="body">
         <div class="date">2026年6月 · 深水埗 · 劏房 · 作者：張丹楓</div>
         <h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3>
@@ -153,7 +204,7 @@
 
   <a href="post-004.html">
     <div class="diary-row">
-      <div class="thumb">私樓改造</div>
+      <div class="thumb"></div>
       <div class="body">
         <div class="date">2026年5月 · 太古城 · 私樓 · 作者：雲蕾</div>
         <h3>500呎私樓打通廳房，變出開放式書房兼客房</h3>
