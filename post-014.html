@@ -19,10 +19,28 @@ header{border-bottom:2px solid #333;margin-bottom:24px;padding-bottom:14px}
 .publish-time{color:#666;font-size:14px;margin-top:8px}
 h1{font-size:1.8rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
 h2{font-size:1.3rem;margin:28px 0 14px;border-left:4px solid #8b5e3c;padding-left:12px;color:#2c2c2c}
+h2::before{content: "◆ ";color:#8b5e3c;font-size:0.8em;margin-right:4px}
 p{margin:14px 0;font-size:1.05rem;text-indent:2em}
+.breadcrumb{padding:10px 5vw;font-size:.88rem;background:#fff;border-bottom:1px solid #e8e4df;display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:-20px -20px 20px -20px}
+.breadcrumb a{color:#8b5e3c;text-decoration:none;font-weight:500}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb .sep{color:#ccc;font-size:1.1rem}
+.breadcrumb .current{color:#666;font-weight:400}
 .tip-box{background:#f5f0eb;padding:18px 20px;border-radius:6px;margin:20px 0;border-left:4px solid #8b5e3c}
 .tip-box h4{margin-bottom:10px;color:#8b5e3c;font-size:1.05rem}
 .tip-box p{text-indent:0;margin:0}
+.scene-divider{text-align:center;margin:32px 0;color:#ccc;font-size:1.2rem;letter-spacing:8px}
+.scene-divider::before{content:"◆ ◆ ◆"}
+.summary-box{background:linear-gradient(135deg,#f8f5f0 0%,#f0ebe3 100%);padding:20px 24px;border-radius:8px;margin:20px 0;border:1px solid #e0d4c0}
+.summary-box h4{color:#8b5e3c;margin-bottom:10px;font-size:1.05rem}
+.summary-box p{text-indent:0;margin:0;color:#555;font-size:.95rem;line-height:1.8}
+.dialogue-block{margin:18px 0;padding:16px 20px;background:#fff;border-left:3px solid #d4a574;border-radius:0 6px 6px 0;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.dialogue-block p{text-indent:0;margin:8px 0;font-size:1rem}
+.dialogue-block .speaker{font-weight:600;color:#8b5e3c}
+.note-box{background:#faf8f5;padding:20px;border-radius:8px;margin:24px 0;border:1px solid #e8e0d5}
+.note-box h3{color:#8b5e3c;margin-bottom:14px;font-size:1.15rem;border-bottom:1px solid #e0d4c0;padding-bottom:8px}
+.note-box ul{margin:0;padding-left:20px}
+.note-box li{margin:10px 0;color:#444;line-height:1.7}
 .author-bio{display:flex;gap:16px;margin:32px 0;padding:22px;background:#f5f0eb;border-radius:8px}
 .author-avatar{width:60px;height:60px;border-radius:50%;background:#8b5e3c;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
 .author-info h4{margin-bottom:6px;font-size:1.05rem}
@@ -71,8 +89,12 @@ footer a{color:#8b5e3c}
 </script>
 </head>
 <body>
-<div style="padding:8px 5vw;font-size:.85rem;color:#888;background:#faf9f7;border-bottom:1px solid #eee;">
-<a href="index.html">首頁</a> &gt; <a href="diary.html">博主講古</a> &gt; <span style="color:#555;">新皇崗口岸將通？傳統師傅講港式定製智慧</span>
+<div class="breadcrumb">
+<a href="index.html">🏠 首頁</a>
+<span class="sep">›</span>
+<a href="diary.html">📖 博主講古</a>
+<span class="sep">›</span>
+<span class="current">新皇崗口岸將通？傳統師傅講港式定製智慧</span>
 </div>
 
 <nav>
@@ -102,7 +124,7 @@ footer a{color:#8b5e3c}
 <p>「E0級多層實木，上星期二百八一副，今日報三百二。」小李滑動屏幕，「而且……要現金先留貨。」</p>
 <p>阿強抹咗把額頭嘅汗，望住牆邊堆積如山嘅訂單——七張公屋、三張居屋、兩張私樓，全部下星期要交貨。</p>
 <p>「打畀老陳。」阿強講，「問佢東莞倉仲有幾多庫存。」</p>
-<p>---</p>
+<div class="scene-divider"></div>
 <h2>場景二：貨倉夜話 · 八點零三分</h2>
 <p>東莞鳳崗鎮，老陳嘅板材倉庫。</p>
 <p>視像電話接通時，老陳正坐喺堆滿樣板嘅辦公枱後面，背後掛住塊褪色嘅紅布橫額：「熱烈祝賀新皇崗口岸通關在即」。</p>
@@ -118,7 +140,7 @@ footer a{color:#8b5e3c}
 <p>老陳沉默咗陣，突然講：「咁我加多個保障——我派人跟車，直送你旺角工場，唔經香港貨倉轉運。慳咗轉運費，你每副平十蚊。」</p>
 <p>阿強望住屏幕裡老陳身後嗰塊紅布橫額，忽然笑了：「你條友，早有準備。」</p>
 <p>「口岸開通，唔係只係你香港人嘅機會。」老陳也笑，「係我哋所有人嘅。」</p>
-<p>---</p>
+<div class="scene-divider"></div>
 <h2>場景三：工場凌晨 · 十一點四十分</h2>
 <p>貨車到咗。</p>
 <p>阿強同小李落樓接貨。夏夜悶熱，貨車引擎嘅熱浪撲面而來。司機係個後生仔，著住件「皇崗口岸通關紀念」T恤， sweat晒。</p>
@@ -134,7 +156,7 @@ footer a{color:#8b5e3c}
 <p>「十年前，一批內地板，表面睇冇問題，切開入面係空心。」阿強舉起右手，疤痕喺月光下泛白，「我當時貪平，冇逐副驗。結果做咗個地台床，客戶仔仔跳上床，踏穿咗中間塊板，跌咗落去，額頭縫咗六針。」</p>
 <p>後生仔同小李都唔出聲。</p>
 <p>「由嗰日開始，」阿強講，「我每副板都驗。唔係信唔過人，係……我信得過嘅只有自己對眼。」</p>
-<p>---</p>
+<div class="scene-divider"></div>
 <h2>深夜筆記 · 師傅嘅三道坑</h2>
 <p>搬完貨，阿強同小李坐喺工場門口，飲緊第二支凍檸茶。</p>
 <p>對面馬路嘅茶餐廳仲開緊，傳出凌晨第一爐菠蘿油嘅香氣。</p>
@@ -152,7 +174,8 @@ footer a{color:#8b5e3c}
 <p>「我阿爺係木匠，我老竇係木匠，我做咗二十五年定製。」佢講，「機器可以切板，但切唔到人心。客人想要咩，唔係靠圖紙講得清，要靠師傅坐喺佢屋企客廳，飲杯茶，傾半個鐘，先知道佢個仔怕黑，要喺櫃底加盞小燈。」</p>
 <p>小李唔出聲。</p>
 <p>「新皇崗口岸通唔通，係國家嘅事。」阿強飲咗啖檸檬茶，「但個櫃做得好唔好，係我哋嘅事。呢樣嘢，無論幾時都唔會變。」</p>
-<p>---</p>
+
+<div class="scene-divider"></div>
 <h2>尾聲 · 凌晨一點十五分</h2>
 <p>貨車開走咗，後生仔揮手講「國慶後再見」。</p>
 <p>阿強鎖好工場大門，同小李行去旺角地鐵站。夜色裡，兩個人嘅影子被街燈拉得好長。</p>
