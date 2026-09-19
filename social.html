@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://custom-api-cfg.vercel.app/social.html">
+<meta property="og:title" content="香港裝修社群 · Follow on Social · 萍踪侠影录">
+<meta property="og:description" content="張丹楓、雲蕾嘅香港全屋定制故事同步到 7 大社媒平台：小紅書、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X。每張卡可一鍵複製文案草稿。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://custom-api-cfg.vercel.app/social.html">
+<meta property="og:image" content="https://custom-api-cfg.vercel.app/images/post-030-hero.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="張丹楓、雲蕾">
+<title>香港裝修社群 · Follow on Social · 萍踪侠影录</title>
+<meta name="description" content="張丹楓、雲蕾嘅香港全屋定制故事同步到 7 大社媒平台： 小紅書、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X。半自動：助手生成草稿，海哥手動發佈。">
+<meta name="keywords" content="香港裝修,全屋定制,社媒,張丹楓,雲蕾,小紅書,YouTube,LinkedIn,Facebook,Instagram,TikTok,Twitter,X">
+<meta name="geo.region" content="HK">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf9f7;color:#302c29;font-family:"PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.85}
+:root{--accent:#8b5e3c;--accent-soft:#f7f0ea;--border:#eee;--muted:#7a685a;--card-shadow:0 2px 12px rgba(0,0,0,.06)}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 5vw;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.logo{font-size:1.15rem;font-weight:700;letter-spacing:1px}
+.logo span{font-weight:400;font-size:.8rem;color:#888;margin-left:6px}
+.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-links a{margin-left:14px;font-size:.85rem;color:#555;white-space:nowrap;flex-shrink:0}
+.nav-links a:hover{color:var(--accent)}
+main{max-width:1100px;margin:0 auto;padding:32px 5vw 60px}
+.hero{padding:48px 5vw 32px;text-align:center;background:linear-gradient(180deg,#f5f0eb 0%,#faf9f7 100%);margin:-32px -5vw 32px}
+.hero h1{font-size:1.85rem;font-weight:700;margin:0 0 10px;color:#1a1a1a}
+.hero p{color:var(--muted);margin:0 0 8px;font-size:1rem}
+.hero .sub{font-size:.88rem;color:#888;margin-top:6px}
+.page-title h2{font-size:1.2rem;margin:0 0 18px;color:#63452f;border-left:4px solid var(--accent);padding-left:12px}
+.social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:32px}
+.social-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 18px;box-shadow:var(--card-shadow);text-align:center;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease;position:relative}
+.social-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.social-emoji{font-size:2.6rem;line-height:1;margin-bottom:10px}
+.social-zh{font-size:1.05rem;font-weight:700;color:#1a1a1a;margin:0 0 4px}
+.social-en{font-size:.78rem;color:#888;margin:0 0 8px;letter-spacing:.5px}
+.social-desc{font-size:.82rem;color:#555;margin:0 0 14px;line-height:1.55;flex:1}
+.social-actions{display:flex;gap:6px;margin-top:auto}
+.social-actions a,.social-actions button{flex:1;text-align:center;font-size:.82rem;padding:8px 0;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;cursor:pointer;font-family:inherit;transition:background .2s}
+.social-actions a:hover,.social-actions button:hover{background:#6f4828}
+.social-actions .copy-btn{background:#fff;color:var(--accent)}
+.social-actions .copy-btn:hover{background:var(--accent-soft);color:var(--accent)}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2c2c2c;color:#fff;padding:10px 22px;border-radius:6px;font-size:.88rem;opacity:0;transition:opacity .3s;z-index:999;pointer-events:none}
+.copy-toast.show{opacity:1}
+.intro{margin-bottom:24px;padding:14px 18px;background:#fff;border-left:4px solid var(--accent);border-radius:4px;font-size:.92rem;color:#555}
+.intro strong{color:var(--accent)}
+@media (max-width:1024px){.social-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.social-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.social-grid{grid-template-columns:1fr}.hero h1{font-size:1.4rem}.page-title h2{font-size:1.05rem}.nav-links{justify-content:flex-start;width:100%}.nav-links a{margin:0 10px 0 0;font-size:.78rem}}
+footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#999;border-top:1px solid var(--border);margin-top:48px}
+footer a{color:var(--accent);margin:0 4px}
+footer p{margin:4px 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">萍踪侠影录 <span>張丹楓、雲蕾</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="diary.html">博主講古</a>
+    <a href="live.html">直播間</a>
+    <a href="social.html">社媒</a>
+    <a href="about.html">認識博主</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="hero">
+  <h1>🌐 香港裝修社群 · Follow on Social</h1>
+  <p>張丹楓、雲蕾嘅香港全屋定制故事 · 同步到 7 大社媒平台</p>
+  <p class="sub">半自動模式：助手生成草稿 · 海哥手動發佈 · 每篇附獨立站連結</p>
+</div>
+
+<div class="intro">
+  <strong>👋 揀你熟悉嘅平台開始追蹤：</strong>每張卡可一鍵跳轉到專屬同步頁，內含 29 篇博主講古草稿、hashtag、文章連結。鐘意就 LIKE / FOLLOW · 想裝修就 WhatsApp 852 5190 2328。
+</div>
+
+<div class="page-title"><h2>📡 7 大平台</h2></div>
+
+<div class="social-grid">
+
+<div class="social-card">
+  <div class="social-emoji">📕</div>
+  <p class="social-zh">小紅書</p>
+  <p class="social-en">Xiaohongshu / RED</p>
+  <p class="social-desc">港漂媽媽、收納控、裝修小白最活躍。3:4 封面 + emoji 標題 + 場景故事。</p>
+  <div class="social-actions">
+    <a href="xhs.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="xhs">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">📺</div>
+  <p class="social-zh">YouTube</p>
+  <p class="social-en">YouTube</p>
+  <p class="social-desc">長影片深度教學。16:9 封面 + 章節時戳 + 字幕。香港裝修頻道起步中。</p>
+  <div class="social-actions">
+    <a href="youtube.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="youtube">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">💼</div>
+  <p class="social-zh">LinkedIn</p>
+  <p class="social-en">LinkedIn</p>
+  <p class="social-desc">B2B 設計圈 / 建築師 / 發展商。專業長文 post，行業洞察為主。</p>
+  <div class="social-actions">
+    <a href="linkedin.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="linkedin">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">📘</div>
+  <p class="social-zh">Facebook</p>
+  <p class="social-en">Facebook</p>
+  <p class="social-desc">香港裝修群組、街坊討論區。日常分享 + Tag 朋友 + 街坊互動。</p>
+  <div class="social-actions">
+    <a href="facebook.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="facebook">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">📸</div>
+  <p class="social-zh">Instagram</p>
+  <p class="social-en">Instagram</p>
+  <p class="social-desc">設計美學、case study、Reels。1:1 方形封面，視覺先決。</p>
+  <div class="social-actions">
+    <a href="instagram.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="instagram">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">🎵</div>
+  <p class="social-zh">TikTok</p>
+  <p class="social-en">TikTok</p>
+  <p class="social-desc">30-60 秒短影片，fyp 標籤為主。9:16 直豎封面，搵痛點、講解決。</p>
+  <div class="social-actions">
+    <a href="tiktok.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="tiktok">📋 複製</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-emoji">🐦</div>
+  <p class="social-zh">Twitter / X</p>
+  <p class="social-en">Twitter / X</p>
+  <p class="social-desc">280 字短帖文、即時新聞評論。行業風向 + 政策評論 + 短思考。</p>
+  <div class="social-actions">
+    <a href="twitter.html">📖 開啟</a>
+    <button class="copy-btn" data-platform="twitter">📋 複製</button>
+  </div>
+</div>
+
+</div>
+
+<div class="intro" style="margin-top:8px">
+  <strong>💡 用法：</strong>① 點開你嘅主力平台 → ② 揀一篇你有共鳴嘅文章 → ③ 按「複製文案」攞草稿 → ④ 自己改一改貼上去 → ⑤ 標註 #萍踪侠影录 #張丹楓 #雲蕾。半自動模式，保留你嘅語氣。
+</div>
+
+</main>
+
+<div id="toast" class="copy-toast">已複製到剪貼簿</div>
+
+<footer>
+  <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" target="_blank">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
+  <p><a href="index.html">首頁</a> · <a href="diary.html">博主講古</a> · <a href="social.html">社媒</a> · <a href="contact.html">聯繫</a></p>
+</footer>
+
+<script>
+(function(){
+  const cards=document.querySelectorAll('.social-card');
+  const txt={
+    xhs:{name:'小紅書',desc:'3:4 封面 + emoji 標題 + 場景故事。最啱港漂媽媽、收納控、裝修小白。',sample:'【小紅書標題】看哭了！香港裝修老師傅30年木工故事\n【小紅書正文】昨天去觀塘探班祥叔工地…（完整故事見獨立站）\n👉 https://custom-api-cfg.vercel.app/\n#香港全屋定制 #張丹楓 #雲蕾 #萍踪侠影录'},
+    youtube:{name:'YouTube',desc:'長影片深度教學。16:9 封面 + 章節時戳 + 字幕。',sample:'【YouTube 影片標題】香港裝修老師傅30年木工故事｜觀塘工地一日\n【描述】完整案例、教學、價錢分享…\n【章節】00:00 開場｜01:00 案例背景｜03:00 技術拆解｜08:00 價錢分享｜10:00 結尾\n👉 https://custom-api-cfg.vercel.app/\n#香港全屋定制 #張丹楓 #雲蕾 #萍踪侠影录'},
+    linkedin:{name:'LinkedIn',desc:'B2B 設計圈。專業長文 post，行業洞察為主。',sample:'【LinkedIn post】\n香港全屋定制嘅底線，唔係幾靚，係幾「啱」。\n觀塘一個 600 呎舊樓，業主陳生上個月先收樓…\n重點：\n• 預算落到四十几萬\n• 板件驗收係落工地頭三日嘅試用期\n• 紅雨下嘅「交代」係口碑論\n👉 https://custom-api-cfg.vercel.app/\n#B2B #行業洞察 #張丹楓'},
+    facebook:{name:'Facebook',desc:'香港裝修群組、街坊討論區。日常分享 + Tag 朋友。',sample:'【FB post】\n香港裝修最貴嘅唔係手藝，係口碑。\n觀塘祥叔講過一句：木頭係有呼吸嘅…\nTag 你身邊準備裝修嘅朋友！\n👉 https://custom-api-cfg.vercel.app/\n#香港全屋定制 #張丹楓 #雲蕾'},
+    instagram:{name:'Instagram',desc:'設計美學、case study、Reels。1:1 方形封面。',sample:'✦ 香港裝修老師傅30年木工故事\n\n📍 觀塘舊樓工地\n📲 Link in bio\n.\n.\n.\n\n#pingzhouxiayinglu #danfeng #yunlei #hongkong #hkhomestyle'},
+    tiktok:{name:'TikTok',desc:'30-60 秒短影片。9:16 直豎封面，搵痛點、講解決。',sample:'🎬 香港裝修老師傅30年木工故事\n【30秒腳本】\n[0-5s] 鏡頭zoom in：木工枱+雨聲\n[5-15s] 祥叔口述：木頭有呼吸\n[15-25s] 鏡頭：板件驗收\n[25-30s] 字幕：訂造前必睇\n🎵 BGM：木紋鋼琴\n📲 全文：https://custom-api-cfg.vercel.app/\n#hongkong #homedecor #fyp'},
+    twitter:{name:'Twitter / X',desc:'280 字短帖文、即時新聞評論。',sample:'【帖文】\n香港裝修老師傅30年木工故事\n\n祥叔講過一句：木頭係有呼吸嘅。落大雨嘅日子，硬係刨、係鋸、係開料，聽日天一轉板就漲、就翹、就裂。\n\n📍 觀塘舊樓\n🔗 https://custom-api-cfg.vercel.app/\n\n#香港裝修 #木工'}
+  };
+  function showToast(){
+    const t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),1400);
+  }
+  function doCopy(text){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showToast).catch(()=>{
+        const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
+      });
+    }else{
+      const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
+    }
+  }
+  document.querySelectorAll('.copy-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const p=txt[b.dataset.platform];
+      if(p) doCopy([`【${p.name}】`,p.desc,'',p.sample].join('\n'));
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
