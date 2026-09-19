@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://custom-api-cfg.vercel.app/linkedin.html">
+<meta property="og:title" content="LinkedIn 同步 · 萍踪侠影录 · 香港全屋定制師傅講古">
+<meta property="og:description" content="張丹楓、雲蕾香港全屋定制文章 LinkedIn 同步：每篇附 LinkedIn post 草稿、hashtag、文章連結。半自動：助手生成草稿，海哥手動發佈。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://custom-api-cfg.vercel.app/linkedin.html">
+<meta property="og:image" content="https://custom-api-cfg.vercel.app/images/post-030-hero.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="張丹楓、雲蕾">
+<title>LinkedIn 同步 · 萍踪侠影录 · 香港全屋定制師傅講古</title>
+<meta name="description" content="香港全屋定制文章 LinkedIn 同步。張丹楓、雲蕾工廠預製上門裝，29 篇真實案例，每篇附 LinkedIn post 草稿。">
+<meta name="keywords" content="LinkedIn,香港裝修,全屋定制,張丹楓,雲蕾,B2B,行業講古">
+<meta name="geo.region" content="HK">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf9f7;color:#302c29;font-family:"PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.85}
+:root{--accent:#8b5e3c;--accent-soft:#f7f0ea;--border:#eee;--muted:#7a685a;--card-shadow:0 2px 12px rgba(0,0,0,.06)}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 5vw;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.logo{font-size:1.15rem;font-weight:700;letter-spacing:1px}
+.logo span{font-weight:400;font-size:.8rem;color:#888;margin-left:6px}
+.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-links a{margin-left:14px;font-size:.85rem;color:#555;white-space:nowrap;flex-shrink:0}
+.nav-links a:hover{color:var(--accent)}
+main{max-width:1180px;margin:0 auto;padding:32px 5vw 60px}
+.page-title h1{font-size:1.7rem;margin:0 0 8px}
+.page-title p{color:var(--muted);margin:0 0 24px;font-size:.95rem}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.stat{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 18px;min-width:140px;box-shadow:var(--card-shadow)}
+.stat .v{font-size:1.4rem;font-weight:700;color:var(--accent)}
+.stat .l{font-size:.78rem;color:#888;margin-top:2px}
+.xhs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.xhs-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.xhs-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.1)}
+.xhs-cover{aspect-ratio:16/9;width:100%;background:#eee;overflow:hidden;position:relative}
+.xhs-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.xhs-cover .badge-new{position:absolute;top:10px;left:10px;background:#ff2442;color:#fff;font-size:.72rem;padding:3px 10px;border-radius:10px;font-weight:600}
+.xhs-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.xhs-meta{font-size:.78rem;color:#999;margin-bottom:6px;letter-spacing:.5px}
+.xhs-title{font-size:1rem;font-weight:700;margin:0 0 8px;line-height:1.45;color:#1a1a1a}
+.xhs-desc{font-size:.88rem;color:#555;margin:0 0 12px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.xhs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.xhs-tags span{font-size:.74rem;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:10px}
+.xhs-actions{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.xhs-actions a,.xhs-actions button{flex:1;text-align:center;font-size:.85rem;padding:8px 0;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;cursor:pointer;font-family:inherit;transition:background .2s}
+.xhs-actions a:hover,.xhs-actions button:hover{background:#6f4828}
+.xhs-actions .copy-btn{background:#fff;color:var(--accent)}
+.xhs-actions .copy-btn:hover{background:var(--accent-soft);color:var(--accent)}
+.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2c2c2c;color:#fff;padding:10px 22px;border-radius:6px;font-size:.88rem;opacity:0;transition:opacity .3s;z-index:999;pointer-events:none}
+.copy-toast.show{opacity:1}
+@media (max-width:640px){.xhs-grid{grid-template-columns:1fr}.page-title h1{font-size:1.35rem}.nav-links{justify-content:flex-start;width:100%}.nav-links a{margin:0 10px 0 0;font-size:.78rem}}
+footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#999;border-top:1px solid var(--border);margin-top:48px}
+footer a{color:var(--accent);margin:0 4px}
+footer p{margin:4px 0}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">萍踪侠影录 <span>張丹楓、雲蕾</span></div>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="diary.html">博主講古</a>
+    <a href="live.html">直播間</a>
+    <a href="xhs.html">小紅書</a>
+    <a href="youtube.html">YouTube</a>
+    <a href="linkedin.html">LinkedIn</a>
+    <a href="facebook.html">Facebook</a>
+    <a href="instagram.html">Instagram</a>
+    <a href="tiktok.html">TikTok</a>
+    <a href="twitter.html">Twitter</a>
+    <a href="about.html">認識博主</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="page-title">
+  <h1>💼 LinkedIn 同步 · 博主講古 29 篇</h1>
+  <p>張丹楓、雲蕾嘅香港全屋定制故事 LinkedIn 版。每張卡附 post 草稿、hashtag、文章連結。半自動：助手生成草稿，海哥手動發佈。</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="v">29</div><div class="l">post 草稿</div></div>
+  <div class="stat"><div class="v">B2B</div><div class="l">目標受眾</div></div>
+  <div class="stat"><div class="v">香港</div><div class="l">本地市場</div></div>
+  <div class="stat"><div class="v">半自動</div><div class="l">發佈模式</div></div>
+</div>
+
+<div class="xhs-grid">
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-030-hero.png" alt="暴雨黑雨下的木工枱 封面" loading="lazy"><span class="badge-new">NEW</span></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-18 · 觀塘舊樓 · 紅色暴雨</div>
+    <h2 class="xhs-title">暴雨黑雨下的木工枱——張丹楓同祥叔讲九一八</h2>
+    <p class="xhs-desc">觀塘舊樓工地，九月十八日紅色暴雨。張丹楓、雲蕾探班祥叔工地，從板件驗收、魯班尺規矩到九一八手藝人嘅傳承：木頭有呼吸，落雨天做嘅嘢先最穩陣。</p>
+    <div class="xhs-tags"><span>#香港裝修</span><span>#木工</span><span>#行業洞察</span></div>
+    <div class="xhs-actions">
+      <a href="post-030.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="030">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-029-hero.png" alt="唐樓入伙前的最后一晚 封面" loading="lazy"><span class="badge-new">NEW</span></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-18 · 旺角砵蘭街 · 380呎唐樓</div>
+    <h2 class="xhs-title">唐樓入伙前的最后一晚：旺角砵蘭街380呎，菠萝旺同周家兩年儲起嘅首期</h2>
+    <p class="xhs-desc">旺角砵蘭街唐樓，業主姓周、太太姓陳，一家四口380呎儲咗十二年首期。油煙不鏽鋼蛇嘴、地台承重800公斤、磨砂玻璃鋁框分床、收尾口碑論。</p>
+    <div class="xhs-tags"><span>#唐樓</span><span>#口碑論</span><span>#香港細單位</span></div>
+    <div class="xhs-actions">
+      <a href="post-029.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="029">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-028-hero.png" alt="東涌公屋混凝土檢查 封面" loading="lazy"><div class="badge-new">NEW</div></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-18 · 東涌第42區公屋 · 結構安全</div>
+    <h2 class="xhs-title">東涌公屋混凝土檢查之後：阿強師傅同阿杰講解結構、裂縫與全屋定制嘅底線</h2>
+    <p class="xhs-desc">東涌第42區公屋第3至5座混凝土方塊抗壓測試異常後，明報、星島、結構工程師倪學仁齊齊拆局。張丹楓主講、雲蕾整理：阿杰驗樓三招、0.3mm裂縫處理。</p>
+    <div class="xhs-tags"><span>#公屋</span><span>#結構</span><span>#驗樓</span></div>
+    <div class="xhs-actions">
+      <a href="post-028.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="028">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-027-theme.jpg" alt="300呎偷出三房 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-17 · 觀塘 · 納米樓</div>
+    <h2 class="xhs-title">300呎偷出三房：張丹楓接納米樓訂造訂單全屋定制攻略</h2>
+    <p class="xhs-desc">觀塘280呎納米樓，黄生雨公婆加小朋友要三間房。上床下櫃、半開放式趟門書房、乾濕分離廁所、偷位收納設計。</p>
+    <div class="xhs-tags"><span>#納米樓</span><span>#三代同堂</span><span>#偷位設計</span></div>
+    <div class="xhs-actions">
+      <a href="post-027.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="027">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-026-theme.jpg" alt="等施政報告之前先把家裝好 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-17 · 北角 · 唐樓</div>
+    <h2 class="xhs-title">等施政報告之前先把家裝好：張丹楓教你北角舊樓收納與通風規劃</h2>
+    <p class="xhs-desc">北角三百呎唐樓收納通風規劃：老公想滿牆櫃vs媽咪話櫃太多會焗、懸空薄身鞋櫃連機器人位、廚房防潮板材、預算三層分配。</p>
+    <div class="xhs-tags"><span>#北角</span><span>#收納規劃</span><span>#通風設計</span></div>
+    <div class="xhs-actions">
+      <a href="post-026.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="026">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-025-theme.jpg" alt="東涌公屋混凝土質量檢查 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-17 · 東涌 · 公屋</div>
+    <h2 class="xhs-title">東涌公屋混凝土質量檢查：張丹楓教你一眼分辨結構問題與裝修陷阱</h2>
+    <p class="xhs-desc">東涌新公屋混凝土質量抽檢工程。空鼓錘敲牆驗質量、裂縫成因與修補方法、批盪防潮注意事項。</p>
+    <div class="xhs-tags"><span>#公屋</span><span>#混凝土</span><span>#質量檢查</span></div>
+    <div class="xhs-actions">
+      <a href="post-025.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="025">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-024-hero.png" alt="五年規劃落地北角 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-17 · 北角 · 300呎舊單位</div>
+    <h2 class="xhs-title">五年規劃落地第二日：北角300呎舊單位，阿May一家先把收納通風搞掂</h2>
+    <p class="xhs-desc">9月16日首份五年規劃公布、9月17日特首立法會答問會同一日，北角三百幾呎舊單位業主阿May問追唔追新政策裝修。</p>
+    <div class="xhs-tags"><span>#五年規劃</span><span>#北角</span><span>#舊樓裝修</span></div>
+    <div class="xhs-actions">
+      <a href="post-024.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="024">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-023-theme.jpg" alt="紅磡357呎淺木櫃 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-13 · 紅磡 · 357呎兩房</div>
+    <h2 class="xhs-title">紅磡357呎兩房：淺木櫃唔係油白色就得，張丹楓教你揀啱色耐睇十年</h2>
+    <p class="xhs-desc">紅磡357呎實用兩房。淺木暖色一樣拉高亮度仲耐污，吊櫃到頂封死角、趟門慳一呎、背板離牆3mm防潮。</p>
+    <div class="xhs-tags"><span>#紅磡</span><span>#色彩設計</span><span>#細單位</span></div>
+    <div class="xhs-actions">
+      <a href="post-023.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="023">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-022-theme.jpg" alt="粉嶺鳳凰嶺邨 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-11 · 粉嶺鳳凰嶺邨 · 新公屋入伙</div>
+    <h2 class="xhs-title">粉嶺鳳凰嶺邨開門見廁點算？張丹楓3.5萬半日裝完430呎3-4人單位</h2>
+    <p class="xhs-desc">粉嶺鳳凰嶺邨新公屋入伙，430呎3-4人單位開門見廁、細房太細。暗門化解、卡座廳房合一、地台床上床下櫃，3.5萬工廠預製半日裝完。</p>
+    <div class="xhs-tags"><span>#公屋</span><span>#粉嶺</span><span>#快速裝修</span></div>
+    <div class="xhs-actions">
+      <a href="post-022.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="022">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-021-theme.jpg" alt="油麻地防潮 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-11 · 油麻地 · 舊樓防潮</div>
+    <h2 class="xhs-title">油麻地老街新居：張丹楓帶阿波師傅同你拆解400呎舊樓防潮</h2>
+    <p class="xhs-desc">油麻地400呎舊單位牆身發霉，後生夫婦預算有限又怕返工。濕度計驗樓、防潮底漆、鋁合金櫃腳、SPC地板。</p>
+    <div class="xhs-tags"><span>#舊樓</span><span>#防潮</span><span>#油麻地</span></div>
+    <div class="xhs-actions">
+      <a href="post-021.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="021">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-020-theme.jpg" alt="康怡花園暴雨 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-11 · 鰂魚涌 · 暴雨防潮</div>
+    <h2 class="xhs-title">暴雨嚟之前，阿炳師傅先幫你諗到三年後嘅事</h2>
+    <p class="xhs-desc">鰂魚涌康怡花園四百幾呎舊單位，阿炳師傅教你暴雨前先處理化妝樓滲水、櫃底離地一吋半、全屋預留零火線。</p>
+    <div class="xhs-tags"><span>#鰂魚涌</span><span>#智能家居</span><span>#暴雨</span></div>
+    <div class="xhs-actions">
+      <a href="post-020.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="020">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-019-theme.jpg" alt="打風前趕中秋 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-11 · 大圍 · 打風防潮</div>
+    <h2 class="xhs-title">打風前趕起，中秋要團圓：炳師傅的大圍防潮一役</h2>
+    <p class="xhs-desc">天文台話熱帶氣旋麥德姆逼近，阿May想趕中秋團圓前入伙。外牆櫃離牆兩厘米、窗台剷底重打膠、五金用304不鏽鋼。</p>
+    <div class="xhs-tags"><span>#打風</span><span>#中秋入伙</span><span>#大圍</span></div>
+    <div class="xhs-actions">
+      <a href="post-019.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="019">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-018-theme.jpg" alt="啟德簡約公屋 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-11 · 啟德 · 簡約公屋</div>
+    <h2 class="xhs-title">啟德簡約公屋第二期傳提早入伙？張丹楓教你拎鎖匙前預留收納位</h2>
+    <p class="xhs-desc">啟德簡約公屋第二期傳出可能提早入伙，拎鎖匙前量尺、預留收納位，並提醒門口、廚房、廁所及窗邊不要亂改。</p>
+    <div class="xhs-tags"><span>#啟德</span><span>#簡約公屋</span><span>#入伙攻略</span></div>
+    <div class="xhs-actions">
+      <a href="post-018.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="018">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-017-kai-tak-demo-unit.jpg" alt="簡約公屋訂造 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-10 · 簡約公屋 · 空間設計</div>
+    <h2 class="xhs-title">劏房戶搬入簡約公屋之後，單位咁細，點樣訂造先住得舒服？</h2>
+    <p class="xhs-desc">劏房戶搬入柴灣常安街簡約公屋後。細單位唔使間死房，用頂天櫃、一體高架床同兩用梳化。</p>
+    <div class="xhs-tags"><span>#劏房</span><span>#簡約公屋</span><span>#空間設計</span></div>
+    <div class="xhs-actions">
+      <a href="post-017.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="017">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-015-thumb.jpg" alt="五年規劃公布前一晚 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-10 · 旺角 · 師傅故事</div>
+    <h2 class="xhs-title">五年規劃公布前一晚：旺角舊樓廚房改造，老師傅同街坊傾嘅嗰啲心事</h2>
+    <p class="xhs-desc">香港首份五年規劃公布前夕，阿強師傅喺旺角舊樓做廚房改造，遇到一對想保留老香港記憶嘅夫婦。</p>
+    <div class="xhs-tags"><span>#五年規劃</span><span>#廚房改造</span><span>#老香港</span></div>
+    <div class="xhs-actions">
+      <a href="post-015.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="015">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-014-thumb.jpg" alt="新皇崗口岸港式定制 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-06 · 行業講古</div>
+    <h2 class="xhs-title">新皇崗口岸將通？傳統師傅講港式定製智慧</h2>
+    <p class="xhs-desc">新皇崗口岸將通，阿強師傅帶學徒小李探討港式定製智慧：嵌入式衣櫥、防火廚房、毫米級細節。</p>
+    <div class="xhs-tags"><span>#皇崗口岸</span><span>#港式定制</span><span>#行業講古</span></div>
+    <div class="xhs-actions">
+      <a href="post-014.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="014">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-013-thumb.jpg" alt="一號信號搶修兒童房 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-03 · 颱風 · 師傅故事</div>
+    <h2 class="xhs-title">一號信號掛住嗰晚，呢位媽媽打電話畀我：『師傅，我個仔間房嘅櫃漏緊水……』</h2>
+    <p class="xhs-desc">颱風沙德爾逼近香港，一號信號高懸。全屋定制師傅上門發現兒童房櫃體甲醛超標兼窗邊漏水，緊急搶修保平安。</p>
+    <div class="xhs-tags"><span>#颱風</span><span>#兒童房</span><span>#甲醛</span></div>
+    <div class="xhs-actions">
+      <a href="post-013.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="013">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-012-thumb.jpg" alt="兒童房甲醛 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-03 · 兒童房 · 甲醛</div>
+    <h2 class="xhs-title">開學前一晚，呢位媽媽打電話畀我：「師傅，我個仔間房嘅櫃好似有味……」</h2>
+    <p class="xhs-desc">香港全屋定制師傅上門檢查兒童房櫃體，揭開「環保」背後嘅真相。一個關於甲醛、選材同信任嘅故事。</p>
+    <div class="xhs-tags"><span>#兒童房</span><span>#甲醛</span><span>#環保</span></div>
+    <div class="xhs-actions">
+      <a href="post-012.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="012">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-011-thumb.jpg" alt="兒童房訂造 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-09-02 · 兒童房 · 訂造</div>
+    <h2 class="xhs-title">開學前一晚，呢位媽媽打電話畀我：『師傅，我個仔間房嘅櫃好似有味……』</h2>
+    <p class="xhs-desc">香港全屋定制師傅上門檢查兒童房櫃體，揭開『環保』背後嘅真相。一個關於甲醛、選材同信任嘅故事。</p>
+    <div class="xhs-tags"><span>#兒童房</span><span>#訂造</span><span>#環保</span></div>
+    <div class="xhs-actions">
+      <a href="post-011.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="011">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-010-thumb.jpg" alt="旺角唐樓改造 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08-26 · 旺角 · 行業講古</div>
+    <h2 class="xhs-title">旺角舊樓改造：四十年唐樓煥發第二春</h2>
+    <p class="xhs-desc">張丹楓走進560呎油麻地唐樓，記錄舊樓如何靠精準量尺、嵌入式收納和香港手藝，重新變成一家人的家。</p>
+    <div class="xhs-tags"><span>#旺角</span><span>#唐樓改造</span><span>#張丹楓</span></div>
+    <div class="xhs-actions">
+      <a href="post-010.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="010">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-009-thumb.jpg" alt="北都全屋定制 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08-26 · 元朗 · 行業講古</div>
+    <h2 class="xhs-title">北都新機遇·老師傅講全屋定制：張丹楓嘅廿八年</h2>
+    <p class="xhs-desc">六大企業合資10.3億奪北都首個片區項目。張丹楓師傅講香港全屋定制廿八年故事。</p>
+    <div class="xhs-tags"><span>#北都</span><span>#行業洞察</span><span>#張丹楓</span></div>
+    <div class="xhs-actions">
+      <a href="post-009.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="009">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-008-thumb.jpg" alt="打風前趕裝 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08-25 · 打風 · 行業講古</div>
+    <h2 class="xhs-title">打風前嘅全屋定製——紫檀逼近，張師傅趕喺八號波之前交貨</h2>
+    <p class="xhs-desc">紫檀逼近，我哋喺八號波前廿分鐘完成交貨。陳太話：「真係估唔到你哋趕得切！」</p>
+    <div class="xhs-tags"><span>#打風</span><span>#紫檀</span><span>#趕工</span></div>
+    <div class="xhs-actions">
+      <a href="post-008.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="008">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-007-thumb.jpg" alt="北都小區家居設計 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08-10 · 北都 · 行業講古</div>
+    <h2 class="xhs-title">北都新小區探訪：張師傅帶你睇未來香港家居設計新趨勢</h2>
+    <p class="xhs-desc">北都首個片區即將入夥，我哋幫發展商做首批定制櫃。今次帶你睇下未來家居設計有啲咩新趨勢。</p>
+    <div class="xhs-tags"><span>#北都</span><span>#家居設計</span><span>#新趨勢</span></div>
+    <div class="xhs-actions">
+      <a href="post-007.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="007">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-006-thumb.jpg" alt="颱風前趕裝 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08-01 · 唐樓 · 行業講古</div>
+    <h2 class="xhs-title">40年唐樓重新裝修——張師傅教你如何在舊樓牆身唔好嘅情況下整出完美櫃體</h2>
+    <p class="xhs-desc">唐樓牆身唔係完全垂直，訂造櫃係最穩陣嘅方法，但係要點樣度尺，先至可以避免到牆身斜嘅問題？</p>
+    <div class="xhs-tags"><span>#唐樓</span><span>#度尺</span><span>#斜牆</span></div>
+    <div class="xhs-actions">
+      <a href="post-006.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="006">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-005-thumb.jpg" alt="木器舖匠人傳承 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-07-18 · 行業講古 · 匠人</div>
+    <h2 class="xhs-title">張師傅同你拆解香港定制傢俬嘅內幕</h2>
+    <p class="xhs-desc">同一個櫃，點解有人做 $5000 呎，有人做 $1500 呎？張師傅教你點樣分辨邊樣嘢值錢。</p>
+    <div class="xhs-tags"><span>#定制傢俬</span><span>#內幕</span><span>#匠人</span></div>
+    <div class="xhs-actions">
+      <a href="post-005.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="005">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-004-thumb.jpg" alt="太古城開放式書房 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-07 · 太古城 · 500呎私樓</div>
+    <h2 class="xhs-title">500呎私樓打通廳房，變出開放式書房兼客房</h2>
+    <p class="xhs-desc">業主係一個freelance designer，需要一個可以拍片、開會、同時有客人瞓得嘅空間。</p>
+    <div class="xhs-tags"><span>#太古城</span><span>#私樓</span><span>#開放式書房</span></div>
+    <div class="xhs-actions">
+      <a href="post-004.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="004">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-003-thumb.jpg" alt="劏房地台床 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-06 · 深水埗 · 劏房</div>
+    <h2 class="xhs-title">劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h2>
+    <p class="xhs-desc">業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺，但係間屋細到連個衣櫃都放唔落。</p>
+    <div class="xhs-tags"><span>#劏房</span><span>#地台床</span><span>#深水埗</span></div>
+    <div class="xhs-actions">
+      <a href="post-003.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="003">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-002-thumb.jpg" alt="居屋隱形門書房 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-04 · 荃灣 · 居屋</div>
+    <h2 class="xhs-title">居屋客廳一分為二：我哋幫陳生喺廳中間加咗道隱形門</h2>
+    <p class="xhs-desc">陳生話想要間書房，但係廳本來已經唔大。我哋用隱形門做間隔，平時睇唔到，但係打開又有獨立空間。</p>
+    <div class="xhs-tags"><span>#居屋</span><span>#隱形門</span><span>#荃灣</span></div>
+    <div class="xhs-actions">
+      <a href="post-002.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="002">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+<div class="xhs-card">
+  <div class="xhs-cover"><img src="images/post-001-thumb.jpg" alt="將軍澳公屋全屋定制 封面" loading="lazy"></div>
+  <div class="xhs-body">
+    <div class="xhs-meta">2026-08 · 將軍澳 · 300呎公屋</div>
+    <h2 class="xhs-title">300呎公屋裝修，3萬蚊搞定全屋定制櫃</h2>
+    <p class="xhs-desc">客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日。</p>
+    <div class="xhs-tags"><span>#公屋</span><span>#3萬蚊</span><span>#工廠預製</span></div>
+    <div class="xhs-actions">
+      <a href="post-001.html" target="_blank">📖 獨立站</a>
+      <button class="copy-btn" data-num="001">📋 複製草稿</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</main>
+
+<div id="toast" class="copy-toast">已複製到剪貼簿</div>
+
+<footer>
+  <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" target="_blank">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
+  <p><a href="index.html">首頁</a> · <a href="diary.html">博主講古</a> · <a href="xhs.html">小紅書</a> · <a href="linkedin.html">LinkedIn</a> · <a href="contact.html">聯繫</a></p>
+  <p>同步更新：<a href="https://www.linkedin.com" target="_blank">LinkedIn · 張丹楓</a> · <a href="https://www.youtube.com" target="_blank">YouTube · 萍踪侠影录</a> · <a href="https://www.facebook.com" target="_blank">Facebook · 香港裝修群組</a></p>
+</footer>
+
+<script>
+(function(){
+  const cards=document.querySelectorAll('.xhs-card');
+  const txt={};
+  cards.forEach(c=>{
+    const num=c.querySelector('.copy-btn').dataset.num;
+    const title=c.querySelector('.xhs-title').textContent.trim();
+    const desc=c.querySelector('.xhs-desc').textContent.trim();
+    const meta=c.querySelector('.xhs-meta').textContent.trim();
+    const tags=Array.from(c.querySelectorAll('.xhs-tags span')).map(s=>s.textContent.trim()).join(' ');
+    txt[num]=[`【標題】${title}`,'',`【post 內容】`,desc,'',`【hashtag】${tags}`,'','【重點】','• 案例單位：'+meta,'• 預算/工期/師傅：詳見原文','• 技術拆解：幾毫之爭 vs 偷位設計 vs 防潮驗樓','• 教訓：香港裝修最貴嘅係口碑',' ',`👉 全文：https://custom-api-cfg.vercel.app/post-${num}.html`,'','#香港全屋定制 #張丹楓 #雲蕾 #萍踪侠影录 #B2B #行業洞察 #裝修顧問 #香港設計'].join('\n');
+  });
+  function showToast(){
+    const t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),1400);
+  }
+  document.querySelectorAll('.copy-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const num=b.dataset.num;
+      const text=txt[num]||'';
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(showToast).catch(()=>{
+          const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
+        });
+      }else{
+        const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
