@@ -1,4 +1,10 @@
-<!doctype html>
+import os
+
+API_KEY = 'sk-bjdhmdfdtzyjzzkekwcamvdzaidkurakdtenulyavkrvgbco'
+API_URL = 'https://api.siliconflow.cn/v1/images/generations'
+TIER_PRICE = {'simple': 650, 'medium': 1150, 'luxury': 2200}
+
+html = '''<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -258,10 +264,10 @@
 </footer>
 
 <script>
-var API_KEY = "sk-bjdhmdfdtzyjzzkekwcamvdzaidkurakdtenulyavkrvgbco";
-var API_URL = "https://api.siliconflow.cn/v1/images/generations";
+var API_KEY = "''' + API_KEY + '''";
+var API_URL = "''' + API_URL + '''";
 var uploadedImageBase64 = null;
-var TIER_PRICE = {'simple': 650, 'medium': 1150, 'luxury': 2200};
+var TIER_PRICE = ''' + str(TIER_PRICE) + ''';
 
 function updatePrice() {
   var area = parseFloat(document.getElementById("area").value) || 0;
@@ -273,8 +279,8 @@ function updatePrice() {
     var low = Math.round(total * 0.85);
     var high = Math.round(total * 1.15);
     var tierLabel = tier === "simple" ? "簡單" : tier === "medium" ? "中等" : "豪華";
-    document.getElementById("price-amount").textContent = "HK$ " + low.toLocaleString() + " – " + high.toLocaleString();
-    document.getElementById("price-range").textContent = "「" + area + "㎡」×「" + tierLabel + " HK$" + TIER_PRICE[tier].toLocaleString() + "/㎡」≈ HK$" + total.toLocaleString();
+    document.getElementById("price-amount").textContent = "HK$ " + low.toLocaleString() + " \u2013 " + high.toLocaleString();
+    document.getElementById("price-range").textContent = "\u300C" + area + "㎡\u300D\u00D7\u300C" + tierLabel + " HK$" + TIER_PRICE[tier].toLocaleString() + "/㎡\u300D\u2248 HK$" + total.toLocaleString();
     priceBox.style.display = "block";
   } else {
     priceBox.style.display = "none";
@@ -311,11 +317,11 @@ async function generate() {
   var btn = document.getElementById("gen-btn");
   var resultSection = document.getElementById("result-section");
   var area = parseFloat(document.getElementById("area").value) || 0;
-  if (area < 5) { setStatus("❌ 請輸入有效的面積（平方米）", true); return; }
+  if (area < 5) { setStatus("\u274C \u8ACB\u8F38\u5165\u6709\u6548\u7684\u9762\u7A4D\uFF08\u5E73\u65B9\u7C73\uFF09", true); return; }
 
   var styleEl = document.querySelector("input[name=style]:checked");
   var tierEl = document.querySelector("input[name=tier]:checked");
-  var style = styleEl ? styleEl.value : "現代簡約";
+  var style = styleEl ? styleEl.value : "\u73FE\u4EE3\u7C21\u7D04";
   var tier = tierEl ? tierEl.value : "medium";
   var extra = document.getElementById("extra-prompt").value.trim();
 
@@ -325,15 +331,15 @@ async function generate() {
   resultSection.classList.remove("show");
 
   var styleMap = {
-    "現代簡約": "modern minimalist interior design, clean white walls, sleek built-in cabinets, neutral tones, contemporary Hong Kong apartment renovation photorealistic render",
-    "北歐": "Scandinavian style interior, light oak flooring, pastel accent wall, minimalist furniture, cozy and bright, Nordic home renovation photorealistic render",
-    "新中式": "new Chinese modern interior, elegant dark wood furniture, subtle traditional motifs, contemporary Chinese style apartment renovation photorealistic render",
-    "輕奥": "luxury modern interior, gold accent details, marble surfaces, sophisticated lighting, upscale Hong Kong apartment renovation photorealistic render",
-    "日式": "Japanese minimalist interior, natural wood textures, tatami inspired corner, warm wood flooring, serene and functional Japanese style renovation photorealistic render",
-    "美式": "American country style interior, warm wood tones, farmhouse kitchen cabinets, cozy countryside home renovation photorealistic render"
+    "\u73FE\u4EE3\u7C21\u7D04": "modern minimalist interior design, clean white walls, sleek built-in cabinets, neutral tones, contemporary Hong Kong apartment renovation photorealistic render",
+    "\u5317\u6B50": "Scandinavian style interior, light oak flooring, pastel accent wall, minimalist furniture, cozy and bright, Nordic home renovation photorealistic render",
+    "\u65B0\u4E2D\u5F0F": "new Chinese modern interior, elegant dark wood furniture, subtle traditional motifs, contemporary Chinese style apartment renovation photorealistic render",
+    "\u8F15\u5965": "luxury modern interior, gold accent details, marble surfaces, sophisticated lighting, upscale Hong Kong apartment renovation photorealistic render",
+    "\u65E5\u5F0F": "Japanese minimalist interior, natural wood textures, tatami inspired corner, warm wood flooring, serene and functional Japanese style renovation photorealistic render",
+    "\u7F8E\u5F0F": "American country style interior, warm wood tones, farmhouse kitchen cabinets, cozy countryside home renovation photorealistic render"
   };
 
-  var stylePrompt = styleMap[style] || styleMap["現代簡約"];
+  var stylePrompt = styleMap[style] || styleMap["\u73FE\u4EE3\u7C21\u7D04"];
   var extraClause = extra ? ", additional details: " + extra : "";
   var tierClause = tier === "luxury" ? ", luxury high-end finishes" : tier === "simple" ? ", simple clean finishes" : ", standard quality finishes";
 
@@ -400,4 +406,9 @@ function setStatus(msg, isErr) {
 </script>
 
 </body>
-</html>
+</html>'''
+
+path = 'C:/Users/a/Desktop/custom-config/ai-design.html'
+with open(path, 'w', encoding='utf-8') as f:
+    f.write(html)
+print('Written', len(html), 'bytes to', path)
