@@ -342,7 +342,7 @@ async function generate() {
     if (uploadedImageBase64) {
       try {
         var imgPayload = {
-          model: "FLUX.1-dev",
+          model: "Tongyi-MAI/Z-Image-Turbo",
           image: uploadedImageBase64,
           prompt: "Interior design rendering based on uploaded room photo. " + stylePrompt + tierClause + extraClause + ". High quality architectural visualization, photorealistic, no text, no watermark.",
           image_size: "1024x1024",
@@ -362,7 +362,7 @@ async function generate() {
     }
     if (!imageUrl) {
       var textPayload = {
-        model: "FLUX.1-dev",
+        model: "Tongyi-MAI/Z-Image-Turbo",
         prompt: "Interior design rendering. " + stylePrompt + tierClause + extraClause + ". High quality architectural visualization, photorealistic, no text, no watermark, Hong Kong apartment renovation.",
         image_size: "1024x1024",
         num_inference_steps: 30,
