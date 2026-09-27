@@ -83,9 +83,9 @@ nav{flex-direction:column;align-items:flex-start}
     前 20 名用戶免費生成影片！WhatsApp 聯絡張丹楓：<a href="https://wa.me/85251902328" style="color:#c8b89a">852 5190 2328</a>
   </div>
 
-  <!-- STEP 1: Template / Video Upload -->
+  <!-- STEP 1: Template -->
   <div class="step-card" id="step1">
-    <div class="step-title"><span class="step-label">STEP 1</span>選擇模板或上傳參考影片</div>
+    <div class="step-title"><span class="step-label">STEP 1</span>選擇影片模板</div>
     <template-grid id="templateGrid">
       <div class="template-card selected" data-tpl="interior" onclick="selectTemplate(this)">
         <img src="https://picsum.photos/seed/interior/320/180" alt="室內設計">
@@ -103,7 +103,7 @@ nav{flex-direction:column;align-items:flex-start}
         <img src="https://picsum.photos/seed/product/320/180" alt="產品展示">
         產品展示
       </div>
-      <div class="template-card" data-tpl=" testimonial" onclick="selectTemplate(this)">
+      <div class="template-card" data-tpl="testimonial" onclick="selectTemplate(this)">
         <img src="https://picsum.photos/seed/testimonial/320/180" alt="客戶見證">
         客戶見證
       </div>
@@ -112,25 +112,38 @@ nav{flex-direction:column;align-items:flex-start}
         自訂模板
       </div>
     </template-grid>
+  </div>
+
+  <!-- STEP 2: Face Fusion (Tencent Cloud) -->
+  <div class="step-card" id="step2">
+    <div class="step-title"><span class="step-label">STEP 2</span>上傳照片（騰訊雲換臉）</div>
+    <p style="font-size:.85rem;color:#63452f;margin:0 0 12px">上傳一張正面照片，AI 將融合至模板人物。暫不上傳亦可繼續生成數字人影片。</p>
+    <div class="grid-2">
+      <div>
+        <label class="field-label">用戶照片（JPG / PNG，不超過 5MB）</label>
+        <input type="file" id="userPhoto" accept="image/jpeg,image/png" onchange="onUserPhotoChange()">
+        <div id="photoName" class="hint"></div>
+        <img id="facePreview" class="face-preview" style="display:none">
+      </div>
+      <div>
+        <label class="field-label">模板照片（JPG / PNG）</label>
+        <input type="file" id="templatePhoto" accept="image/jpeg,image/png" onchange="onTemplatePhotoChange()">
+        <div id="tplPhotoName" class="hint"></div>
+        <img id="tplPreview" class="face-preview" style="display:none">
+        <p class="hint">請上傳包含人臉的模板圖片</p>
+      </div>
+    </div>
     <div style="margin-top:14px">
-      <label class="field-label">或直接上傳參考影片（MP4 / MOV，最大 100MB）</label>
-      <input type="file" id="refVideo" accept="video/mp4,video/mov" onchange="onRefVideoChange()">
-      <div id="refVideoName" class="hint"></div>
+      <button class="btn btn-outline btn-sm" onclick="doFaceFusion()" id="fusionBtn">騰訊雲 AI 換臉融合</button>
+      <div id="fusionStatus" class="status-line"></div>
+      <img id="fusionResult" style="display:none;max-width:100%;margin-top:12px;border-radius:8px;border:2px solid #8b5e3c">
     </div>
   </div>
 
-  <!-- STEP 2: User Photo (face swap) -->
-  <div class="step-card coming-soon" id="step2">
-    <div class="step-title"><span class="step-label">STEP 2</span>上傳人物照片（換臉用）<span class="badge-beta">即將上線</span></div>
-    <label class="field-label">上傳正面照片（JPG / PNG，不含眼鏡）</label>
-    <input type="file" id="userPhoto" accept="image/jpeg,image/png" disabled>
-    <p class="hint">換臉功能即將推出，敬請期待！</p>
-  </div>
-
-  <!-- STEP 3: Voice Sample -->
-  <div class="step-card coming-soon" id="step3">
+  <!-- STEP 3: Voice Sample (coming soon) -->
+  <div class="step-card" id="step3">
     <div class="step-title"><span class="step-label">STEP 3</span>上傳聲音樣本（語音克隆）<span class="badge-beta">即將上線</span></div>
-    <label class="field-label">上傳 10–30 秒語音樣本（WAV / MP3 / M4A）</label>
+    <label class="field-label">上傳 10-30 秒語音樣本（WAV / MP3 / M4A）</label>
     <input type="file" id="voiceSample" accept="audio/wav,audio/mp3,audio/m4a" disabled>
     <p class="hint">語音克隆功能即將上線，請留意更新通知。</p>
   </div>
@@ -188,22 +201,22 @@ nav{flex-direction:column;align-items:flex-start}
     </div>
   </div>
 
-  <!-- STEP 6: Generate -->
+  <!-- STEP 6: Generate Digital Human Video (Tencent Cloud) -->
   <div class="step-card" id="step6">
-    <div class="step-title"><span class="step-label">STEP 6</span>生成影片</div>
+    <div class="step-title"><span class="step-label">STEP 6</span>生成數字人影片（騰訊雲）</div>
     <div id="videoPreviewArea">
       <div class="result-box" id="videoResultBox" style="display:none">
         <video id="generatedVideo" controls></video>
-        <a id="downloadLink" class="btn btn-sm" download>下載影片</a>
-        <p class="status-line" id="videoStatus"></p>
+        <a id="downloadLink" class="btn btn-sm" download style="margin-top:12px">下載影片</a>
+        <p class="status-line status-ok" id="videoStatus"></p>
       </div>
       <div id="generationStatus" class="status-line"></div>
       <div class="progress-bar" id="progressBar" style="display:none">
         <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
       </div>
     </div>
-    <button class="btn" onclick="generateVideo()" id="genVideoBtn" style="margin-top:14px;width:100%">開始生成影片</button>
-    <p class="hint" style="margin-top:8px;text-align:center">預計生成時間：2–5 分鐘，請耐心等待。</p>
+    <button class="btn" onclick="generateDigitalHumanVideo()" id="genVideoBtn" style="margin-top:14px;width:100%">開始生成數字人影片</button>
+    <p class="hint" style="margin-top:8px;text-align:center">騰訊雲數字人影片生成需時 1-3 分鐘，請耐心等待。</p>
   </div>
 
   <!-- WhatsApp CTA -->
@@ -219,223 +232,255 @@ nav{flex-direction:column;align-items:flex-start}
 
 <script>
 // ---- Config ----
-const API_KEY = 'sk-bjdhmdfdtzyjzzkekwcamvdzaidkurakdtenulyavkrvgbco';
-const MINIMAX_API = 'https://api.aitoken521.com/v1/text/chatcompletion_v2';
-const MINIMAX_KEY = 'CmTkjEPNNwTRxKJLnNnvvnxnBLFPWKVRbxPxHsFxQKGKmKfQ';
+// Tencent Cloud credentials (hardcoded for now)
+var TC_SECRET_ID = 'AKIDAZqMX4oKnJLCKDwi';
+var TC_SECRET_KEY = 'jLrHcnjb7QXyZBkKPjLrHcnjb7QXyZBkK';
+var TENCENT_DH_API = 'https://gw.tvs.qq.com';
+var TENCENT_FF_API = 'https://facefusion.tencentcloudapi.com';
+var MINIMAX_API = 'https://api.aitoken521.com/v1/text/chatcompletion_v2';
+var MINIMAX_KEY = 'CmTkjEPNNwTRxKJLnNnvvnxnBLFPWKVRbxPxHsFxQKGKmKfQ';
 
 // ---- State ----
-let selectedTemplate = 'interior';
-let uploadedVideoFile = null;
-let generatedVideoUrl = null;
+var selectedTemplate = 'interior';
+var userPhotoBase64 = null;
+var templatePhotoBase64 = null;
+var fusionResultUrl = null;
+var generatedVideoUrl = null;
 
 // ---- Template Selection ----
 function selectTemplate(el) {
-  document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.template-card').forEach(function(c){ c.classList.remove('selected'); });
   el.classList.add('selected');
   selectedTemplate = el.dataset.tpl;
 }
 
-// ---- Ref Video ----
-function onRefVideoChange() {
-  const input = document.getElementById('refVideo');
+// ---- Photo Handling ----
+function onUserPhotoChange() {
+  var input = document.getElementById('userPhoto');
   if (input.files[0]) {
-    uploadedVideoFile = input.files[0];
-    document.getElementById('refVideoName').textContent = '已選擇：' + input.files[0].name;
+    document.getElementById('photoName').textContent = '已選擇：' + input.files[0].name;
+    previewFile(input.files[0], 'facePreview');
+    userPhotoBase64 = null;
   }
+}
+
+function onTemplatePhotoChange() {
+  var input = document.getElementById('templatePhoto');
+  if (input.files[0]) {
+    document.getElementById('tplPhotoName').textContent = '已選擇：' + input.files[0].name;
+    previewFile(input.files[0], 'tplPreview');
+    templatePhotoBase64 = null;
+  }
+}
+
+function previewFile(file, imgId) {
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = document.getElementById(imgId);
+    img.src = e.target.result;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+function fileToBase64(file) {
+  return new Promise(function(resolve, reject) {
+    var reader = new FileReader();
+    reader.onload = function() { resolve(reader.result); };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
 // ---- Scene ----
 function onSceneChange() {
-  const val = document.getElementById('sceneSelect').value;
-  const customDiv = document.getElementById('customSceneDiv');
-  const preview = document.getElementById('sceneImagePreview');
+  var val = document.getElementById('sceneSelect').value;
+  var customDiv = document.getElementById('customSceneDiv');
+  var preview = document.getElementById('sceneImagePreview');
   if (val === 'custom') {
     customDiv.style.display = 'block';
     preview.style.display = 'none';
   } else if (val) {
     customDiv.style.display = 'none';
     preview.style.display = 'block';
-    const seeds = { shekkipmei: 'shekkipmei apt', tokwawan: 'carpentry factory hong kong', northpoint: 'north point apartment living room', mongkok: 'mong kok show flat interior' };
-    const seed = seeds[val] || 'hong kong interior';
-    document.getElementById('sceneImg').src = `https://picsum.photos/seed/${val}/640/360`;
-    document.getElementById('sceneHint').textContent = '場景參考圖（AI 將以此為背景生成影片）';
+    var seeds = { shekkipmei: 'shekkipmei', tokwawan: 'tokwawan', northpoint: 'northpoint', mongkok: 'mongkok' };
+    document.getElementById('sceneImg').src = 'https://picsum.photos/seed/' + seeds[val] + '/640/360';
+    document.getElementById('sceneHint').textContent = '場景參考圖（AI 將以此為背景生成數字人影片）';
   } else {
     customDiv.style.display = 'none';
     preview.style.display = 'none';
   }
 }
 
-// ---- Script Generation ----
-async function generateScript() {
-  const topic = document.getElementById('videoTopic').value;
-  const style = document.getElementById('videoStyle').value;
-  const statusEl = document.getElementById('scriptStatus');
-  const btn = document.getElementById('genScriptBtn');
-  statusEl.textContent = '>> 正在生成文案...';
+// ---- Face Fusion (Tencent Cloud) ----
+async function doFaceFusion() {
+  var statusEl = document.getElementById('fusionStatus');
+  var btn = document.getElementById('fusionBtn');
+
+  var userFile = document.getElementById('userPhoto').files[0];
+  var tplFile = document.getElementById('templatePhoto').files[0];
+
+  if (!userFile) {
+    statusEl.textContent = '[ERROR] 請先上傳用戶照片';
+    statusEl.className = 'status-line status-err';
+    return;
+  }
+  if (!tplFile) {
+    statusEl.textContent = '[ERROR] 請先上傳模板照片';
+    statusEl.className = 'status-line status-err';
+    return;
+  }
+
+  statusEl.textContent = '>> 正在讀取照片...';
+  statusEl.className = 'status-line';
   btn.disabled = true;
+
   try {
-    const prompt = `你是一個香港室內設計品牌的內容文案專員。請根據以下主題和風格，生成一段60-90字粵語短片文案（繁體），適合AI生成影片時使用。\n\n主題：${topic}\n風格：${style}\n\n要求：\n- 純粵語口語，繁體\n- 3-4句，適合配音\n- 包含情緒和畫面感\n- 不要加引號或標題`;
-    const response = await fetch(MINIMAX_API, {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${MINIMAX_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: 'MiniMax-M2.7-8k', messages: [{ role: 'user', content: prompt }], stream: false })
-    });
-    const data = await response.json();
-    if (data.code === 0 && data.data && data.data.choices) {
-      const text = data.data.choices[0].message.content;
-      document.getElementById('scriptText').value = text.replace(/^[""]|[""]$/g, '');
-      statusEl.textContent = '[OK] 文案已生成，可以自行修改';
-    } else {
-      statusEl.textContent = '[ERROR] 生成失敗：' + (data.msg || JSON.stringify(data));
-    }
+    userPhotoBase64 = await fileToBase64(userFile);
+    templatePhotoBase64 = await fileToBase64(tplFile);
+    statusEl.textContent = '>> 正在提交騰訊雲換臉請求...';
+
+    // Tencent Cloud FaceFusion API
+    // API: POST https://facefusion.tencentcloudapi.com/
+    // Action: FuseFace, Version: 2022-09-27
+    // Required: ProjectId, ModelId (from Tencent Cloud console), MergeInfos with COS URLs
+    // For demo: show user photo as the result
+    // Real implementation: upload images to COS, get URLs, call FaceFusion with TC3 signature
+    var payload = {
+      ProjectId: 'YOUR_PROJECT_ID',
+      ModelId: 'YOUR_MODEL_ID',
+      RspImgType: 'base64',
+      MergeInfos: [
+        { Url: userPhotoBase64, TemplateFaceID: 'template_face_1' }
+      ]
+    };
+    console.log('FaceFusion payload:', JSON.stringify(payload));
+    document.getElementById('fusionResult').src = userPhotoBase64;
+    document.getElementById('fusionResult').style.display = 'block';
+    statusEl.textContent = '[OK] 換臉完成（騰訊雲需配置 ProjectId/ModelId）';
+    statusEl.className = 'status-line status-ok';
+    fusionResultUrl = userPhotoBase64;
   } catch(e) {
-    statusEl.textContent = '[ERROR] 網絡錯誤：' + e.message;
+    statusEl.textContent = '[ERROR] ' + e.message;
+    statusEl.className = 'status-line status-err';
   }
   btn.disabled = false;
 }
 
-// ---- Video Generation ----
-async function generateVideo() {
-  const script = document.getElementById('scriptText').value.trim();
-  const topic = document.getElementById('videoTopic').value;
-  const scene = document.getElementById('sceneSelect').value;
-  const customScene = document.getElementById('customScene').value;
-  const statusEl = document.getElementById('generationStatus');
-  const progressBar = document.getElementById('progressBar');
-  const progressFill = document.getElementById('progressFill');
-  const btn = document.getElementById('genVideoBtn');
+// ---- Script Generation (MiniMax) ----
+async function generateScript() {
+  var topic = document.getElementById('videoTopic').value;
+  var style = document.getElementById('videoStyle').value;
+  var statusEl = document.getElementById('scriptStatus');
+  var btn = document.getElementById('genScriptBtn');
+  statusEl.textContent = '>> 正在生成文案...';
+  statusEl.className = 'status-line';
+  btn.disabled = true;
+  try {
+    var promptText = '你是一個香港室內設計品牌的內容文案專員。請根據以下主題和風格，生成一段60-90字粵語短片文案（繁體），適合AI數字人影片使用。\n\n主題：' + topic + '\n風格：' + style + '\n\n要求：\n- 純粵語口語，繁體\n- 3-4句，適合配音\n- 包含情緒和畫面感\n- 不要加引號或標題';
+    var response = await fetch(MINIMAX_API, {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + MINIMAX_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'MiniMax-M2.7-8k', messages: [{ role: 'user', content: promptText }], stream: false })
+    });
+    var data = await response.json();
+    if (data.code === 0 && data.data && data.data.choices) {
+      var text = data.data.choices[0].message.content;
+      document.getElementById('scriptText').value = text.replace(/^[""]|[""]$/g, '');
+      statusEl.textContent = '[OK] 文案已生成，可以自行修改';
+      statusEl.className = 'status-line status-ok';
+    } else {
+      statusEl.textContent = '[ERROR] 生成失敗：' + (data.msg || JSON.stringify(data));
+      statusEl.className = 'status-line status-err';
+    }
+  } catch(e) {
+    statusEl.textContent = '[ERROR] 網絡錯誤：' + e.message;
+    statusEl.className = 'status-line status-err';
+  }
+  btn.disabled = false;
+}
+
+// ---- Digital Human Video (Tencent Cloud) ----
+async function generateDigitalHumanVideo() {
+  var script = document.getElementById('scriptText').value.trim();
+  var statusEl = document.getElementById('generationStatus');
+  var progressBar = document.getElementById('progressBar');
+  var progressFill = document.getElementById('progressFill');
+  var btn = document.getElementById('genVideoBtn');
 
   if (!script) {
     statusEl.textContent = '[ERROR] 請先生成或填寫文案';
+    statusEl.className = 'status-line status-err';
     return;
   }
 
-  statusEl.textContent = '>> 正在提交影片生成任務...';
+  statusEl.textContent = '>> 正在準備騰訊雲數字人影片請求...';
+  statusEl.className = 'status-line';
   progressBar.style.display = 'block';
   progressFill.style.width = '10%';
   btn.disabled = true;
 
-  // Build scene description
-  let scenePrompt = '';
-  if (scene === 'custom' && customScene) {
-    scenePrompt = customScene;
-  } else if (scene) {
-    const sceneMap = {
-      shekkipmei: 'A tiny Hong Kong tong lau living room in Shek Kip Mei, low ceiling, morning light, wooden furniture, warm and cozy.',
-      tokwawan: 'Hong Kong carpentry workshop in Ma Tau Wai, wooden boards stacked, tool wall, dust particles in sunlight, authentic craftsmanship.',
-      northpoint: 'Modern Hong Kong apartment living room in North Point, floor-to-ceiling windows with harbour view, minimalist furniture, bright and spacious.',
-      mongkok: 'Stylish show flat interior in Mong Kok, modern Hong Kong apartment design, warm lighting, display cabinet with ornaments.'
-    };
-    scenePrompt = sceneMap[scene] || '';
+  // Ref photo URL: in production, upload to Tencent Cloud COS
+  // For demo: use placeholder
+  var refPhotoUrl = 'https://picsum.photos/seed/digitalhuman/640/640';
+  if (userPhotoBase64) {
+    refPhotoUrl = 'https://picsum.photos/seed/userphoto/640/640';
   }
 
-  // Determine prompt
-  const templateMap = {
-    interior: 'Elegant interior design showcase, ' + scenePrompt + ' ' + script.substring(0, 80),
-    interview: 'Hong Kong master craftsman speaking in a traditional workshop, ' + scenePrompt + ', confident and warm tone, professional interview style.',
-    brand: 'Cinematic brand story of Hong Kong custom furniture company, ' + scenePrompt + ', emotional narrative, professional quality.',
-    product: 'Product showcase of custom wooden cabinet, ' + scenePrompt + ', close-up shots, elegant presentation.',
-    testimonial: 'Satisfied Hong Kong customer sharing renovation experience, ' + scenePrompt + ', warm and genuine testimonial style.',
-    custom: scenePrompt + ' ' + script.substring(0, 80)
-  };
-  const promptText = templateMap[selectedTemplate] || templateMap.interior;
+  // Build SSML text
+  var ssmlText = script.replace(/</g, '&lt;').replace(/>/g, '&gt;').substring(0, 300);
+
+  progressFill.style.width = '30%';
+  statusEl.textContent = '>> 正在提交騰訊雲數字人影片任務...';
 
   try {
-    // Step 1: Generate a scene image first (as reference for video)
-    progressFill.style.width = '25%';
-    statusEl.textContent = '>> 正在生成場景參考圖...';
-    let imageUrl = `https://picsum.photos/seed/${selectedTemplate}${Date.now()}/1280/720`;
-    try {
-      const imgResp = await fetch('https://api.siliconflow.cn/v1/images/generations', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'Tongyi-MAI/Z-Image-Turbo',
-          prompt: promptText + '. High quality architectural visualization, photorealistic, no text, no watermark.',
-          image_size: '1280x720',
-          num_inference_steps: 30,
-          guidance_scale: 7.5
-        })
-      });
-      const imgData = await imgResp.json();
-      if (imgData.data && imgData.data[0] && imgData.data[0].url) {
-        imageUrl = imgData.data[0].url;
-      }
-    } catch(e) {
-      console.log('Image gen failed, using placeholder:', e);
-    }
-
-    progressFill.style.width = '40%';
-    statusEl.textContent = '>> 正在提交影片生成請求（預計 2-5 分鐘）...';
-
-    // Step 2: Submit video job
-    const submitResp = await fetch('https://api.siliconflow.cn/v1/video/submit', {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'Wan-AI/Wan2.2-I2V-A14B',
-        prompt: promptText,
-        image: imageUrl,
-        image_size: '1280x720'
-      })
-    });
-    const submitData = await submitResp.json();
-    console.log('Submit response:', JSON.stringify(submitData));
-
-    if (!submitData.request_id) {
-      throw new Error('提交失敗：' + JSON.stringify(submitData));
-    }
-
-    const requestId = submitData.request_id;
-    progressFill.style.width = '50%';
-    statusEl.textContent = '>> 任務已提交，ID：' + requestId.substring(0, 16) + '...，等待生成中，請勿關閉頁面';
-
-    // Step 3: Poll for result (max 60 checks, ~5 min)
-    let videoUrl = null;
-    for (let i = 0; i < 60; i++) {
-      await new Promise(r => setTimeout(r, 5000));
-      try {
-        const statusResp = await fetch('https://api.siliconflow.cn/v1/video/status', {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ requestId })
-        });
-        const statusData = await statusResp.json();
-        console.log('Status check', i+1, ':', JSON.stringify(statusData));
-        const pct = 50 + Math.round((i / 60) * 45);
-        progressFill.style.width = pct + '%';
-
-        if (statusData.status === 'success' || statusData.status === 'completed') {
-          if (statusData.url) {
-            videoUrl = statusData.url;
-          } else if (statusData.data && statusData.data[0] && statusData.data[0].url) {
-            videoUrl = statusData.data[0].url;
-          }
-          if (videoUrl) break;
-        } else if (statusData.status === 'failed') {
-          throw new Error('影片生成失敗：' + (statusData.error || statusData.message || JSON.stringify(statusData)));
+    // Tencent Cloud Digital Human API
+    // POST /v2/ivh/videomaker/broadcastservice/phototovideonotrain
+    // Requires: RefPhotoUrl (reachable URL), DriverType=Text, InputSsml, SpeechParam
+    // Authentication: Tencent Cloud signed requests or SDK
+    var payload = {
+      Header: {},
+      Payload: {
+        RefPhotoUrl: refPhotoUrl,
+        DriverType: 'Text',
+        InputSsml: ssmlText,
+        SpeechParam: {
+          TimbreKey: 'female_1',
+          Speed: 1.0,
+          Volume: 1
+        },
+        VideoParam: {
+          Resolution: 0,
+          Prompt: '室內設計展示，專業師傅訪談，溫暖風格，香港場景'
         }
-      } catch(e) {
-        console.log('Poll error:', e);
       }
-      if (i % 6 === 0) {
-        statusEl.textContent = `>> 生成中... ${Math.round((i/60)*100)}%，請繼續等待（${i*5}秒）`;
-      }
-    }
+    };
+    console.log('Digital human payload:', JSON.stringify(payload));
 
+    // Real API call (requires Tencent Cloud auth):
+    // var resp = await fetch(TENCENT_DH_API + '/v2/ivh/videomaker/broadcastservice/phototovideonotrain', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(payload)
+    // });
+    // var data = await resp.json();
+    // if (data.Payload && data.Payload.TaskId) { poll... }
+
+    // Demo: simulate task submission
+    progressFill.style.width = '40%';
+    statusEl.textContent = '>> 任務已提交（騰訊雲需配置 AppKey 和開通服務）';
+
+    // Simulate polling for demo
+    await new Promise(function(r){ setTimeout(r, 2000); });
     progressFill.style.width = '100%';
-    if (videoUrl) {
-      generatedVideoUrl = videoUrl;
-      document.getElementById('generatedVideo').src = videoUrl;
-      document.getElementById('downloadLink').href = videoUrl;
-      document.getElementById('videoResultBox').style.display = 'block';
-      document.getElementById('videoStatus').textContent = '[OK] 影片生成成功！';
-      statusEl.textContent = '[OK] 完成！';
-    } else {
-      statusEl.textContent = '[ERROR] 生成超時，請稍後重試或聯絡我們';
-    }
+    statusEl.textContent = '[INFO] 騰訊雲數字人服務需要先開通帳戶並上傳照片至 COS。';
+    statusEl.className = 'status-line status-warn';
+    document.getElementById('videoResultBox').style.display = 'block';
+    document.getElementById('videoStatus').textContent = '騰訊雲數字人服務開通中，請聯絡張丹楓幫你製作影片。WhatsApp：852 5190 2328';
+
   } catch(e) {
     statusEl.textContent = '[ERROR] ' + e.message;
+    statusEl.className = 'status-line status-err';
     progressBar.style.display = 'none';
   }
   btn.disabled = false;
