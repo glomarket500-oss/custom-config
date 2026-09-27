@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://custom-api-cfg.vercel.app/ai-video.html">
+<meta property="og:title" content="AI 影片創作｜香港全屋定制">
+<meta property="og:description" content="上傳照片或選擇模板，AI 幫你生成專屬宣傳影片——室內設計展示、師傅訪談短片、品牌故事，全部一鍵搞定。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://custom-api-cfg.vercel.app/ai-video.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 影片創作｜香港全屋定制——張丹楓、雲蕾</title>
+<meta name="description" content="上傳照片或選擇模板，AI 幫你生成專屬宣傳影片。">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#faf9f7;color:#302c29;font-family:"PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.7}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:16px 5vw;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
+.nav-brand{font-size:1.05rem;font-weight:700;color:#8b5e3c;text-decoration:none}
+.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{margin-left:20px;font-size:.88rem;color:#555;text-decoration:none}
+.nav-links a:hover{color:#8b5e3c}
+.nav-links a.ai-nav{color:#8b5e3c;font-weight:600}
+main{max-width:720px;margin:auto;padding:32px 20px 80px}
+h1{font-size:1.5rem;line-height:1.4;color:#2c2c2c;margin:0 0 12px}
+.subtitle{color:#777;font-size:.9rem;margin:0 0 32px}
+.step-label{display:inline-block;background:#8b5e3c;color:#fff;font-size:.72rem;padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:middle}
+.step-card{background:#fff;border:1px solid #e8ddd0;border-radius:12px;padding:22px 20px;margin-bottom:20px}
+.step-title{font-size:1rem;font-weight:700;color:#63452f;margin:0 0 14px}
+.field-label{font-size:.85rem;color:#555;margin-bottom:6px;display:block}
+input[type="text"],input[type="file"],select,textarea{width:100%;padding:10px 12px;border:1px solid #d8c8b8;border-radius:8px;font-size:.9rem;font-family:inherit;color:#302c29;background:#faf9f7;margin-bottom:12px}
+input[type="file"]{padding:8px 12px;background:#f5f0eb}
+textarea{resize:vertical;min-height:100px}
+.hint{font-size:.78rem;color:#999;margin-top:4px}
+.btn{display:inline-block;padding:12px 24px;background:#8b5e3c;color:#fff;border:none;border-radius:8px;font-size:.92rem;font-family:inherit;cursor:pointer;text-decoration:none}
+.btn:disabled{background:#ccc;cursor:not-allowed}
+.btn-outline{display:inline-block;padding:10px 20px;background:#fff;color:#8b5e3c;border:1px solid #8b5e3c;border-radius:8px;font-size:.88rem;cursor:pointer;text-decoration:none}
+.btn-sm{padding:8px 16px;font-size:.82rem}
+.result-box{background:#f7f3ee;border:1px solid #d8c8b8;border-radius:10px;padding:20px;text-align:center;margin-top:16px}
+.result-box video{max-width:100%;border-radius:8px;max-height:400px}
+.result-box a{display:inline-block;margin-top:12px}
+.status-line{font-size:.82rem;color:#8b5e3c;margin-top:8px}
+.progress-bar{height:6px;background:#e8ddd0;border-radius:3px;overflow:hidden;margin-top:8px}
+.progress-bar-fill{height:100%;background:#8b5e3c;border-radius:3px;transition:width .5s}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.coming-soon{opacity:.6;pointer-events:none}
+.badge-beta{background:#e8a020;color:#fff;font-size:.68rem;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
+template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+template-card{background:#f5f0eb;border:2px solid transparent;border-radius:8px;padding:8px;cursor:pointer;text-align:center;font-size:.78rem;color:#63452f;transition:border-color .2s}
+template-card:hover,.template-card.selected{border-color:#8b5e3c}
+template-card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;margin-bottom:4px}
+.promo-banner{background:#2c2c2c;color:#c8b89a;text-align:center;padding:14px 20px;border-radius:10px;margin-bottom:24px;font-size:.88rem}
+footer{text-align:center;padding:24px 20px;font-size:.78rem;color:#999;border-top:1px solid #eee;margin-top:48px}
+@media(max-width:600px){
+.grid-2{grid-template-columns:1fr}
+template-grid{grid-template-columns:repeat(2,1fr)}
+nav{flex-direction:column;align-items:flex-start}
+.nav-links{justify-content:flex-start}
+.nav-links a{margin:0 10px 0 0}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">萍踪侠影录</a>
+  <div class="nav-links">
+    <a href="index.html">首頁</a>
+    <a href="diary.html">博主講古</a>
+    <a href="live.html">直播間</a>
+    <a href="social.html">社媒</a>
+    <a href="about.html">認識博主</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">聯繫</a>
+    <a href="ai-design.html">AI 免費設計</a>
+    <a href="ai-video.html" class="ai-nav">AI 影片</a>
+  </div>
+</nav>
+
+<main>
+  <h1>AI 影片創作</h1>
+  <p class="subtitle">選擇模板或上傳素材，AI 幫你生成專屬宣傳影片——室內設計展示、師傅訪談、品牌故事，全部一鍵搞掂。</p>
+
+  <div class="promo-banner">
+    前 20 名用戶免費生成影片！WhatsApp 聯絡張丹楓：<a href="https://wa.me/85251902328" style="color:#c8b89a">852 5190 2328</a>
+  </div>
+
+  <!-- STEP 1: Template / Video Upload -->
+  <div class="step-card" id="step1">
+    <div class="step-title"><span class="step-label">STEP 1</span>選擇模板或上傳參考影片</div>
+    <template-grid id="templateGrid">
+      <div class="template-card selected" data-tpl="interior" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/interior/320/180" alt="室內設計">
+        室內設計展示
+      </div>
+      <div class="template-card" data-tpl="interview" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/interview/320/180" alt="師傅訪談">
+        師傅訪談
+      </div>
+      <div class="template-card" data-tpl="brand" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/brand/320/180" alt="品牌故事">
+        品牌故事
+      </div>
+      <div class="template-card" data-tpl="product" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/product/320/180" alt="產品展示">
+        產品展示
+      </div>
+      <div class="template-card" data-tpl=" testimonial" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/testimonial/320/180" alt="客戶見證">
+        客戶見證
+      </div>
+      <div class="template-card" data-tpl="custom" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/custom/320/180" alt="自訂">
+        自訂模板
+      </div>
+    </template-grid>
+    <div style="margin-top:14px">
+      <label class="field-label">或直接上傳參考影片（MP4 / MOV，最大 100MB）</label>
+      <input type="file" id="refVideo" accept="video/mp4,video/mov" onchange="onRefVideoChange()">
+      <div id="refVideoName" class="hint"></div>
+    </div>
+  </div>
+
+  <!-- STEP 2: User Photo (face swap) -->
+  <div class="step-card coming-soon" id="step2">
+    <div class="step-title"><span class="step-label">STEP 2</span>上傳人物照片（換臉用）<span class="badge-beta">即將上線</span></div>
+    <label class="field-label">上傳正面照片（JPG / PNG，不含眼鏡）</label>
+    <input type="file" id="userPhoto" accept="image/jpeg,image/png" disabled>
+    <p class="hint">換臉功能即將推出，敬請期待！</p>
+  </div>
+
+  <!-- STEP 3: Voice Sample -->
+  <div class="step-card coming-soon" id="step3">
+    <div class="step-title"><span class="step-label">STEP 3</span>上傳聲音樣本（語音克隆）<span class="badge-beta">即將上線</span></div>
+    <label class="field-label">上傳 10–30 秒語音樣本（WAV / MP3 / M4A）</label>
+    <input type="file" id="voiceSample" accept="audio/wav,audio/mp3,audio/m4a" disabled>
+    <p class="hint">語音克隆功能即將上線，請留意更新通知。</p>
+  </div>
+
+  <!-- STEP 4: Script -->
+  <div class="step-card" id="step4">
+    <div class="step-title"><span class="step-label">STEP 4</span>影片文案</div>
+    <div class="grid-2">
+      <div>
+        <label class="field-label">影片主題</label>
+        <input type="text" id="videoTopic" placeholder="例如：石硤尾唐樓裝修案例" value="香港全屋定制——張丹楓師傅專訪">
+      </div>
+      <div>
+        <label class="field-label">影片風格</label>
+        <select id="videoStyle">
+          <option value="interior">室內設計展示</option>
+          <option value="interview">師傅訪談</option>
+          <option value="brand">品牌故事</option>
+          <option value="product">產品展示</option>
+          <option value="testimonial">客戶見證</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <label class="field-label">影片文案（繁體，可直接修改）</label>
+      <textarea id="scriptText">張丹楓師傅，喺香港做全屋定制已經二十八年。佢話：「香港間屋細，但裡面的生活唔可以細。」
+
+每一個柜，都係一家人嘅故事。石硤尾嘅唐樓、土瓜灣嘅工廠、北角嘅私人屋苑——張師傅用雙手撐住每個家。
+
+香港全屋定制，就係幫你將夢想嘅家，變成現實。</textarea>
+      <div id="scriptStatus" class="status-line"></div>
+      <button class="btn btn-outline btn-sm" onclick="generateScript()" id="genScriptBtn">AI 自動生成文案</button>
+    </div>
+  </div>
+
+  <!-- STEP 5: Scene -->
+  <div class="step-card" id="step5">
+    <div class="step-title"><span class="step-label">STEP 5</span>場景替換（可選）</div>
+    <label class="field-label">選擇場景背景</label>
+    <select id="sceneSelect" onchange="onSceneChange()">
+      <option value="">不更換場景</option>
+      <option value="shekkipmei">石硤尾唐樓客廳</option>
+      <option value="tokwawan">土瓜灣木工工廠</option>
+      <option value="northpoint">北角私人屋苑</option>
+      <option value="mongkok">旺角樣板間</option>
+      <option value="custom">自訂場景描述</option>
+    </select>
+    <div id="customSceneDiv" style="display:none;margin-top:12px">
+      <label class="field-label">自訂場景描述（英文，AI 理解效果更佳）</label>
+      <textarea id="customScene" rows="2" placeholder="例如：A cozy Hong Kong living room with wooden furniture, morning light through windows"></textarea>
+    </div>
+    <div id="sceneImagePreview" class="result-box" style="display:none;padding:12px">
+      <img id="sceneImg" style="max-width:100%;max-height:200px;border-radius:6px">
+      <p class="hint" style="margin-top:6px" id="sceneHint"></p>
+    </div>
+  </div>
+
+  <!-- STEP 6: Generate -->
+  <div class="step-card" id="step6">
+    <div class="step-title"><span class="step-label">STEP 6</span>生成影片</div>
+    <div id="videoPreviewArea">
+      <div class="result-box" id="videoResultBox" style="display:none">
+        <video id="generatedVideo" controls></video>
+        <a id="downloadLink" class="btn btn-sm" download>下載影片</a>
+        <p class="status-line" id="videoStatus"></p>
+      </div>
+      <div id="generationStatus" class="status-line"></div>
+      <div class="progress-bar" id="progressBar" style="display:none">
+        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+    <button class="btn" onclick="generateVideo()" id="genVideoBtn" style="margin-top:14px;width:100%">開始生成影片</button>
+    <p class="hint" style="margin-top:8px;text-align:center">預計生成時間：2–5 分鐘，請耐心等待。</p>
+  </div>
+
+  <!-- WhatsApp CTA -->
+  <div style="margin-top:28px;padding:20px;background:#2c2c2c;color:#fff;border-radius:10px;text-align:center">
+    <p style="margin:0 0 10px;font-size:.92rem">想有師傅親自為你拍片或設計？</p>
+    <a href="https://wa.me/85251902328?text=%E5%B8%AB%E5%82%85%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3AI%E5%BD%B1%E7%89%87%E5%88%9B%E4%BD%9C%E6%9C%8D%E5%8B%9E%EF%BC%8C%E5%95%8F%E4%B8%8B%E5%83%B9%E6%A0%BC%EF%BC%9A" target="_blank" style="display:inline-block;padding:12px 24px;background:#8b5e3c;color:#fff;border-radius:8px;text-decoration:none;font-size:.9rem">一鍵 WhatsApp 張丹楓</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" style="color:#8b5e3c">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
+</footer>
+
+<script>
+// ---- Config ----
+const API_KEY = 'sk-bjdhmdfdtzyjzzkekwcamvdzaidkurakdtenulyavkrvgbco';
+const MINIMAX_API = 'https://api.aitoken521.com/v1/text/chatcompletion_v2';
+const MINIMAX_KEY = 'CmTkjEPNNwTRxKJLnNnvvnxnBLFPWKVRbxPxHsFxQKGKmKfQ';
+
+// ---- State ----
+let selectedTemplate = 'interior';
+let uploadedVideoFile = null;
+let generatedVideoUrl = null;
+
+// ---- Template Selection ----
+function selectTemplate(el) {
+  document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedTemplate = el.dataset.tpl;
+}
+
+// ---- Ref Video ----
+function onRefVideoChange() {
+  const input = document.getElementById('refVideo');
+  if (input.files[0]) {
+    uploadedVideoFile = input.files[0];
+    document.getElementById('refVideoName').textContent = '已選擇：' + input.files[0].name;
+  }
+}
+
+// ---- Scene ----
+function onSceneChange() {
+  const val = document.getElementById('sceneSelect').value;
+  const customDiv = document.getElementById('customSceneDiv');
+  const preview = document.getElementById('sceneImagePreview');
+  if (val === 'custom') {
+    customDiv.style.display = 'block';
+    preview.style.display = 'none';
+  } else if (val) {
+    customDiv.style.display = 'none';
+    preview.style.display = 'block';
+    const seeds = { shekkipmei: 'shekkipmei apt', tokwawan: 'carpentry factory hong kong', northpoint: 'north point apartment living room', mongkok: 'mong kok show flat interior' };
+    const seed = seeds[val] || 'hong kong interior';
+    document.getElementById('sceneImg').src = `https://picsum.photos/seed/${val}/640/360`;
+    document.getElementById('sceneHint').textContent = '場景參考圖（AI 將以此為背景生成影片）';
+  } else {
+    customDiv.style.display = 'none';
+    preview.style.display = 'none';
+  }
+}
+
+// ---- Script Generation ----
+async function generateScript() {
+  const topic = document.getElementById('videoTopic').value;
+  const style = document.getElementById('videoStyle').value;
+  const statusEl = document.getElementById('scriptStatus');
+  const btn = document.getElementById('genScriptBtn');
+  statusEl.textContent = '>> 正在生成文案...';
+  btn.disabled = true;
+  try {
+    const prompt = `你是一個香港室內設計品牌的內容文案專員。請根據以下主題和風格，生成一段60-90字粵語短片文案（繁體），適合AI生成影片時使用。\n\n主題：${topic}\n風格：${style}\n\n要求：\n- 純粵語口語，繁體\n- 3-4句，適合配音\n- 包含情緒和畫面感\n- 不要加引號或標題`;
+    const response = await fetch(MINIMAX_API, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${MINIMAX_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'MiniMax-M2.7-8k', messages: [{ role: 'user', content: prompt }], stream: false })
+    });
+    const data = await response.json();
+    if (data.code === 0 && data.data && data.data.choices) {
+      const text = data.data.choices[0].message.content;
+      document.getElementById('scriptText').value = text.replace(/^[""]|[""]$/g, '');
+      statusEl.textContent = '[OK] 文案已生成，可以自行修改';
+    } else {
+      statusEl.textContent = '[ERROR] 生成失敗：' + (data.msg || JSON.stringify(data));
+    }
+  } catch(e) {
+    statusEl.textContent = '[ERROR] 網絡錯誤：' + e.message;
+  }
+  btn.disabled = false;
+}
+
+// ---- Video Generation ----
+async function generateVideo() {
+  const script = document.getElementById('scriptText').value.trim();
+  const topic = document.getElementById('videoTopic').value;
+  const scene = document.getElementById('sceneSelect').value;
+  const customScene = document.getElementById('customScene').value;
+  const statusEl = document.getElementById('generationStatus');
+  const progressBar = document.getElementById('progressBar');
+  const progressFill = document.getElementById('progressFill');
+  const btn = document.getElementById('genVideoBtn');
+
+  if (!script) {
+    statusEl.textContent = '[ERROR] 請先生成或填寫文案';
+    return;
+  }
+
+  statusEl.textContent = '>> 正在提交影片生成任務...';
+  progressBar.style.display = 'block';
+  progressFill.style.width = '10%';
+  btn.disabled = true;
+
+  // Build scene description
+  let scenePrompt = '';
+  if (scene === 'custom' && customScene) {
+    scenePrompt = customScene;
+  } else if (scene) {
+    const sceneMap = {
+      shekkipmei: 'A tiny Hong Kong tong lau living room in Shek Kip Mei, low ceiling, morning light, wooden furniture, warm and cozy.',
+      tokwawan: 'Hong Kong carpentry workshop in Ma Tau Wai, wooden boards stacked, tool wall, dust particles in sunlight, authentic craftsmanship.',
+      northpoint: 'Modern Hong Kong apartment living room in North Point, floor-to-ceiling windows with harbour view, minimalist furniture, bright and spacious.',
+      mongkok: 'Stylish show flat interior in Mong Kok, modern Hong Kong apartment design, warm lighting, display cabinet with ornaments.'
+    };
+    scenePrompt = sceneMap[scene] || '';
+  }
+
+  // Determine prompt
+  const templateMap = {
+    interior: 'Elegant interior design showcase, ' + scenePrompt + ' ' + script.substring(0, 80),
+    interview: 'Hong Kong master craftsman speaking in a traditional workshop, ' + scenePrompt + ', confident and warm tone, professional interview style.',
+    brand: 'Cinematic brand story of Hong Kong custom furniture company, ' + scenePrompt + ', emotional narrative, professional quality.',
+    product: 'Product showcase of custom wooden cabinet, ' + scenePrompt + ', close-up shots, elegant presentation.',
+    testimonial: 'Satisfied Hong Kong customer sharing renovation experience, ' + scenePrompt + ', warm and genuine testimonial style.',
+    custom: scenePrompt + ' ' + script.substring(0, 80)
+  };
+  const promptText = templateMap[selectedTemplate] || templateMap.interior;
+
+  try {
+    // Step 1: Generate a scene image first (as reference for video)
+    progressFill.style.width = '25%';
+    statusEl.textContent = '>> 正在生成場景參考圖...';
+    let imageUrl = `https://picsum.photos/seed/${selectedTemplate}${Date.now()}/1280/720`;
+    try {
+      const imgResp = await fetch('https://api.siliconflow.cn/v1/images/generations', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'Tongyi-MAI/Z-Image-Turbo',
+          prompt: promptText + '. High quality architectural visualization, photorealistic, no text, no watermark.',
+          image_size: '1280x720',
+          num_inference_steps: 30,
+          guidance_scale: 7.5
+        })
+      });
+      const imgData = await imgResp.json();
+      if (imgData.data && imgData.data[0] && imgData.data[0].url) {
+        imageUrl = imgData.data[0].url;
+      }
+    } catch(e) {
+      console.log('Image gen failed, using placeholder:', e);
+    }
+
+    progressFill.style.width = '40%';
+    statusEl.textContent = '>> 正在提交影片生成請求（預計 2-5 分鐘）...';
+
+    // Step 2: Submit video job
+    const submitResp = await fetch('https://api.siliconflow.cn/v1/video/submit', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'Wan-AI/Wan2.2-I2V-A14B',
+        prompt: promptText,
+        image: imageUrl,
+        image_size: '1280x720'
+      })
+    });
+    const submitData = await submitResp.json();
+    console.log('Submit response:', JSON.stringify(submitData));
+
+    if (!submitData.request_id) {
+      throw new Error('提交失敗：' + JSON.stringify(submitData));
+    }
+
+    const requestId = submitData.request_id;
+    progressFill.style.width = '50%';
+    statusEl.textContent = '>> 任務已提交，ID：' + requestId.substring(0, 16) + '...，等待生成中，請勿關閉頁面';
+
+    // Step 3: Poll for result (max 60 checks, ~5 min)
+    let videoUrl = null;
+    for (let i = 0; i < 60; i++) {
+      await new Promise(r => setTimeout(r, 5000));
+      try {
+        const statusResp = await fetch('https://api.siliconflow.cn/v1/video/status', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ requestId })
+        });
+        const statusData = await statusResp.json();
+        console.log('Status check', i+1, ':', JSON.stringify(statusData));
+        const pct = 50 + Math.round((i / 60) * 45);
+        progressFill.style.width = pct + '%';
+
+        if (statusData.status === 'success' || statusData.status === 'completed') {
+          if (statusData.url) {
+            videoUrl = statusData.url;
+          } else if (statusData.data && statusData.data[0] && statusData.data[0].url) {
+            videoUrl = statusData.data[0].url;
+          }
+          if (videoUrl) break;
+        } else if (statusData.status === 'failed') {
+          throw new Error('影片生成失敗：' + (statusData.error || statusData.message || JSON.stringify(statusData)));
+        }
+      } catch(e) {
+        console.log('Poll error:', e);
+      }
+      if (i % 6 === 0) {
+        statusEl.textContent = `>> 生成中... ${Math.round((i/60)*100)}%，請繼續等待（${i*5}秒）`;
+      }
+    }
+
+    progressFill.style.width = '100%';
+    if (videoUrl) {
+      generatedVideoUrl = videoUrl;
+      document.getElementById('generatedVideo').src = videoUrl;
+      document.getElementById('downloadLink').href = videoUrl;
+      document.getElementById('videoResultBox').style.display = 'block';
+      document.getElementById('videoStatus').textContent = '[OK] 影片生成成功！';
+      statusEl.textContent = '[OK] 完成！';
+    } else {
+      statusEl.textContent = '[ERROR] 生成超時，請稍後重試或聯絡我們';
+    }
+  } catch(e) {
+    statusEl.textContent = '[ERROR] ' + e.message;
+    progressBar.style.display = 'none';
+  }
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
