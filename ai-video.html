@@ -116,7 +116,7 @@ nav{flex-direction:column;align-items:flex-start}
 
   <!-- STEP 2: Face Fusion (Tencent Cloud) -->
   <div class="step-card" id="step2">
-    <div class="step-title"><span class="step-label">STEP 2</span>上傳照片（騰訊雲換臉）</div>
+    <div class="step-title"><span class="step-label">STEP 2</span>上傳照片（Replicate 換臉）</div>
     <p style="font-size:.85rem;color:#63452f;margin:0 0 12px">上傳一張正面照片，AI 將融合至模板人物。暫不上傳亦可繼續生成數字人影片。</p>
     <div class="grid-2">
       <div>
@@ -134,7 +134,7 @@ nav{flex-direction:column;align-items:flex-start}
       </div>
     </div>
     <div style="margin-top:14px">
-      <button class="btn btn-outline btn-sm" onclick="doFaceFusion()" id="fusionBtn">騰訊雲 AI 換臉融合</button>
+      <button class="btn btn-outline btn-sm" onclick="doFaceFusion()" id="fusionBtn">Replicate AI 換臉融合</button>
       <div id="fusionStatus" class="status-line"></div>
       <img id="fusionResult" style="display:none;max-width:100%;margin-top:12px;border-radius:8px;border:2px solid #8b5e3c">
     </div>
@@ -241,9 +241,6 @@ var TENCENT_DH_API = 'https://gw.tvs.qq.com';
 var TENCENT_FF_API = 'https://facefusion.tencentcloudapi.com';
 var MINIMAX_API = 'https://api.aitoken521.com/v1/text/chatcompletion_v2';
 var MINIMAX_KEY = 'CmTkjEPNNwTRxKJLnNnvvnxnBLFPWKVRbxPxHsFxQKGKmKfQ';
-// Replicate API key (obfuscated to bypass GitHub Secret Scanning)
-var _rk1 = 'r8_5' + 'zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE';
-var REPLICATE_KEY = _rk1;
 
 // ---- State ----
 var selectedTemplate = 'interior';
@@ -317,10 +314,12 @@ function onSceneChange() {
   }
 }
 
-// ---- Face Swap (Replicate) ----
+// ---- Face Fusion (Replicate) ----
+
 async function doFaceFusion() {
   var statusEl = document.getElementById('fusionStatus');
   var btn = document.getElementById('fusionBtn');
+
   var userFile = document.getElementById('userPhoto').files[0];
   var tplFile = document.getElementById('templatePhoto').files[0];
 
@@ -330,60 +329,75 @@ async function doFaceFusion() {
     return;
   }
   if (!tplFile) {
-    statusEl.textContent = '[ERROR] 請先上傳參考影片截圖';
+    statusEl.textContent = '[ERROR] 請先上傳模板照片';
     statusEl.className = 'status-line status-err';
     return;
   }
 
-  statusEl.textContent = '>> 正在上傳照片至 Replicate...';
+  statusEl.textContent = '>> 正在讀取照片...';
   statusEl.className = 'status-line';
   btn.disabled = true;
 
   try {
-    // Convert both files to base64
-    var userPhotoBase64 = await fileToBase64(userFile);
-    var tplPhotoBase64 = await fileToBase64(tplFile);
-    statusEl.textContent = '>> 正在提交 Replicate face-swap 預測任務...';
+    userPhotoBase64 = await fileToBase64(userFile);
+    templatePhotoBase64 = await fileToBase64(tplFile);
+    statusEl.textContent = '>> 正在提交 Replicate 換臉請求...';
 
-    // Step 1: Create prediction via Replicate REST API
-    // Model: zhofa/face-swap (face-swap效果好模型)
+    // Replicate face-swap via predictions API
+    // Model: https://replicate.com/ashleykleynhans/face-swap
     var createResp = await fetch('https://api.replicate.com/v1/predictions', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer ' + REPLICATE_KEY,
-        'Content-Type': 'application/json',
+        'Authorization': 'Bearer r8_5zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        version: '7a5143cd2d648703996c4a92befc3da2fd6e3194a1f7e9e2a6b5e9e9c9c9c9c',
+        version: '意象力/face_swap',
         input: {
-          first_face_image': userPhotoBase64,
-          second_face_image': tplPhotoBase64,
+          target_image: userPhotoBase64,
+          swap_image: templatePhotoBase64
         }
       })
     });
+    var createData = await createResp.json();
+    console.log('Replicate response:', JSON.stringify(createData));
 
-    if (!createResp.ok) {
-      var errText = await createResp.text();
-      throw new Error('Replicate API error: ' + createResp.status + ' ' + errText);
+    if (createData.detail) {
+      statusEl.textContent = '[ERROR] ' + createData.detail;
+      statusEl.className = 'status-line status-err';
+      btn.disabled = false;
+      return;
     }
 
-    var prediction = await createResp.json();
-    var predictionUrl = prediction.urls.prediction;
+    var predictionId = createData.id;
+    statusEl.textContent = '>> 等待 Replicate 處理（ID: ' + predictionId + '）...';
 
-    statusEl.textContent = '>> 正在處理換臉（請稍候約30秒）...';
-
-    // Step 2: Poll until done
-    var result = await pollReplicatePrediction(predictionUrl);
-    if (result.error) {
-      throw new Error(result.error);
+    // Poll for result
+    for (var i = 0; i < 60; i++) {
+      await new Promise(r => setTimeout(r, 5000));
+      var pollResp = await fetch('https://api.replicate.com/v1/predictions/' + predictionId, {
+        headers: { 'Authorization': 'Bearer r8_5zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE' }
+      });
+      var pollData = await pollResp.json();
+      if (pollData.status === 'succeeded') {
+        var outputUrl = Array.isArray(pollData.output) ? pollData.output[pollData.output.length - 1] : pollData.output;
+        document.getElementById('fusionResult').src = outputUrl;
+        document.getElementById('fusionResult').style.display = 'block';
+        statusEl.textContent = '[OK] 換臉完成！';
+        statusEl.className = 'status-line status-ok';
+        fusionResultUrl = outputUrl;
+        btn.disabled = false;
+        return;
+      } else if (pollData.status === 'failed') {
+        statusEl.textContent = '[ERROR] 處理失敗：' + (pollData.error || 'unknown');
+        statusEl.className = 'status-line status-err';
+        btn.disabled = false;
+        return;
+      }
+      statusEl.textContent = '>> 處理中... (' + (i+1) + '/60, ' + pollData.status + ')';
     }
-
-    // Show result
-    document.getElementById('fusionResult').src = result.output[0];
-    document.getElementById('fusionResult').style.display = 'block';
-    statusEl.textContent = '[OK] 換臉完成！';
-    statusEl.className = 'status-line status-ok';
-    fusionResultUrl = result.output[0];
+    statusEl.textContent = '[ERROR] 處理超時，請稍後重試';
+    statusEl.className = 'status-line status-err';
   } catch(e) {
     statusEl.textContent = '[ERROR] ' + e.message;
     statusEl.className = 'status-line status-err';
@@ -391,22 +405,6 @@ async function doFaceFusion() {
   btn.disabled = false;
 }
 
-async function pollReplicatePrediction(predictionUrl, maxAttempts) {
-  maxAttempts = maxAttempts || 60;
-  for (var i = 0; i < maxAttempts; i++) {
-    await sleep(2000);
-    var resp = await fetch(predictionUrl, {
-      headers: { 'Authorization': 'Bearer ' + REPLICATE_KEY }
-    });
-    var data = await resp.json();
-    if (data.status === 'succeeded') return data;
-    if (data.status === 'failed') return { error: data.error || 'Prediction failed' };
-    if (i % 10 === 0) console.log('Replicate status:', data.status);
-  }
-  return { error: 'Timeout waiting for Replicate prediction' };
-}
-
-function sleep(ms) { return new Promise(function(r){ setTimeout(r, ms); }); }
 
 // ---- Script Generation (MiniMax) ----
 async function generateScript() {
