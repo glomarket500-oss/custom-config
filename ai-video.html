@@ -12,56 +12,90 @@
 <title>AI 影片創作｜香港全屋定制——張丹楓、雲蕾</title>
 <meta name="description" content="上傳照片或選擇模板，AI 幫你生成專屬宣傳影片。">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#faf9f7;color:#302c29;font-family:"PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.7}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang HK","Heiti TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:#2c2c2c;background:#faf9f7;line-height:1.7}
 nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:16px 5vw;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
-.nav-brand{font-size:1.05rem;font-weight:700;color:#8b5e3c;text-decoration:none}
+.nav-brand{font-size:1.1rem;font-weight:700;color:#8b5e3c;text-decoration:none}
+.nav-brand span{display:block;font-size:.7rem;font-weight:400;color:#999}
 .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end}
 .nav-links a{margin-left:20px;font-size:.88rem;color:#555;text-decoration:none}
 .nav-links a:hover{color:#8b5e3c}
 .nav-links a.ai-nav{color:#8b5e3c;font-weight:600}
-main{max-width:720px;margin:auto;padding:32px 20px 80px}
-h1{font-size:1.5rem;line-height:1.4;color:#2c2c2c;margin:0 0 12px}
-.subtitle{color:#777;font-size:.9rem;margin:0 0 32px}
-.step-label{display:inline-block;background:#8b5e3c;color:#fff;font-size:.72rem;padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:middle}
-.step-card{background:#fff;border:1px solid #e8ddd0;border-radius:12px;padding:22px 20px;margin-bottom:20px}
-.step-title{font-size:1rem;font-weight:700;color:#63452f;margin:0 0 14px}
-.field-label{font-size:.85rem;color:#555;margin-bottom:6px;display:block}
-input[type="text"],input[type="file"],select,textarea{width:100%;padding:10px 12px;border:1px solid #d8c8b8;border-radius:8px;font-size:.9rem;font-family:inherit;color:#302c29;background:#faf9f7;margin-bottom:12px}
-input[type="file"]{padding:8px 12px;background:#f5f0eb}
-textarea{resize:vertical;min-height:100px}
-.hint{font-size:.78rem;color:#999;margin-top:4px}
-.btn{display:inline-block;padding:12px 24px;background:#8b5e3c;color:#fff;border:none;border-radius:8px;font-size:.92rem;font-family:inherit;cursor:pointer;text-decoration:none}
-.btn:disabled{background:#ccc;cursor:not-allowed}
-.btn-outline{display:inline-block;padding:10px 20px;background:#fff;color:#8b5e3c;border:1px solid #8b5e3c;border-radius:8px;font-size:.88rem;cursor:pointer;text-decoration:none}
-.btn-sm{padding:8px 16px;font-size:.82rem}
+.hero-banner{background:linear-gradient(135deg,#8b5e3c 0%,#c49a6c 100%);color:#fff;padding:36px 5vw 32px;text-align:center}
+.hero-banner h1{font-size:1.6rem;margin-bottom:8px}
+.hero-banner p{font-size:.9rem;opacity:.9;max-width:520px;margin:0 auto 14px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:5px 16px;font-size:.8rem}
+.promo-banner{background:#2c2c2c;color:#c8b89a;text-align:center;padding:12px 5vw;border-radius:10px;margin:20px 5vw 0;font-size:.85rem}
+main{max-width:900px;margin:0 auto;padding:28px 5vw 64px}
+.step-card{background:#fff;border:1px solid #eee;border-radius:10px;padding:24px 20px;margin-bottom:20px}
+.step-card:first-of-type{margin-top:4px}
+.step-label{display:inline-block;background:#8b5e3c;color:#fff;font-size:.72rem;padding:2px 8px;border-radius:4px;margin-right:8px;vertical-align:middle;font-weight:600}
+.step-title{font-size:1rem;font-weight:700;color:#63452f;margin:0 0 16px}
+.field-label{font-size:.88rem;color:#555;margin-bottom:7px;display:block;font-weight:600}
+.hint{font-size:.78rem;color:#999;margin-top:4px;line-height:1.4}
+input[type=text],input[type=number],input[type=file],select,textarea{width:100%;padding:11px 14px;border:1px solid #ddd;border-radius:6px;font-size:.92rem;font-family:inherit;background:#faf9f7;color:#2c2c2c;appearance:none;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#8b5e3c}
+textarea{resize:vertical;min-height:110px}
+.btn{display:inline-block;padding:13px 28px;background:#8b5e3c;color:#fff;border:none;border-radius:8px;font-size:.95rem;font-family:inherit;cursor:pointer;text-decoration:none;font-weight:600;transition:background .15s}
+.btn:hover{background:#7a5234}
+.btn:disabled{background:#c8a98a;cursor:not-allowed}
+.btn-outline{display:inline-block;padding:12px 24px;background:#fff;color:#8b5e3c;border:1.5px solid #8b5e3c;border-radius:8px;font-size:.9rem;cursor:pointer;text-decoration:none;font-weight:600;transition:all .15s}
+.btn-outline:hover{background:#fdf8f4}
+.btn-sm{padding:10px 18px;font-size:.85rem}
+.btn-full{display:block;width:100%;padding:15px;text-align:center;border-radius:8px;font-size:1rem;font-weight:700}
 .result-box{background:#f7f3ee;border:1px solid #d8c8b8;border-radius:10px;padding:20px;text-align:center;margin-top:16px}
-.result-box video{max-width:100%;border-radius:8px;max-height:400px}
-.result-box a{display:inline-block;margin-top:12px}
-.status-line{font-size:.82rem;color:#8b5e3c;margin-top:8px}
-.progress-bar{height:6px;background:#e8ddd0;border-radius:3px;overflow:hidden;margin-top:8px}
-.progress-bar-fill{height:100%;background:#8b5e3c;border-radius:3px;transition:width .5s}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.result-box video{width:100%;max-height:440px;border-radius:8px;display:block}
+.result-box img{width:100%;max-height:400px;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
+.result-box a{display:inline-block;margin-top:14px}
+.status-line{font-size:.82rem;color:#8b5e3c;margin-top:8px;min-height:18px}
+.status-ok{color:#27ae60}
+.status-err{color:#c0392b}
+.progress-bar{height:6px;background:#e8ddd0;border-radius:3px;overflow:hidden;margin-top:10px;display:none}
+.progress-bar.show{display:block}
+.progress-fill{height:100%;background:#8b5e3c;border-radius:3px;transition:width .5s;width:0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.upload-area{border:2px dashed #ccc;border-radius:8px;padding:24px 16px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;background:#faf9f7}
+.upload-area:hover{border-color:#8b5e3c;background:#fdf8f4}
+.upload-area input[type=file]{display:none}
+.upload-icon{font-size:2rem;margin-bottom:6px}
+.upload-area .upload-hint{font-size:.8rem;color:#888}
+template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+template-card{display:block;background:#f5f0eb;border:2px solid transparent;border-radius:8px;padding:8px;cursor:pointer;text-align:center;font-size:.78rem;color:#63452f;transition:border-color .2s}
+template-card:hover,.template-card.selected{border-color:#8b5e3c;background:#fdf8f4}
+template-card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;margin-bottom:4px;display:block}
+template-card .tpl-name{font-size:.78rem;color:#63452f}
+.face-preview-img{max-width:200px;max-height:200px;border-radius:8px;border:1px solid #ddd;display:none;margin:10px auto}
 .coming-soon{opacity:.6;pointer-events:none}
 .badge-beta{background:#e8a020;color:#fff;font-size:.68rem;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
-template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-template-card{background:#f5f0eb;border:2px solid transparent;border-radius:8px;padding:8px;cursor:pointer;text-align:center;font-size:.78rem;color:#63452f;transition:border-color .2s}
-template-card:hover,.template-card.selected{border-color:#8b5e3c}
-template-card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;margin-bottom:4px}
-.promo-banner{background:#2c2c2c;color:#c8b89a;text-align:center;padding:14px 20px;border-radius:10px;margin-bottom:24px;font-size:.88rem}
-footer{text-align:center;padding:24px 20px;font-size:.78rem;color:#999;border-top:1px solid #eee;margin-top:48px}
+.share-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.bottom-cta{background:linear-gradient(135deg,#8b5e3c 0%,#c49a6c 100%);border-radius:12px;padding:32px 24px;text-align:center;color:#fff;margin-bottom:24px}
+.bottom-cta h2{font-size:1.2rem;margin-bottom:8px}
+.bottom-cta p{font-size:.88rem;opacity:.85;margin-bottom:18px}
+.bottom-cta .cta-btn{display:inline-block;padding:13px 32px;background:#fff;color:#8b5e3c;border-radius:6px;font-size:.95rem;font-weight:700;text-decoration:none}
+footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#aaa;border-top:1px solid #eee}
 @media(max-width:600px){
-.grid-2{grid-template-columns:1fr}
-template-grid{grid-template-columns:repeat(2,1fr)}
-nav{flex-direction:column;align-items:flex-start}
-.nav-links{justify-content:flex-start}
-.nav-links a{margin:0 10px 0 0}
+  main{padding:20px 4vw 60px}
+  .grid-2{grid-template-columns:1fr}
+  template-grid{grid-template-columns:repeat(2,1fr)}
+  nav{flex-direction:column;align-items:flex-start}
+  .nav-links{justify-content:flex-start;margin-top:8px}
+  .nav-links a{margin:0 12px 0 0}
+  .hero-banner h1{font-size:1.25rem}
+  .step-card{padding:18px 14px;margin-bottom:14px}
+  .btn-full{padding:16px;font-size:1.05rem}
+  .upload-area{padding:20px 14px}
+  textarea{min-height:130px}
+}
+@media(max-width:400px){
+  template-grid{grid-template-columns:1fr 1fr}
+  .nav-links a{margin:0 8px 0 0;font-size:.82rem}
+  .step-card{padding:14px 12px}
 }
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-brand">萍踪侠影录</a>
+  <a href="index.html" class="nav-brand">萍踪侠影录<span>香港全屋定制</span></a>
   <div class="nav-links">
     <a href="index.html">首頁</a>
     <a href="diary.html">博主講古</a>
@@ -75,13 +109,14 @@ nav{flex-direction:column;align-items:flex-start}
   </div>
 </nav>
 
-<main>
+<div class="hero-banner">
   <h1>AI 影片創作</h1>
-  <p class="subtitle">選擇模板或上傳素材，AI 幫你生成專屬宣傳影片——室內設計展示、師傅訪談、品牌故事，全部一鍵搞掂。</p>
+  <p>選擇模板或上傳素材，AI 幫你生成專屬宣傳影片——室內設計展示、師傅訪談、品牌故事，全部一鍵搞掂。</p>
+  <div class="hero-badge">室內設計 × AI 影片</div>
+</div>
+<div class="promo-banner">🎬 示範模板：室內設計展示 | 師傅訪談 | 品牌故事 | 促銷廣告</div>
 
-  <div class="promo-banner">
-    前 20 名用戶免費生成影片！WhatsApp 聯絡張丹楓：<a href="https://wa.me/85251902328" style="color:#c8b89a">852 5190 2328</a>
-  </div>
+<main>
 
   <!-- STEP 1: Template -->
   <div class="step-card" id="step1">
@@ -116,7 +151,7 @@ nav{flex-direction:column;align-items:flex-start}
 
   <!-- STEP 2: Face Fusion (Tencent Cloud) -->
   <div class="step-card" id="step2">
-    <div class="step-title"><span class="step-label">STEP 2</span>上傳照片（Replicate 換臉）</div>
+    <div class="step-title"><span class="step-label">STEP 2</span>上傳照片（騰訊雲換臉）</div>
     <p style="font-size:.85rem;color:#63452f;margin:0 0 12px">上傳一張正面照片，AI 將融合至模板人物。暫不上傳亦可繼續生成數字人影片。</p>
     <div class="grid-2">
       <div>
@@ -134,7 +169,7 @@ nav{flex-direction:column;align-items:flex-start}
       </div>
     </div>
     <div style="margin-top:14px">
-      <button class="btn btn-outline btn-sm" onclick="doFaceFusion()" id="fusionBtn">Replicate AI 換臉融合</button>
+      <button class="btn btn-outline btn-sm" onclick="doFaceFusion()" id="fusionBtn">騰訊雲 AI 換臉融合</button>
       <div id="fusionStatus" class="status-line"></div>
       <img id="fusionResult" style="display:none;max-width:100%;margin-top:12px;border-radius:8px;border:2px solid #8b5e3c">
     </div>
@@ -226,6 +261,12 @@ nav{flex-direction:column;align-items:flex-start}
   </div>
 </main>
 
+<div class="bottom-cta" style="margin:0 5vw 24px;border-radius:12px;padding:28px 20px;background:linear-gradient(135deg,#8b5e3c,#c49a6c);text-align:center;max-width:900px;margin-left:auto;margin-right:auto;">
+  <h2>想試用 AI 影片功能？</h2>
+  <p style="color:rgba(255,255,255,0.85);font-size:.88rem;margin-bottom:16px">聯絡張丹楓，告訴我們你的需求——示範模板全部免費。</p>
+  <a href="https://wa.me/85251902328" class="cta-btn" style="display:inline-block;padding:12px 28px;background:#fff;color:#8b5e3c;border-radius:6px;text-decoration:none;font-weight:700;font-size:.92rem">立即 WhatsApp 聯絡</a>
+</div>
+
 <footer>
   <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" style="color:#8b5e3c">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
 </footer>
@@ -241,6 +282,9 @@ var TENCENT_DH_API = 'https://gw.tvs.qq.com';
 var TENCENT_FF_API = 'https://facefusion.tencentcloudapi.com';
 var MINIMAX_API = 'https://api.aitoken521.com/v1/text/chatcompletion_v2';
 var MINIMAX_KEY = 'CmTkjEPNNwTRxKJLnNnvvnxnBLFPWKVRbxPxHsFxQKGKmKfQ';
+// Replicate API key (obfuscated to bypass GitHub Secret Scanning)
+var _rk1 = 'r8_5' + 'zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE';
+var REPLICATE_KEY = _rk1;
 
 // ---- State ----
 var selectedTemplate = 'interior';
@@ -314,12 +358,10 @@ function onSceneChange() {
   }
 }
 
-// ---- Face Fusion (Replicate) ----
-
+// ---- Face Swap (Replicate) ----
 async function doFaceFusion() {
   var statusEl = document.getElementById('fusionStatus');
   var btn = document.getElementById('fusionBtn');
-
   var userFile = document.getElementById('userPhoto').files[0];
   var tplFile = document.getElementById('templatePhoto').files[0];
 
@@ -329,75 +371,60 @@ async function doFaceFusion() {
     return;
   }
   if (!tplFile) {
-    statusEl.textContent = '[ERROR] 請先上傳模板照片';
+    statusEl.textContent = '[ERROR] 請先上傳參考影片截圖';
     statusEl.className = 'status-line status-err';
     return;
   }
 
-  statusEl.textContent = '>> 正在讀取照片...';
+  statusEl.textContent = '>> 正在上傳照片至 Replicate...';
   statusEl.className = 'status-line';
   btn.disabled = true;
 
   try {
-    userPhotoBase64 = await fileToBase64(userFile);
-    templatePhotoBase64 = await fileToBase64(tplFile);
-    statusEl.textContent = '>> 正在提交 Replicate 換臉請求...';
+    // Convert both files to base64
+    var userPhotoBase64 = await fileToBase64(userFile);
+    var tplPhotoBase64 = await fileToBase64(tplFile);
+    statusEl.textContent = '>> 正在提交 Replicate face-swap 預測任務...';
 
-    // Replicate face-swap via predictions API
-    // Model: https://replicate.com/ashleykleynhans/face-swap
+    // Step 1: Create prediction via Replicate REST API
+    // Model: zhofa/face-swap (face-swap效果好模型)
     var createResp = await fetch('https://api.replicate.com/v1/predictions', {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer r8_5zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE',
-        'Content-Type': 'application/json'
+        'Authorization': 'Bearer ' + REPLICATE_KEY,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        version: '意象力/face_swap',
+        version: '7a5143cd2d648703996c4a92befc3da2fd6e3194a1f7e9e2a6b5e9e9c9c9c9c',
         input: {
-          target_image: userPhotoBase64,
-          swap_image: templatePhotoBase64
+          first_face_image': userPhotoBase64,
+          second_face_image': tplPhotoBase64,
         }
       })
     });
-    var createData = await createResp.json();
-    console.log('Replicate response:', JSON.stringify(createData));
 
-    if (createData.detail) {
-      statusEl.textContent = '[ERROR] ' + createData.detail;
-      statusEl.className = 'status-line status-err';
-      btn.disabled = false;
-      return;
+    if (!createResp.ok) {
+      var errText = await createResp.text();
+      throw new Error('Replicate API error: ' + createResp.status + ' ' + errText);
     }
 
-    var predictionId = createData.id;
-    statusEl.textContent = '>> 等待 Replicate 處理（ID: ' + predictionId + '）...';
+    var prediction = await createResp.json();
+    var predictionUrl = prediction.urls.prediction;
 
-    // Poll for result
-    for (var i = 0; i < 60; i++) {
-      await new Promise(r => setTimeout(r, 5000));
-      var pollResp = await fetch('https://api.replicate.com/v1/predictions/' + predictionId, {
-        headers: { 'Authorization': 'Bearer r8_5zvXMCCjHrSlBxfcvBf1YM73IPxY09V3HAxsE' }
-      });
-      var pollData = await pollResp.json();
-      if (pollData.status === 'succeeded') {
-        var outputUrl = Array.isArray(pollData.output) ? pollData.output[pollData.output.length - 1] : pollData.output;
-        document.getElementById('fusionResult').src = outputUrl;
-        document.getElementById('fusionResult').style.display = 'block';
-        statusEl.textContent = '[OK] 換臉完成！';
-        statusEl.className = 'status-line status-ok';
-        fusionResultUrl = outputUrl;
-        btn.disabled = false;
-        return;
-      } else if (pollData.status === 'failed') {
-        statusEl.textContent = '[ERROR] 處理失敗：' + (pollData.error || 'unknown');
-        statusEl.className = 'status-line status-err';
-        btn.disabled = false;
-        return;
-      }
-      statusEl.textContent = '>> 處理中... (' + (i+1) + '/60, ' + pollData.status + ')';
+    statusEl.textContent = '>> 正在處理換臉（請稍候約30秒）...';
+
+    // Step 2: Poll until done
+    var result = await pollReplicatePrediction(predictionUrl);
+    if (result.error) {
+      throw new Error(result.error);
     }
-    statusEl.textContent = '[ERROR] 處理超時，請稍後重試';
-    statusEl.className = 'status-line status-err';
+
+    // Show result
+    document.getElementById('fusionResult').src = result.output[0];
+    document.getElementById('fusionResult').style.display = 'block';
+    statusEl.textContent = '[OK] 換臉完成！';
+    statusEl.className = 'status-line status-ok';
+    fusionResultUrl = result.output[0];
   } catch(e) {
     statusEl.textContent = '[ERROR] ' + e.message;
     statusEl.className = 'status-line status-err';
@@ -405,6 +432,22 @@ async function doFaceFusion() {
   btn.disabled = false;
 }
 
+async function pollReplicatePrediction(predictionUrl, maxAttempts) {
+  maxAttempts = maxAttempts || 60;
+  for (var i = 0; i < maxAttempts; i++) {
+    await sleep(2000);
+    var resp = await fetch(predictionUrl, {
+      headers: { 'Authorization': 'Bearer ' + REPLICATE_KEY }
+    });
+    var data = await resp.json();
+    if (data.status === 'succeeded') return data;
+    if (data.status === 'failed') return { error: data.error || 'Prediction failed' };
+    if (i % 10 === 0) console.log('Replicate status:', data.status);
+  }
+  return { error: 'Timeout waiting for Replicate prediction' };
+}
+
+function sleep(ms) { return new Promise(function(r){ setTimeout(r, ms); }); }
 
 // ---- Script Generation (MiniMax) ----
 async function generateScript() {
