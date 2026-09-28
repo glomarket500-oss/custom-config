@@ -59,16 +59,16 @@ textarea{resize:vertical;min-height:110px}
 .upload-area input[type=file]{display:none}
 .upload-icon{font-size:2rem;margin-bottom:6px}
 .upload-area .upload-hint{font-size:.8rem;color:#888}
-template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-template-card{display:block;position:relative;background:#f0ebe5;border:2px solid transparent;border-radius:8px;padding:0;cursor:pointer;text-align:center;font-size:.75rem;color:#63452f;transition:border-color .15s,transform .15s;overflow:hidden}
-template-card:hover{border-color:#c49a6c;transform:translateY(-1px)}
-template-card.selected{border-color:#8b5e3c;border-width:2.5px}
-template-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:6px 6px 0 0}
-template-card .tpl-name{font-size:.72rem;color:#63452f;padding:5px 4px 6px;background:#fff;line-height:1.3}
-template-card .tpl-check{position:absolute;top:6px;right:6px;width:20px;height:20px;background:#8b5e3c;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700}
-template-card.selected .tpl-check{display:flex}
-template-card .tpl-tag{position:absolute;bottom:28px;left:0;right:0;font-size:.65rem;color:#fff;background:rgba(0,0,0,0.45);padding:2px 4px;text-align:center}
-.tpl-next-btn{display:none;margin:14px 0 0;text-align:center}
+.template-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}
+.tpl-card{display:block;position:relative;background:#f0ebe5;border:2px solid transparent;border-radius:8px;padding:0;cursor:pointer;text-align:center;font-size:.72rem;color:#63452f;transition:border-color .15s,transform .15s;overflow:hidden}
+.tpl-card:hover{border-color:#c49a6c;transform:translateY(-1px)}
+.tpl-card.selected{border-color:#8b5e3c;border-width:2.5px;background:#fdf8f4}
+.tpl-card img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.tpl-card .tpl-name{font-size:.7rem;color:#63452f;padding:5px 4px 6px;background:#fff;line-height:1.3}
+.tpl-card .tpl-check{position:absolute;top:5px;right:5px;width:18px;height:18px;background:#8b5e3c;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;line-height:18px}
+.tpl-card.selected .tpl-check{display:flex}
+.tpl-card .tpl-tag{position:absolute;bottom:26px;left:0;right:0;font-size:.62rem;color:#fff;background:rgba(0,0,0,.5);padding:1px 3px;text-align:center}
+.tpl-next-btn{display:none;margin:12px 0 0}
 .tpl-next-btn.show{display:block}
 .face-preview-img{max-width:200px;max-height:200px;border-radius:8px;border:1px solid #ddd;display:none;margin:10px auto}
 .coming-soon{opacity:.6;pointer-events:none}
@@ -82,8 +82,7 @@ footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#aaa;border-top
 @media(max-width:600px){
   main{padding:20px 4vw 60px}
   .grid-2{grid-template-columns:1fr}
-  template-grid{grid-template-columns:repeat(2,1fr)}
-  template-card img{aspect-ratio:16/9}
+  .template-grid{grid-template-columns:repeat(2,1fr)}
   nav{flex-direction:column;align-items:flex-start}
   .nav-links{justify-content:flex-start;margin-top:8px}
   .nav-links a{margin:0 12px 0 0}
@@ -94,9 +93,8 @@ footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#aaa;border-top
   textarea{min-height:130px}
 }
 @media(max-width:400px){
-  template-grid{grid-template-columns:1fr 1fr}
+  .template-grid{grid-template-columns:repeat(2,1fr)}
   .nav-links a{margin:0 8px 0 0;font-size:.82rem}
-  .step-card{padding:14px 12px}
 }
 </style>
 </head>
@@ -128,40 +126,40 @@ footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#aaa;border-top
   <!-- STEP 1: Template -->
   <div class="step-card" id="step1">
     <div class="step-title"><span class="step-label">STEP 1</span>選擇影片模板</div>
-    <template-grid id="templateGrid">
-      <div class="template-card selected" data-tpl="interior" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/interior/320/240" alt="室內設計">
+    <div class="template-grid" id="templateGrid">
+      <div class="tpl-card selected" data-tpl="interior" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/interior/240/160" alt="室內設計">
         <div class="tpl-check">✓</div>
         <div class="tpl-tag">熱門</div>
         <div class="tpl-name">室內設計展示</div>
       </div>
-      <div class="template-card" data-tpl="interview" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/interview/320/240" alt="師傅訪談">
+      <div class="tpl-card" data-tpl="interview" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/interview/240/160" alt="師傅訪談">
         <div class="tpl-check">✓</div>
         <div class="tpl-tag">獨家</div>
         <div class="tpl-name">師傅訪談</div>
       </div>
-      <div class="template-card" data-tpl="brand" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/brand/320/240" alt="品牌故事">
+      <div class="tpl-card" data-tpl="brand" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/brand/240/160" alt="品牌故事">
         <div class="tpl-check">✓</div>
         <div class="tpl-name">品牌故事</div>
       </div>
-      <div class="template-card" data-tpl="product" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/product/320/240" alt="產品展示">
+      <div class="tpl-card" data-tpl="product" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/product/240/160" alt="產品展示">
         <div class="tpl-check">✓</div>
         <div class="tpl-name">產品展示</div>
       </div>
-      <div class="template-card" data-tpl="testimonial" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/testimonial/320/240" alt="客戶見證">
+      <div class="tpl-card" data-tpl="testimonial" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/testimonial/240/160" alt="客戶見證">
         <div class="tpl-check">✓</div>
         <div class="tpl-name">客戶見證</div>
       </div>
-      <div class="template-card" data-tpl="custom" onclick="selectTemplate(this)">
-        <img src="https://picsum.photos/seed/custom/320/240" alt="自訂">
+      <div class="tpl-card" data-tpl="custom" onclick="selectTemplate(this)">
+        <img src="https://picsum.photos/seed/custom/240/160" alt="自訂">
         <div class="tpl-check">✓</div>
         <div class="tpl-name">自訂模板</div>
       </div>
-    </template-grid>
+    </div>
     <div class="tpl-next-btn show" id="tplNextBtn">
       <button class="btn btn-full" onclick="goToStep2()" style="background:#8b5e3c;color:#fff;border:none;border-radius:8px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:4px">
         已選擇模板 → 下一步
@@ -315,7 +313,7 @@ var generatedVideoUrl = null;
 
 // ---- Template Selection ----
 function selectTemplate(el) {
-  document.querySelectorAll('.template-card').forEach(function(c){ c.classList.remove('selected'); });
+  document.querySelectorAll('.tpl-card').forEach(function(c){ c.classList.remove('selected'); });
   el.classList.add('selected');
   selectedTemplate = el.dataset.tpl;
   // Update button text with selected template name
