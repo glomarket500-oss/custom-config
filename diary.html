@@ -1,526 +1,528 @@
-<!DOCTYPE html>
-
-<html lang="zh-HK">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
-<meta name="viewport">
-
-<meta name="geo.position" content="22.3193;114.1694">
-
-<meta name="geo.placename" content="旺角, 九龍, 香港">
-
-<meta name="geo.region" content="HK">
-
-<meta name="ICBM" content="22.3193, 114.1694">
-
-<link rel="canonical" href="https://custom-api-cfg.vercel.app/diary.html">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾</title>
-
-<meta name="description" content="香港裝修日記全紀錄：公屋、居屋、劏房、私樓改造實錄。真實價錢、工期、師傅評價，幫你避開裝修陷阱。">
-
-<meta name="keywords" content="香港裝修日記,公屋裝修實錄,居屋裝修案例,劏房改造,私樓裝修,香港裝修價錢,裝修工期,裝修避坑">
-
-<style>
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body { font-family: "PingFang HK","Heiti TC","Noto Sans TC","Microsoft JhengHei",sans-serif; color: #2c2c2c; background: #faf9f7; line-height: 1.7; }
-
-  a { text-decoration: none; color: inherit; }
-
-  nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 16px 5vw; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-
-  .logo { font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; }
-
-  .logo span { font-weight: 400; font-size: 0.8rem; color: #888; margin-left: 6px; }
-
-  .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; }
-
-  .nav-links a { margin-left: 20px; font-size: 0.88rem; color: #555; }
-
-  .nav-links a:hover { color: #8b5e3c; }
-
-  .page-title { padding: 40px 5vw 20px; text-align: center; }
-
-  .page-title h1 { font-size: 1.5rem; margin-bottom: 8px; }
-
-  .page-title p { color: #777; font-size: 0.9rem; }
-
-  .filter { text-align: center; margin-bottom: 24px; }
-
-  .filter button { padding: 6px 16px; margin: 4px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
-
-  .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
-
-  .diary-list { padding: 0 5vw 40px; max-width: 800px; margin: 0 auto; }
-
-  .diary-row { display: flex; gap: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-bottom: 14px; transition: box-shadow 0.2s; }
-
-  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-
-  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: #e8e4df; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.75rem; overflow: hidden; }
-
-  .diary-row .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-  .diary-row .body { flex: 1; }
-
-  .diary-row .date { font-size: 0.78rem; color: #999; margin-bottom: 4px; }
-
-  .diary-row h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
-
-  .diary-row p { font-size: 0.85rem; color: #666; margin-bottom: 8px; }
-
-  .diary-row .meta { display: flex; gap: 10px; font-size: 0.75rem; color: #999; }
-
-  .diary-row .meta span { background: #f5f0eb; padding: 2px 10px; border-radius: 12px; }
-
-  .new-badge { display: inline-block; background: #e74c3c; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle; }
-
-  footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
-
-  footer a { color: #8b5e3c; }
-
-  @media (max-width: 480px) { .diary-row { flex-direction: column;  nav { flex-direction: column; align-items: flex-start; padding: 12px 5vw; } .logo { font-size: 1rem; margin-bottom: 8px; } .logo span { font-size: 0.75rem; } .nav-links { justify-content: flex-start; width: 100%; } .nav-links a { margin: 0 14px 0 0; font-size: 0.82rem; }} .diary-row .thumb { width: 100%; height: 140px; } .nav-links a { margin: 0 8px; font-size: 0.82rem; } }
-
-</style>
-
-<meta name="author" content="張丹楓">
-
-<meta property="og:title" content="博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾">
-
-<meta property="og:description" content="香港裝修日記全紀錄：公屋、居屋、劏房、私樓改造實錄。真實價錢、工期、師傅評價，幫你避開裝修陷阱。">
-
-<meta property="og:type" content="website">
-
-<meta property="og:locale" content="zh_HK">
-
-<meta property="og:url" content="https://custom-api-cfg.vercel.app/diary.html">
-
-<script type="application/ld+json">
-
-{
-
-  "@context": "https://schema.org",
-
-  "@type": "Blog",
-
-  "name": "萍踪侠影录 · 博主講古",
-
-  "description": "香港裝修行業文化輸出平台，記錄真實裝修故事、師傅傳承、客戶人生百態",
-
-  "url": "https://custom-api-cfg.vercel.app/diary.html",
-
-  "publisher": {
-
-    "@type": "Organization",
-
-    "name": "萍踪侠影录",
-
-    "logo": {
-
-      "@type": "ImageObject",
-
-      "url": "https://custom-api-cfg.vercel.app/images/hero1.jpg"
-
-    }
-
-  },
-
-  "author": {
-
-    "@type": "Person",
-
-    "name": "張丹楓"
-
-  }
-
-}
-
-</script>
-
-</head>
-
-<body>
-
-
-
-<nav>
-
-  <div class="logo">萍踪侠影录 <span>張丹楓、雲蕾</span></div>
-
-  <div class="nav-links">
-
-    <a href="index.html">首頁</a>
-
-    <a href="diary.html">博主講古</a>
-
-    <a href="live.html">直播間</a>
-
-    <a href="social.html">社媒</a>
-
-    <a href="about.html">認識博主</a>
-
-    <a href="cases.html">案例</a>
-
-    <a href="contact.html">聯繫</a>
-
-    <a href="ai-design.html">AI 免費設計</a>
-
-    <a href="ai-video.html">AI 影片</a>
-
-  </div>
-
-</nav>
-
-
-
-<div class="page-title">
-
-  <h1>博主講古</h1>
-
-  <p>真實單位、真實價錢、真實工期 · 幫你避開裝修陷阱</p>
-
-</div>
-
-
-
-<div class="filter">
-
-  <button class="active">全部</button>
-
-  <button>公屋</button>
-
-  <button>居屋</button>
-
-  <button>劏房</button>
-
-  <button>私樓</button>
-
-  <button>行業講古</button>
-
-</div>
-
-
-
-<div class="diary-list">
-
-
-
-
-
-<div class="diary-row"><a href="post-040.html"><div class="thumb"><img src="images/post-040/scene-01.jpg" alt="三十年老行尊話你知裝修秘密" loading="lazy"></div><div class="body"><div class="date">2026年09月28日 22:35:10 · 香港仔田灣 · 四十五年經驗 · 主力牆</div><h3>四十五年經驗師傅話你知：香港裝修秘密 <span class="new-badge">NEW</span></h3><p>七十二歲陳耀明師傅，做裝修四十五年。主力牆點解拆唔走得？收口位點樣計準？師傅一次過話你知——東涌混凝土風波下，樓宇安全更值得關注。</p></div></a></div>
-
-
-
-<div class="diary-row"><a href="post-039.html"><div class="thumb"><img src="images/post-039/post-039-hero.png" alt="石硖尾唐楼清晨陈徒弟量尺（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月27日 14:30:00 · 石硖尾唐楼 · 柜仔哲学 · 定制柜</div><h3>老行尊话你知：柜仔哲学 <span class="new-badge">NEW</span></h3><p>石硖尾四十年唐楼，陈徒弟用二十八年经验话你知——柜唔係越做越大就越好，就係要识得分寸。C形电视柜，留白先至最贵。香港间屋细，但里面的生活唔可以细。</p></div></a></div>
-
-<div class="diary-row"><a href="post-038.html"><div class="thumb"><img src="images/post-038/post-038-hero.png" alt="中秋前北角屋苑送货夜景（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月26日 14:30:00 · 北角私人屋苑 · 中秋赶工 · 定制柜</div><h3>中秋前赶工的定制柜——陈师傅的熬夜与客人的惊喜</h3><p>中秋前一个礼拜，陈志明师傅接下周生一家全屋定制——连续赶工七个夜班，北角私人屋苑中秋前一晚送到。徒弟阿康问：点解接咁急单？师傅答：帮人解决问题，就系我哋呢行嘅意义。</p></div></a></div>
-
-
-
-<a href="post-037.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-037/post-037-hero.png" alt="深水埗唐樓假牆颱風日測量（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月26日 16:00:00 · 深水埗唐樓 · 颱風翻新 · 老師傅</div><h3>颱風天裡的裝修哲學——深水埗陳德師傅同張丹楓講二十六年的三句真言 <span class="new-badge">NEW</span></h3><p>深水埗唐樓颱風日回訪：陳師傅（一九九八年入行，二十六年全屋定制）同張丹楓講舊樓翻新三寶——假牆誤差不過兩毫米、暗喉漏水預判、趕風球前三步。香港間屋細，但裡面的生活唔可以細。</p></div></div>
-
-</a>
-
-
-
-<a href="post-036.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-036/post-036-hero.png" alt="觀塘公屋單位客廳半製成品電視櫃同衣櫃框架（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月25日 16:00:00 · 觀塘公屋 · 打風趕工 · 中秋驗收</div><h3>打風前最後趕工記——觀塘順天邨林師傅同張丹楓講趕工三招</h3><p>中秋正日回訪觀塘順天邨：林師傅（林志強，二十五年九龍區全屋訂造）打風前一日趕封邊——膠溫要夠180度、露台執板用紅尼龍布、四包工業鹽頂住焗漆返潮。趕得切周生個仔十月擺酒做新房，今日中秋一家人新櫃前食團圓飯。</p></div></div>
-
-</a>
-
-
-
-<a href="post-035.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-035/post-035-hero.png" alt="土瓜灣舊樓廚房角落朝早度尺，老行尊權叔同張丹楓（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月24日 21:00:00 · 土瓜灣舊樓 · L形櫥櫃 · 老行尊手藝</div><h3>老行尊话当年：经济差也要守住手艺——土瓜灣權叔同張丹楓講四十年嘅一句话 <span class="new-badge">NEW</span></h3><p>土瓜灣舊樓廚房L形櫥櫃嗰日，張丹楓、雲蕾跟住老行尊權叔（林永權）學度尺——牆唔係主力牆就唔使拆牆，管道位就住做。經濟差、工程少，但手藝唔可以賤賣：「你唔係做裝修，你係幫人起家。」</p></div></div>
-
-</a>
-
-
-
-<a href="post-034.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-034/post-034-hero.png" alt="大埔舊樓大維修義工，張丹楓、雲蕾、祥叔同林伯研讀2022年圍標合約（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月22日 16:00:00 · 大埔舊樓 · 反圍標 · 大維修預審名單</div><h3>反圍標嗰日，我哋裝修佬去咗大維修嗰度做義工——大埔舊樓三條鐵律</h3><p>發展局9月22日推大維修預審名單反圍標，張丹楓、雲蕾、祥叔上咗大埔林伯嗰棟44年舊樓做義工——6mm砂漿同8mm砂漿差2mm差40萬、問問題查背景寫工序三條鐵律、廉記查喎同ISO認證。裝修佬唔止識刨板，係要識規矩廉潔良心。</p></div></div>
-
-</a>
-
-
-
-<a href="post-033.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-033/post-033-hero.png" alt="大坑舞火龍前嗰一晚，唐樓木工師傅輝哥同徒弟阿俊（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月21日 18:30:00 · 大坑勳德閣 · 唐樓木工 · 中秋舞火龍</div><h3>大坑舞火龍前嗰一晚——唐樓木工師傅嘅訂造智慧</h3><p>中秋舞火龍前嗰一晚，張丹楓同雲蕾探訪大坑老行尊輝哥（林志輝）同徒弟阿俊——勳德閣陳太嘅 L 型廚櫃、牆身兩厘米傾斜、唐樓「一戶一尺」嘅飄窗櫈、鋅盤底板斜放嘅細藝。六百年舞火龍封街前最後一單訂造。</p></div></div>
-
-</a>
-
-
-
-<a href="post-032.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-032/post-032-hero.png" alt="屯門欣寶路簡屋四座18層外牆（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月21日 16:30:00 · 屯門欣寶路簡屋 · 簡約公屋 · 掛碼吊牆</div><h3>屯門欣寶路簡屋入伙嗰晚：張丹楓同雲蕾點幫基層訂造一個企身鞋櫃 <span class="new-badge">NEW</span></h3><p>屯門欣寶路簡約公屋第三季入伙，5,600 個單位月租 900 至 2,010 蚊。余婆婆同杜先生一家由劏房搬上簡屋嗰晚，張丹楓、雲蕾、祥叔上門訂造——簡屋唔可以打實螺絲，所有訂造都要預埋十年後點拆。</p></div></div>
-
-</a>
-
-
-
-<a href="post-031.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-031/post-031-hero.png" alt="油塘長者屋邨四十幾年老單位，陳伯同張丹楓、雲蕾、祥叔由一塊E0板講到港鐵跨欄跳閘後生仔（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月20日 16:30:00 · 油塘長者屋邨 · E0生態板 · 宏福苑發泡膠</div><h3>油塘阿伯嘅櫃同宏福苑嘅膠板——張丹楓、雲蕾同祥叔講承建商走數</h3><p>油塘長者屋邨四十幾年老單位，陳伯同張丹楓、雲蕾、祥叔由一塊 E0 板講到港鐵跨欄跳閘後生仔，再講到大埔宏福苑火災獨立委員會揭發承建商用非阻燃發泡膠。搭車要正價，裝修要實淨——呢啲唔係大道理，係細藝。</p></div></div>
-
-</a>
-
-
-
-<a href="post-030.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-030-hero.png" alt="觀塘舊樓工地紅雨木工枱（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 15:30:00 · 觀塘舊樓 · 紅色暴雨 · 九一八手藝</div><h3>暴雨黑雨下的木工枱——張丹楓同祥叔讲九一八</h3><p>觀塘舊樓工地，九月十八日紅色暴雨。張丹楓、雲蕾探班祥叔工地，從板件驗收、魯班尺規矩到九一八手藝人嘅傳承：木頭有呼吸，落雨天做嘅嘢先最穩陣。</p></div></div>
-
-</a>
-
-
-
-<a href="post-029.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-029-hero.png" alt="旺角砵蘭街唐樓入伙前一晚（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 00:13:35 · 旺角砵蘭街 · 380呎唐樓 · 入伙夜</div><h3>唐樓入伙前的最后一晚：旺角砵蘭街380呎，菠萝旺同周家兩年儲起嘅首期 <span class="new-badge">NEW</span></h3><p>旺角砵蘭街唐樓，業主姓周、太太姓陳，一家四口380呎儲咗十二年首期。張丹楓主講、雲蕾設計：油煙不鏽鋼蛇嘴、地台承重800公斤、磨砂玻璃鋁框分床、收尾口碑論。</p></div></div>
-
-</a>
-
-
-
-<a href="post-028.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-028-hero.png" alt="東涌公屋混凝土結構檢查（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 00:13:30 · 東涌第42區公屋 · 結構安全 · 裝修底線</div><h3>東涌公屋混凝土檢查之後：阿強師傅同阿杰講解結構、裂縫與全屋定制嘅底線 <span class="new-badge">NEW</span></h3><p>東涌第42區公屋第3至5座混凝土方塊抗壓測試異常後，明報、星島、結構工程師倪學仁齊齊拆局。張丹楓主講、雲蕾整理：阿杰驗樓三招、0.3mm裂縫處理、報價單防水層唔可以漏。</p></div></div>
-
-</a>
-
-
-
-<a href="post-024.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-024-hero.png" alt="北角300呎舊單位淺木色收納櫃與通風（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 12:50:20 · 北角 · 300呎舊單位</div><h3>五年規劃落地第二日：北角300呎舊單位，阿May一家先把收納通風搞掂 <span class="new-badge">NEW</span></h3><p>9月16日首份五年規劃公布、9月17日特首立法會答問會同一日，北角三百幾呎舊單位業主阿May問追唔追新政策裝修。張丹楓主講、雲蕾設計：櫃到頂唔貼死、廚房耐潮板、玄關薄身懸空櫃。</p></div></div>
-
-</a>
-
-
-
-<a href="post-027.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-027-theme.jpg" alt="觀塘280呎納米樓偷位設計" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:23:59 · 觀塘 · 納米樓</div><h3>300呎偷出三房：張丹楓接納米樓訂造訂單全屋定制攻略 <span class="new-badge">NEW</span></h3><p>觀塘280呎納米樓，黄生雨公婆加小朋友要三間房。張丹楓主講、雲蕾設計、陳永強師傅同行：上床下櫃、半開放式趟門書房、乾濕分離廁所、偷位收納設計，納米樓變身三代同堂安樂窩。</p></div></div>
-
-</a>
-
-
-
-<a href="post-026.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-026-theme.jpg" alt="北角舊樓收納通風規劃" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:23:57 · 北角 · 唐樓</div><h3>等施政報告之前先把家裝好：張丹楓教你北角舊樓收納與通風規劃 <span class="new-badge">NEW</span></h3><p>北角三百呎唐樓收納通風規劃，張丹楓主講、雲蕾設計：老公想滿牆櫃vs媽咪話櫃太多會焗、懸空薄身鞋櫃連機器人位、廚房防潮板材、預算三層分配，政策規劃城市，裝修規劃生活。</p></div></div>
-
-</a>
-
-
-
-<a href="post-025.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-025-theme.jpg" alt="東涌公屋混凝土質量檢查" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:22:55 · 東涌 · 公屋</div><h3>東涌公屋混凝土質量檢查：張丹楓教你一眼分辨結構問題與裝修陷阱 <span class="new-badge">NEW</span></h3><p>東涌新公屋混凝土質量抽檢工程，張丹楓主講、雲蕾設計、陳師傅師徒同行：空鼓錘敲牆驗質量、裂縫成因與修補方法、批盪防潮注意事項，助業主避開購咪置業與裝修大伏。</p></div></div>
-
-</a>
-
-
-
-<a href="post-023.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-023-theme.jpg" alt="紅磡357呎兩房淺木色全屋定制（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月13日 01:56:03 · 紅磡 · 357呎兩房</div><h3>紅磡357呎兩房：淺木櫃唔係油白色就得，張丹楓教你揀啱色耐睇十年 <span class="new-badge">NEW</span></h3><p>紅磡357呎實用兩房，阿Yan阿樂以為全屋油白色顯大。張丹楓主講、雲蕾設計、昌哥老師傅幫手：淺木暖色一樣拉高亮度仲耐污，吊櫃到頂封死角、趟門慳一呎、背板離牆3mm防潮，細屋交得。</p></div></div>
-
-</a>
-
-
-
-<a href="post-022.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-022-theme.jpg" alt="粉嶺鳳凰嶺邨新公屋全屋定制（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 23:08:24 · 粉嶺鳳凰嶺邨 · 新公屋入伙</div><h3>粉嶺鳳凰嶺邨開門見廁點算？張丹楓3.5萬半日裝完430呎3-4人單位 <span class="new-badge">NEW</span></h3><p>粉嶺鳳凰嶺邨新公屋入伙，430呎3-4人單位開門見廁、細房太細。張丹楓主講、雲蕾設計：暗門化解、卡座廳房合一、地台床上床下櫃，3.5萬工廠預製半日裝完。</p></div></div>
-
-</a>
-
-
-
-<a href="post-021.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-021-theme.jpg" alt="油麻地舊樓新居防潮驗樓（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 22:03:09 · 油麻地 · 舊樓防潮</div><h3>油麻地老街新居：張丹楓帶阿波師傅同你拆解400呎舊樓防潮 <span class="new-badge">NEW</span></h3><p>油麻地400呎舊單位牆身發霉，後生夫婦預算有限又怕返工。張丹楓主講、雲蕾傾設計、街坊阿波師傅幫手：濕度計驗樓、防潮底漆、鋁合金櫃腳、SPC地板，一次講清舊樓防潮。</p></div></div>
-
-</a>
-
-
-
-<a href="post-020.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-020-theme.jpg" alt="暴雨前康怡花園舊單位驗牆（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 21:50:03 · 暴雨防潮 · 智能家居預留</div><h3>暴雨嚟之前，阿炳師傅先幫你諗到三年後嘅事 <span class="new-badge">NEW</span></h3><p>鰂魚涌康怡花園四百幾呎舊單位，阿炳師傅教你暴雨前先處理化妝樓滲水、櫃底離地一吋半、全屋預留零火線，智能家居留位唔使拆過。</p></div></div>
-
-</a>
-
-
-
-<a href="post-019.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-019-theme.jpg" alt="打風前大圍細單位防潮改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 21:23:49 · 打風防潮 · 中秋入伙</div><h3>打風前趕起，中秋要團圓：炳師傅的大圍防潮一役 <span class="new-badge">NEW</span></h3><p>天文台話熱帶氣旋麥德姆逼近，阿May想趕中秋團圓前入伙。炳師傅用大圍顯徑邨三百幾呎細單位教你：外牆櫃離牆兩厘米、窗台剷底重打膠、五金用304不鏽鋼。</p></div></div>
-
-</a>
-
-
-
-<a href="post-018.html">
-
-  <div class="diary-row"><div class="thumb"><img src="images/post-018-theme.jpg" alt="啟德簡約公屋小戶型整體空間（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 03:40:16 · 簡約公屋 · 入伙收納</div><h3>啟德簡約公屋第二期傳提早入伙？住戶拎鎖匙前點樣預留收納位，三個位置唔好亂改｜張丹楓師傅 <span class="new-badge">NEW</span></h3><p>啟德簡約公屋第二期傳出可能提早入伙，張丹楓師傅教你拎鎖匙前量尺、預留收納位，並提醒門口、廚房、廁所及窗邊不要亂改。</p></div></div>
-
-</a>
-
-
-
-<a href="post-017.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-017-kai-tak-demo-unit.jpg" alt="香港啟德簡約公屋示範單位室內" loading="lazy"></div><div class="body"><div class="date">2026年09月10日 03:11:27 · 簡約公屋 · 空間設計</div><h3>劏房戶搬入簡約公屋之後，單位咁細，點樣訂造先住得舒服？ <span class="new-badge">NEW</span></h3><p>劏房戶搬入柴灣常安街簡約公屋後，張丹楓師傅教路：細單位唔使間死房，用頂天櫃、一體高架床同兩用梳化，一樣住得舒服又企理。香港全屋訂造師傅講古。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-015.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-015-thumb.jpg" alt="旺角舊樓L型小廚房回憶（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月10日 01:17:07 · 師傅故事 · 作者：鄭志強（阿強） <span class="new-badge">NEW</span></div><h3>五年規劃公布前一晚：旺角舊樓廚房改造，老師傅同街坊傾嘅嗰啲心事</h3><p>香港首份五年規劃公布前夕，阿強師傅喺旺角舊樓做廚房改造，遇到一對想保留老香港記憶嘅夫婦...</p></div></div>
-
-  </a>
-
-
-
-<a href="post-014.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-014-thumb.jpg" alt="九龍灣工場驗板搶料（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月06日 13:51:11 · 行業講古 · 作者：鄭志強（阿強） <span class="new-badge">NEW</span></div><h3>新皇崗口岸將通？傳統師傅講港式定製智慧</h3><p>新皇崗口岸將通，阿強師傅帶學徒小李探討港式定製智慧：嵌入式衣櫥、防火廚房、毫米級細節...</p></div></div>
-
-  </a>
-
-
-
-<a href="post-013.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-013-thumb.jpg" alt="一號信號夜搶修兒童房漏水櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月03日 21:26:54 · 師傅故事 · 作者：香港全屋定制師傅 <span class="new-badge">NEW</span></div><h3>一號信號掛住嗰晚，呢位媽媽打電話畀我：『師傅，我個仔間房嘅櫃漏緊水……』</h3><p>颱風沙德爾逼近香港，一號信號高懸。全屋定制師傅上門發現兒童房櫃體甲醛超標兼窗邊漏水，緊急搶修保平安。...</p></div></div>
-
-  </a>
-
-
-
-<a href="post-012.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-012-thumb.jpg" alt="九龍城兒童房驗櫃甲醛（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年9月3日 19:41:00 · 師傅故事 · 作者：香港全屋定制師傅 <span class="new-badge">NEW</span></div><h3>開學前一晚，呢位媽媽打電話畀我：「師傅，我個仔間房嘅櫃好似有味……」</h3><p>香港全屋定制師傅上門檢查兒童房櫃體，揭開「環保」背後嘅真相。一個關於甲醛、選材同信任嘅故事。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-010.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-010-thumb.jpg" alt="旺角唐樓560呎舊樓改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月26日 20:44:05 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div><h3>旺角舊樓改造：四十年唐樓煥發第二春</h3><p>張丹楓走進560呎油麻地唐樓，記錄舊樓如何靠精準量尺、嵌入式收納和香港手藝，重新變成一家人的家。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-009.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-009-thumb.jpg" alt="元朗600呎唐樓斜牆量尺（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月26日 10:00:00 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div><h3>北都新機遇·老師傅講全屋定制：張丹楓嘅廿八年</h3><p>六大企業合資10.3億奪北都首個片區項目。張丹楓師傅講香港全屋定制廿八年故事。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-008.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-008-thumb.jpg" alt="八號波前趕裝胡桃木電視櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月25日 21:08:39 · 行業講古 · 作者：張丹楓</div><h3>打風前嘅全屋定製——紫檀逼近，我哋趕喺八號波之前交貨</h3><p>紫檀逼近，我哋喺八號波前廿分鐘完成交貨。陳太話：「真係估唔到你哋趕得切！」</p></div></div>
-
-  </a>
-
-
-
-<a href="post-007.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-007-thumb.jpg" alt="旺角公屋淺身圓角櫃讓出走廊（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月10日 · 行業講古 · 作者：張丹楓</div><h3>北都新小區探訪：張師傅帶你睇未來香港家居設計新趨勢</h3><p>北都首個片區即將入夥，我哋幫發展商做首批定制櫃。今次帶你睇下未來家居設計有啲咩新趨勢。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-001.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-001-thumb.jpg" alt="將軍澳300呎公屋全屋定制櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月 · 行業講古 · 作者：張丹楓</div><h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃</h3><p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-006.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-006-thumb.jpg" alt="颱風前趕裝到頂櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月1日 · 行業講古 · 作者：張丹楓</div><h3>40年唐樓重新裝修——張師傅教你如何在舊樓牆身唔好嘅情況下整出完美櫃體</h3><p>唐樓牆身唔係完全垂直，訂造櫃係最穩陣嘅方法，但係要點樣度尺，先至可以避免到牆身斜嘅問題？</p></div></div>
-
-  </a>
-
-
-
-<a href="post-005.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-005-thumb.jpg" alt="1972年香港木器舖匠人傳承（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年7月18日 · 行業講古 · 作者：張丹楓</div><h3>張師傅同你拆解香港定制傢俬嘅內幕</h3><p>同一個櫃，點解有人做 $5000 呎，有人做 $1500 呎？張師傅教你點樣分辨邊樣嘢值錢。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-004.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-004-thumb.jpg" alt="太古城500呎私樓開放式書房兼客房（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年7月 · 行業講古 · 作者：張丹楓</div><h3>500呎私樓打通廳房，變出開放式書房兼客房</h3><p>業主係一個freelance designer，需要一個可以拍片、開會、同時有客人瞓得嘅空間。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-003.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-003-thumb.jpg" alt="深水埗150呎劏房地台床藏衣櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年6月 · 行業講古 · 作者：張丹楓</div><h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3><p>業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺，但係間屋細到連個衣櫃都放唔落。</p></div></div>
-
-  </a>
-
-
-
-<a href="post-002.html">
-
-    <div class="diary-row"><div class="thumb"><img src="images/post-002-thumb.jpg" alt="荃灣居屋60呎廚房L型櫃改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年4月 · 行業講古 · 作者：張丹楓</div><h3>居屋客廳一分為二：我哋幫陳生喺廳中間加咗道隱形門</h3><p>陳生話想要間書房，但係廳本來已經唔大。我哋用隱形門做間隔，平時睇唔到，但係打開又有獨立空間。</p></div></div>
-
-  </a>
-
-
-
-</div>
-
-
-
-<footer>
-
-  <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" target="_blank">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
-
-</footer>
-
-
-
-</body>
-
-</html>
-
+<!DOCTYPE html>
+
+<html lang="zh-HK">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<meta name="viewport">
+
+<meta name="geo.position" content="22.3193;114.1694">
+
+<meta name="geo.placename" content="旺角, 九龍, 香港">
+
+<meta name="geo.region" content="HK">
+
+<meta name="ICBM" content="22.3193, 114.1694">
+
+<link rel="canonical" href="https://custom-api-cfg.vercel.app/diary.html">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾</title>
+
+<meta name="description" content="香港裝修日記全紀錄：公屋、居屋、劏房、私樓改造實錄。真實價錢、工期、師傅評價，幫你避開裝修陷阱。">
+
+<meta name="keywords" content="香港裝修日記,公屋裝修實錄,居屋裝修案例,劏房改造,私樓裝修,香港裝修價錢,裝修工期,裝修避坑">
+
+<style>
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { font-family: "PingFang HK","Heiti TC","Noto Sans TC","Microsoft JhengHei",sans-serif; color: #2c2c2c; background: #faf9f7; line-height: 1.7; }
+
+  a { text-decoration: none; color: inherit; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 16px 5vw; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+
+  .logo { font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; }
+
+  .logo span { font-weight: 400; font-size: 0.8rem; color: #888; margin-left: 6px; }
+
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; }
+
+  .nav-links a { margin-left: 20px; font-size: 0.88rem; color: #555; }
+
+  .nav-links a:hover { color: #8b5e3c; }
+
+  .page-title { padding: 40px 5vw 20px; text-align: center; }
+
+  .page-title h1 { font-size: 1.5rem; margin-bottom: 8px; }
+
+  .page-title p { color: #777; font-size: 0.9rem; }
+
+  .filter { text-align: center; margin-bottom: 24px; }
+
+  .filter button { padding: 6px 16px; margin: 4px; border: 1px solid #ddd; background: #fff; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+
+  .filter button.active { background: #2c2c2c; color: #fff; border-color: #2c2c2c; }
+
+  .diary-list { padding: 0 5vw 40px; max-width: 800px; margin: 0 auto; }
+
+  .diary-row { display: flex; gap: 16px; background: #fff; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-bottom: 14px; transition: box-shadow 0.2s; }
+
+  .diary-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+
+  .diary-row .thumb { width: 120px; min-width: 120px; height: 90px; background: #e8e4df; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.75rem; overflow: hidden; }
+
+  .diary-row .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .diary-row .body { flex: 1; }
+
+  .diary-row .date { font-size: 0.78rem; color: #999; margin-bottom: 4px; }
+
+  .diary-row h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
+
+  .diary-row p { font-size: 0.85rem; color: #666; margin-bottom: 8px; }
+
+  .diary-row .meta { display: flex; gap: 10px; font-size: 0.75rem; color: #999; }
+
+  .diary-row .meta span { background: #f5f0eb; padding: 2px 10px; border-radius: 12px; }
+
+  .new-badge { display: inline-block; background: #e74c3c; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle; }
+
+  footer { text-align: center; padding: 24px 5vw; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
+
+  footer a { color: #8b5e3c; }
+
+  @media (max-width: 480px) { .diary-row { flex-direction: column;  nav { flex-direction: column; align-items: flex-start; padding: 12px 5vw; } .logo { font-size: 1rem; margin-bottom: 8px; } .logo span { font-size: 0.75rem; } .nav-links { justify-content: flex-start; width: 100%; } .nav-links a { margin: 0 14px 0 0; font-size: 0.82rem; }} .diary-row .thumb { width: 100%; height: 140px; } .nav-links a { margin: 0 8px; font-size: 0.82rem; } }
+
+</style>
+
+<meta name="author" content="張丹楓">
+
+<meta property="og:title" content="博主講古列表 | 香港公屋居屋小戶型裝修全過程 | 張丹楓、雲蕾">
+
+<meta property="og:description" content="香港裝修日記全紀錄：公屋、居屋、劏房、私樓改造實錄。真實價錢、工期、師傅評價，幫你避開裝修陷阱。">
+
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="zh_HK">
+
+<meta property="og:url" content="https://custom-api-cfg.vercel.app/diary.html">
+
+<script type="application/ld+json">
+
+{
+
+  "@context": "https://schema.org",
+
+  "@type": "Blog",
+
+  "name": "萍踪侠影录 · 博主講古",
+
+  "description": "香港裝修行業文化輸出平台，記錄真實裝修故事、師傅傳承、客戶人生百態",
+
+  "url": "https://custom-api-cfg.vercel.app/diary.html",
+
+  "publisher": {
+
+    "@type": "Organization",
+
+    "name": "萍踪侠影录",
+
+    "logo": {
+
+      "@type": "ImageObject",
+
+      "url": "https://custom-api-cfg.vercel.app/images/hero1.jpg"
+
+    }
+
+  },
+
+  "author": {
+
+    "@type": "Person",
+
+    "name": "張丹楓"
+
+  }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+
+<nav>
+
+  <div class="logo">萍踪侠影录 <span>張丹楓、雲蕾</span></div>
+
+  <div class="nav-links">
+
+    <a href="index.html">首頁</a>
+
+    <a href="diary.html">博主講古</a>
+
+    <a href="live.html">直播間</a>
+
+    <a href="social.html">社媒</a>
+
+    <a href="about.html">認識博主</a>
+
+    <a href="cases.html">案例</a>
+
+    <a href="contact.html">聯繫</a>
+
+    <a href="ai-design.html">AI 免費設計</a>
+
+    <a href="ai-video.html">AI 影片</a>
+
+  </div>
+
+</nav>
+
+
+
+<div class="page-title">
+
+  <h1>博主講古</h1>
+
+  <p>真實單位、真實價錢、真實工期 · 幫你避開裝修陷阱</p>
+
+</div>
+
+
+
+<div class="filter">
+
+  <button class="active">全部</button>
+
+  <button>公屋</button>
+
+  <button>居屋</button>
+
+  <button>劏房</button>
+
+  <button>私樓</button>
+
+  <button>行業講古</button>
+
+</div>
+
+
+
+<div class="diary-list">
+
+
+
+
+
+    <div class="diary-row"><a href="post-041.html"><div class="thumb"><img src="images/post-041/scene-01.jpg" alt="二十年老師傅公屋變溫馨家" loading="lazy"></div><div class="body"><div class="date">2026年09月29日 01:36:33 · 土瓜灣 · 公屋定制 · 阿棟師傅</div><h3>二十年老師傅講述：公屋變溫馨家的故事 <span class="new-badge">NEW</span></h3><p>清晨七點，土瓜灣一間有二十年歷史的木工廠裡，鋸木機已經嗡嗡作響。老板陳國棟——阿棟師傅，五十多歲，手掌佈滿老繭，但眼睛裡透著做了一輩子木工的光。</p></div></a></div>
+    <div class="diary-row"><a href="post-042.html"><div class="thumb"><img src="images/post-042/scene-01.jpg" alt="上車驗樓潘師傅" loading="lazy"></div><div class="body"><div class="date">2026年09月30日 07:34:37 · 康怡花園 · 驗樓上車 · 潘師傅</div><h3>上車驗樓唔可以馬虎！潘師傅教你去睇二手樓要注意的地方 <span class="new-badge">NEW</span></h3><p>阿仁，你今日去邊度啊？師傅潘仲明問。</p></div></a></div>
+<div class="diary-row"><a href="post-040.html"><div class="thumb"><img src="images/post-040/scene-01.jpg" alt="三十年老行尊話你知裝修秘密" loading="lazy"></div><div class="body"><div class="date">2026年09月28日 22:35:10 · 香港仔田灣 · 四十五年經驗 · 主力牆</div><h3>四十五年經驗師傅話你知：香港裝修秘密 <span class="new-badge">NEW</span></h3><p>七十二歲陳耀明師傅，做裝修四十五年。主力牆點解拆唔走得？收口位點樣計準？師傅一次過話你知——東涌混凝土風波下，樓宇安全更值得關注。</p></div></a></div>
+
+
+
+<div class="diary-row"><a href="post-039.html"><div class="thumb"><img src="images/post-039/post-039-hero.png" alt="石硖尾唐楼清晨陈徒弟量尺（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月27日 14:30:00 · 石硖尾唐楼 · 柜仔哲学 · 定制柜</div><h3>老行尊话你知：柜仔哲学 <span class="new-badge">NEW</span></h3><p>石硖尾四十年唐楼，陈徒弟用二十八年经验话你知——柜唔係越做越大就越好，就係要识得分寸。C形电视柜，留白先至最贵。香港间屋细，但里面的生活唔可以细。</p></div></a></div>
+
+<div class="diary-row"><a href="post-038.html"><div class="thumb"><img src="images/post-038/post-038-hero.png" alt="中秋前北角屋苑送货夜景（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月26日 14:30:00 · 北角私人屋苑 · 中秋赶工 · 定制柜</div><h3>中秋前赶工的定制柜——陈师傅的熬夜与客人的惊喜</h3><p>中秋前一个礼拜，陈志明师傅接下周生一家全屋定制——连续赶工七个夜班，北角私人屋苑中秋前一晚送到。徒弟阿康问：点解接咁急单？师傅答：帮人解决问题，就系我哋呢行嘅意义。</p></div></a></div>
+
+
+
+<a href="post-037.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-037/post-037-hero.png" alt="深水埗唐樓假牆颱風日測量（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月26日 16:00:00 · 深水埗唐樓 · 颱風翻新 · 老師傅</div><h3>颱風天裡的裝修哲學——深水埗陳德師傅同張丹楓講二十六年的三句真言 <span class="new-badge">NEW</span></h3><p>深水埗唐樓颱風日回訪：陳師傅（一九九八年入行，二十六年全屋定制）同張丹楓講舊樓翻新三寶——假牆誤差不過兩毫米、暗喉漏水預判、趕風球前三步。香港間屋細，但裡面的生活唔可以細。</p></div></div>
+
+</a>
+
+
+
+<a href="post-036.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-036/post-036-hero.png" alt="觀塘公屋單位客廳半製成品電視櫃同衣櫃框架（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月25日 16:00:00 · 觀塘公屋 · 打風趕工 · 中秋驗收</div><h3>打風前最後趕工記——觀塘順天邨林師傅同張丹楓講趕工三招</h3><p>中秋正日回訪觀塘順天邨：林師傅（林志強，二十五年九龍區全屋訂造）打風前一日趕封邊——膠溫要夠180度、露台執板用紅尼龍布、四包工業鹽頂住焗漆返潮。趕得切周生個仔十月擺酒做新房，今日中秋一家人新櫃前食團圓飯。</p></div></div>
+
+</a>
+
+
+
+<a href="post-035.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-035/post-035-hero.png" alt="土瓜灣舊樓廚房角落朝早度尺，老行尊權叔同張丹楓（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月24日 21:00:00 · 土瓜灣舊樓 · L形櫥櫃 · 老行尊手藝</div><h3>老行尊话当年：经济差也要守住手艺——土瓜灣權叔同張丹楓講四十年嘅一句话 <span class="new-badge">NEW</span></h3><p>土瓜灣舊樓廚房L形櫥櫃嗰日，張丹楓、雲蕾跟住老行尊權叔（林永權）學度尺——牆唔係主力牆就唔使拆牆，管道位就住做。經濟差、工程少，但手藝唔可以賤賣：「你唔係做裝修，你係幫人起家。」</p></div></div>
+
+</a>
+
+
+
+<a href="post-034.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-034/post-034-hero.png" alt="大埔舊樓大維修義工，張丹楓、雲蕾、祥叔同林伯研讀2022年圍標合約（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月22日 16:00:00 · 大埔舊樓 · 反圍標 · 大維修預審名單</div><h3>反圍標嗰日，我哋裝修佬去咗大維修嗰度做義工——大埔舊樓三條鐵律</h3><p>發展局9月22日推大維修預審名單反圍標，張丹楓、雲蕾、祥叔上咗大埔林伯嗰棟44年舊樓做義工——6mm砂漿同8mm砂漿差2mm差40萬、問問題查背景寫工序三條鐵律、廉記查喎同ISO認證。裝修佬唔止識刨板，係要識規矩廉潔良心。</p></div></div>
+
+</a>
+
+
+
+<a href="post-033.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-033/post-033-hero.png" alt="大坑舞火龍前嗰一晚，唐樓木工師傅輝哥同徒弟阿俊（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月21日 18:30:00 · 大坑勳德閣 · 唐樓木工 · 中秋舞火龍</div><h3>大坑舞火龍前嗰一晚——唐樓木工師傅嘅訂造智慧</h3><p>中秋舞火龍前嗰一晚，張丹楓同雲蕾探訪大坑老行尊輝哥（林志輝）同徒弟阿俊——勳德閣陳太嘅 L 型廚櫃、牆身兩厘米傾斜、唐樓「一戶一尺」嘅飄窗櫈、鋅盤底板斜放嘅細藝。六百年舞火龍封街前最後一單訂造。</p></div></div>
+
+</a>
+
+
+
+<a href="post-032.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-032/post-032-hero.png" alt="屯門欣寶路簡屋四座18層外牆（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月21日 16:30:00 · 屯門欣寶路簡屋 · 簡約公屋 · 掛碼吊牆</div><h3>屯門欣寶路簡屋入伙嗰晚：張丹楓同雲蕾點幫基層訂造一個企身鞋櫃 <span class="new-badge">NEW</span></h3><p>屯門欣寶路簡約公屋第三季入伙，5,600 個單位月租 900 至 2,010 蚊。余婆婆同杜先生一家由劏房搬上簡屋嗰晚，張丹楓、雲蕾、祥叔上門訂造——簡屋唔可以打實螺絲，所有訂造都要預埋十年後點拆。</p></div></div>
+
+</a>
+
+
+
+<a href="post-031.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-031/post-031-hero.png" alt="油塘長者屋邨四十幾年老單位，陳伯同張丹楓、雲蕾、祥叔由一塊E0板講到港鐵跨欄跳閘後生仔（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月20日 16:30:00 · 油塘長者屋邨 · E0生態板 · 宏福苑發泡膠</div><h3>油塘阿伯嘅櫃同宏福苑嘅膠板——張丹楓、雲蕾同祥叔講承建商走數</h3><p>油塘長者屋邨四十幾年老單位，陳伯同張丹楓、雲蕾、祥叔由一塊 E0 板講到港鐵跨欄跳閘後生仔，再講到大埔宏福苑火災獨立委員會揭發承建商用非阻燃發泡膠。搭車要正價，裝修要實淨——呢啲唔係大道理，係細藝。</p></div></div>
+
+</a>
+
+
+
+<a href="post-030.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-030-hero.png" alt="觀塘舊樓工地紅雨木工枱（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 15:30:00 · 觀塘舊樓 · 紅色暴雨 · 九一八手藝</div><h3>暴雨黑雨下的木工枱——張丹楓同祥叔讲九一八</h3><p>觀塘舊樓工地，九月十八日紅色暴雨。張丹楓、雲蕾探班祥叔工地，從板件驗收、魯班尺規矩到九一八手藝人嘅傳承：木頭有呼吸，落雨天做嘅嘢先最穩陣。</p></div></div>
+
+</a>
+
+
+
+<a href="post-029.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-029-hero.png" alt="旺角砵蘭街唐樓入伙前一晚（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 00:13:35 · 旺角砵蘭街 · 380呎唐樓 · 入伙夜</div><h3>唐樓入伙前的最后一晚：旺角砵蘭街380呎，菠萝旺同周家兩年儲起嘅首期 <span class="new-badge">NEW</span></h3><p>旺角砵蘭街唐樓，業主姓周、太太姓陳，一家四口380呎儲咗十二年首期。張丹楓主講、雲蕾設計：油煙不鏽鋼蛇嘴、地台承重800公斤、磨砂玻璃鋁框分床、收尾口碑論。</p></div></div>
+
+</a>
+
+
+
+<a href="post-028.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-028-hero.png" alt="東涌公屋混凝土結構檢查（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月18日 00:13:30 · 東涌第42區公屋 · 結構安全 · 裝修底線</div><h3>東涌公屋混凝土檢查之後：阿強師傅同阿杰講解結構、裂縫與全屋定制嘅底線 <span class="new-badge">NEW</span></h3><p>東涌第42區公屋第3至5座混凝土方塊抗壓測試異常後，明報、星島、結構工程師倪學仁齊齊拆局。張丹楓主講、雲蕾整理：阿杰驗樓三招、0.3mm裂縫處理、報價單防水層唔可以漏。</p></div></div>
+
+</a>
+
+
+
+<a href="post-024.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-024-hero.png" alt="北角300呎舊單位淺木色收納櫃與通風（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 12:50:20 · 北角 · 300呎舊單位</div><h3>五年規劃落地第二日：北角300呎舊單位，阿May一家先把收納通風搞掂 <span class="new-badge">NEW</span></h3><p>9月16日首份五年規劃公布、9月17日特首立法會答問會同一日，北角三百幾呎舊單位業主阿May問追唔追新政策裝修。張丹楓主講、雲蕾設計：櫃到頂唔貼死、廚房耐潮板、玄關薄身懸空櫃。</p></div></div>
+
+</a>
+
+
+
+<a href="post-027.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-027-theme.jpg" alt="觀塘280呎納米樓偷位設計" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:23:59 · 觀塘 · 納米樓</div><h3>300呎偷出三房：張丹楓接納米樓訂造訂單全屋定制攻略 <span class="new-badge">NEW</span></h3><p>觀塘280呎納米樓，黄生雨公婆加小朋友要三間房。張丹楓主講、雲蕾設計、陳永強師傅同行：上床下櫃、半開放式趟門書房、乾濕分離廁所、偷位收納設計，納米樓變身三代同堂安樂窩。</p></div></div>
+
+</a>
+
+
+
+<a href="post-026.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-026-theme.jpg" alt="北角舊樓收納通風規劃" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:23:57 · 北角 · 唐樓</div><h3>等施政報告之前先把家裝好：張丹楓教你北角舊樓收納與通風規劃 <span class="new-badge">NEW</span></h3><p>北角三百呎唐樓收納通風規劃，張丹楓主講、雲蕾設計：老公想滿牆櫃vs媽咪話櫃太多會焗、懸空薄身鞋櫃連機器人位、廚房防潮板材、預算三層分配，政策規劃城市，裝修規劃生活。</p></div></div>
+
+</a>
+
+
+
+<a href="post-025.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-025-theme.jpg" alt="東涌公屋混凝土質量檢查" loading="lazy"></div><div class="body"><div class="date">2026年09月17日 21:22:55 · 東涌 · 公屋</div><h3>東涌公屋混凝土質量檢查：張丹楓教你一眼分辨結構問題與裝修陷阱 <span class="new-badge">NEW</span></h3><p>東涌新公屋混凝土質量抽檢工程，張丹楓主講、雲蕾設計、陳師傅師徒同行：空鼓錘敲牆驗質量、裂縫成因與修補方法、批盪防潮注意事項，助業主避開購咪置業與裝修大伏。</p></div></div>
+
+</a>
+
+
+
+<a href="post-023.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-023-theme.jpg" alt="紅磡357呎兩房淺木色全屋定制（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月13日 01:56:03 · 紅磡 · 357呎兩房</div><h3>紅磡357呎兩房：淺木櫃唔係油白色就得，張丹楓教你揀啱色耐睇十年 <span class="new-badge">NEW</span></h3><p>紅磡357呎實用兩房，阿Yan阿樂以為全屋油白色顯大。張丹楓主講、雲蕾設計、昌哥老師傅幫手：淺木暖色一樣拉高亮度仲耐污，吊櫃到頂封死角、趟門慳一呎、背板離牆3mm防潮，細屋交得。</p></div></div>
+
+</a>
+
+
+
+<a href="post-022.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-022-theme.jpg" alt="粉嶺鳳凰嶺邨新公屋全屋定制（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 23:08:24 · 粉嶺鳳凰嶺邨 · 新公屋入伙</div><h3>粉嶺鳳凰嶺邨開門見廁點算？張丹楓3.5萬半日裝完430呎3-4人單位 <span class="new-badge">NEW</span></h3><p>粉嶺鳳凰嶺邨新公屋入伙，430呎3-4人單位開門見廁、細房太細。張丹楓主講、雲蕾設計：暗門化解、卡座廳房合一、地台床上床下櫃，3.5萬工廠預製半日裝完。</p></div></div>
+
+</a>
+
+
+
+<a href="post-021.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-021-theme.jpg" alt="油麻地舊樓新居防潮驗樓（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 22:03:09 · 油麻地 · 舊樓防潮</div><h3>油麻地老街新居：張丹楓帶阿波師傅同你拆解400呎舊樓防潮 <span class="new-badge">NEW</span></h3><p>油麻地400呎舊單位牆身發霉，後生夫婦預算有限又怕返工。張丹楓主講、雲蕾傾設計、街坊阿波師傅幫手：濕度計驗樓、防潮底漆、鋁合金櫃腳、SPC地板，一次講清舊樓防潮。</p></div></div>
+
+</a>
+
+
+
+<a href="post-020.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-020-theme.jpg" alt="暴雨前康怡花園舊單位驗牆（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 21:50:03 · 暴雨防潮 · 智能家居預留</div><h3>暴雨嚟之前，阿炳師傅先幫你諗到三年後嘅事 <span class="new-badge">NEW</span></h3><p>鰂魚涌康怡花園四百幾呎舊單位，阿炳師傅教你暴雨前先處理化妝樓滲水、櫃底離地一吋半、全屋預留零火線，智能家居留位唔使拆過。</p></div></div>
+
+</a>
+
+
+
+<a href="post-019.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-019-theme.jpg" alt="打風前大圍細單位防潮改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 21:23:49 · 打風防潮 · 中秋入伙</div><h3>打風前趕起，中秋要團圓：炳師傅的大圍防潮一役 <span class="new-badge">NEW</span></h3><p>天文台話熱帶氣旋麥德姆逼近，阿May想趕中秋團圓前入伙。炳師傅用大圍顯徑邨三百幾呎細單位教你：外牆櫃離牆兩厘米、窗台剷底重打膠、五金用304不鏽鋼。</p></div></div>
+
+</a>
+
+
+
+<a href="post-018.html">
+
+  <div class="diary-row"><div class="thumb"><img src="images/post-018-theme.jpg" alt="啟德簡約公屋小戶型整體空間（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月11日 03:40:16 · 簡約公屋 · 入伙收納</div><h3>啟德簡約公屋第二期傳提早入伙？住戶拎鎖匙前點樣預留收納位，三個位置唔好亂改｜張丹楓師傅 <span class="new-badge">NEW</span></h3><p>啟德簡約公屋第二期傳出可能提早入伙，張丹楓師傅教你拎鎖匙前量尺、預留收納位，並提醒門口、廚房、廁所及窗邊不要亂改。</p></div></div>
+
+</a>
+
+
+
+<a href="post-017.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-017-kai-tak-demo-unit.jpg" alt="香港啟德簡約公屋示範單位室內" loading="lazy"></div><div class="body"><div class="date">2026年09月10日 03:11:27 · 簡約公屋 · 空間設計</div><h3>劏房戶搬入簡約公屋之後，單位咁細，點樣訂造先住得舒服？ <span class="new-badge">NEW</span></h3><p>劏房戶搬入柴灣常安街簡約公屋後，張丹楓師傅教路：細單位唔使間死房，用頂天櫃、一體高架床同兩用梳化，一樣住得舒服又企理。香港全屋訂造師傅講古。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-015.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-015-thumb.jpg" alt="旺角舊樓L型小廚房回憶（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月10日 01:17:07 · 師傅故事 · 作者：鄭志強（阿強） <span class="new-badge">NEW</span></div><h3>五年規劃公布前一晚：旺角舊樓廚房改造，老師傅同街坊傾嘅嗰啲心事</h3><p>香港首份五年規劃公布前夕，阿強師傅喺旺角舊樓做廚房改造，遇到一對想保留老香港記憶嘅夫婦...</p></div></div>
+
+  </a>
+
+
+
+<a href="post-014.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-014-thumb.jpg" alt="九龍灣工場驗板搶料（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月06日 13:51:11 · 行業講古 · 作者：鄭志強（阿強） <span class="new-badge">NEW</span></div><h3>新皇崗口岸將通？傳統師傅講港式定製智慧</h3><p>新皇崗口岸將通，阿強師傅帶學徒小李探討港式定製智慧：嵌入式衣櫥、防火廚房、毫米級細節...</p></div></div>
+
+  </a>
+
+
+
+<a href="post-013.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-013-thumb.jpg" alt="一號信號夜搶修兒童房漏水櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年09月03日 21:26:54 · 師傅故事 · 作者：香港全屋定制師傅 <span class="new-badge">NEW</span></div><h3>一號信號掛住嗰晚，呢位媽媽打電話畀我：『師傅，我個仔間房嘅櫃漏緊水……』</h3><p>颱風沙德爾逼近香港，一號信號高懸。全屋定制師傅上門發現兒童房櫃體甲醛超標兼窗邊漏水，緊急搶修保平安。...</p></div></div>
+
+  </a>
+
+
+
+<a href="post-012.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-012-thumb.jpg" alt="九龍城兒童房驗櫃甲醛（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年9月3日 19:41:00 · 師傅故事 · 作者：香港全屋定制師傅 <span class="new-badge">NEW</span></div><h3>開學前一晚，呢位媽媽打電話畀我：「師傅，我個仔間房嘅櫃好似有味……」</h3><p>香港全屋定制師傅上門檢查兒童房櫃體，揭開「環保」背後嘅真相。一個關於甲醛、選材同信任嘅故事。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-010.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-010-thumb.jpg" alt="旺角唐樓560呎舊樓改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月26日 20:44:05 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div><h3>旺角舊樓改造：四十年唐樓煥發第二春</h3><p>張丹楓走進560呎油麻地唐樓，記錄舊樓如何靠精準量尺、嵌入式收納和香港手藝，重新變成一家人的家。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-009.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-009-thumb.jpg" alt="元朗600呎唐樓斜牆量尺（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月26日 10:00:00 · 行業講古 · 作者：張丹楓 <span class="new-badge">NEW</span></div><h3>北都新機遇·老師傅講全屋定制：張丹楓嘅廿八年</h3><p>六大企業合資10.3億奪北都首個片區項目。張丹楓師傅講香港全屋定制廿八年故事。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-008.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-008-thumb.jpg" alt="八號波前趕裝胡桃木電視櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月25日 21:08:39 · 行業講古 · 作者：張丹楓</div><h3>打風前嘅全屋定製——紫檀逼近，我哋趕喺八號波之前交貨</h3><p>紫檀逼近，我哋喺八號波前廿分鐘完成交貨。陳太話：「真係估唔到你哋趕得切！」</p></div></div>
+
+  </a>
+
+
+
+<a href="post-007.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-007-thumb.jpg" alt="旺角公屋淺身圓角櫃讓出走廊（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月10日 · 行業講古 · 作者：張丹楓</div><h3>北都新小區探訪：張師傅帶你睇未來香港家居設計新趨勢</h3><p>北都首個片區即將入夥，我哋幫發展商做首批定制櫃。今次帶你睇下未來家居設計有啲咩新趨勢。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-001.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-001-thumb.jpg" alt="將軍澳300呎公屋全屋定制櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月 · 行業講古 · 作者：張丹楓</div><h3>300呎公屋裝修，3萬蚊搞定全屋定制櫃</h3><p>客戶係一對新婚夫婦，預算有限，但要求收納要夠。我哋工廠預製好櫃體，現場只裝咗半日。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-006.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-006-thumb.jpg" alt="颱風前趕裝到頂櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年8月1日 · 行業講古 · 作者：張丹楓</div><h3>40年唐樓重新裝修——張師傅教你如何在舊樓牆身唔好嘅情況下整出完美櫃體</h3><p>唐樓牆身唔係完全垂直，訂造櫃係最穩陣嘅方法，但係要點樣度尺，先至可以避免到牆身斜嘅問題？</p></div></div>
+
+  </a>
+
+
+
+<a href="post-005.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-005-thumb.jpg" alt="1972年香港木器舖匠人傳承（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年7月18日 · 行業講古 · 作者：張丹楓</div><h3>張師傅同你拆解香港定制傢俬嘅內幕</h3><p>同一個櫃，點解有人做 $5000 呎，有人做 $1500 呎？張師傅教你點樣分辨邊樣嘢值錢。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-004.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-004-thumb.jpg" alt="太古城500呎私樓開放式書房兼客房（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年7月 · 行業講古 · 作者：張丹楓</div><h3>500呎私樓打通廳房，變出開放式書房兼客房</h3><p>業主係一個freelance designer，需要一個可以拍片、開會、同時有客人瞓得嘅空間。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-003.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-003-thumb.jpg" alt="深水埗150呎劏房地台床藏衣櫃（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年6月 · 行業講古 · 作者：張丹楓</div><h3>劏房變身：150呎單間，床底藏衣櫃，瞓覺終於唔使聞鞋味</h3><p>業主係一個做夜班嘅姐姐，返工12個鐘，返屋企只想瞓個好覺，但係間屋細到連個衣櫃都放唔落。</p></div></div>
+
+  </a>
+
+
+
+<a href="post-002.html">
+
+    <div class="diary-row"><div class="thumb"><img src="images/post-002-thumb.jpg" alt="荃灣居屋60呎廚房L型櫃改造（AI生成示意圖）" loading="lazy"></div><div class="body"><div class="date">2026年4月 · 行業講古 · 作者：張丹楓</div><h3>居屋客廳一分為二：我哋幫陳生喺廳中間加咗道隱形門</h3><p>陳生話想要間書房，但係廳本來已經唔大。我哋用隱形門做間隔，平時睇唔到，但係打開又有獨立空間。</p></div></div>
+
+  </a>
+
+
+
+</div>
+
+
+
+<footer>
+
+  <p>© 萍踪侠影录 · 張丹楓、雲蕾 · <a href="https://wa.me/85251902328" target="_blank">WhatsApp 報價</a> · 香港九龍旺角菜園街</p>
+
+</footer>
+
+
+
+</body>
+
+</html>
+
