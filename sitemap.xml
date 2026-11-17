@@ -4,11 +4,7 @@
 
 
 
-
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
 
 
 
@@ -20,11 +16,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/index.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-
 
 
 
@@ -36,11 +28,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/cases.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -52,11 +40,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/about.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-
 
 
 
@@ -68,11 +52,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/xhs.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
 
 
 
@@ -84,11 +64,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/youtube.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
 
 
 
@@ -100,11 +76,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/facebook.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
 
 
 
@@ -116,11 +88,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/tiktok.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
 
 
 
@@ -132,11 +100,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-035.html</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -148,11 +112,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-033.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -164,11 +124,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-031.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -180,11 +136,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-029.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -196,11 +148,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-027.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -212,11 +160,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-025.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -228,11 +172,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-023.html</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -244,11 +184,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-021.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -260,11 +196,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-019.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -276,11 +208,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-017.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -292,11 +220,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-014.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -308,11 +232,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-012.html</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -324,11 +244,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-010.html</loc><lastmod>2026-08-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -340,11 +256,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-008.html</loc><lastmod>2026-08-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -356,11 +268,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-006.html</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -372,11 +280,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-004.html</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -388,11 +292,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-002.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -404,20 +304,14 @@
 
 
 
-
-
+  <url><loc>https://hkdecor.online/post-044.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://custom-api-cfg.vercel.app/post-043.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
   <url><loc>https://custom-api-cfg.vercel.app/post-042.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
 
   <url><loc>https://custom-api-cfg.vercel.app/post-041.html</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 
-
   <url><loc>https://custom-api-cfg.vercel.app/post-040.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -429,11 +323,7 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-039.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
 
 
 
@@ -445,15 +335,10 @@
 
 
 
-
-
   <url><loc>https://custom-api-cfg.vercel.app/post-037.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 
 
 
 
-
-
-<url><loc>https://custom-api-cfg.vercel.app/post-044.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
