@@ -1,0 +1,2 @@
+last image-optimization deploy trigger: 2026-11-17T21:37:16Z
+images compressed to <=200KB each, total 22MB
