@@ -1,344 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
-
-
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/index.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/diary.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/cases.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/live.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/about.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/contact.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/xhs.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/social.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/youtube.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/linkedin.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/facebook.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/instagram.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/tiktok.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/twitter.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-035.html</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-034.html</loc><lastmod>2026-09-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-033.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-032.html</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-031.html</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-030.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-029.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-028.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-027.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-026.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-025.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-024.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-023.html</loc><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-022.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-021.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-020.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-019.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-018.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-017.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-015.html</loc><lastmod>2026-09-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-014.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-013.html</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-012.html</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-011.html</loc><lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-010.html</loc><lastmod>2026-08-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-009.html</loc><lastmod>2026-08-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-008.html</loc><lastmod>2026-08-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-007.html</loc><lastmod>2026-08-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-006.html</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-005.html</loc><lastmod>2026-07-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-004.html</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-003.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-002.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-001.html</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://hkdecor.online/post-044.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://custom-api-cfg.vercel.app/post-043.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://custom-api-cfg.vercel.app/post-042.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-041.html</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-040.html</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-036.html</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-039.html</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-038.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
-  <url><loc>https://custom-api-cfg.vercel.app/post-037.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-
-
-
-
+  <url><loc>https://hkdecor.online/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://hkdecor.online/diary.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hkdecor.online/ai-design.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hkdecor.online/ai-video.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hkdecor.online/post-044.html</loc><lastmod>2026-10-04T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-043.html</loc><lastmod>2026-10-02T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-042.html</loc><lastmod>2026-09-30T07:34:37+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-041.html</loc><lastmod>2026-09-30T01:36:33+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-040.html</loc><lastmod>2026-09-28T14:35:10+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-039.html</loc><lastmod>2026-09-27T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-038.html</loc><lastmod>2026-09-26T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-037.html</loc><lastmod>2026-09-26T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-036.html</loc><lastmod>2026-09-25T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-035.html</loc><lastmod>2026-09-24T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-034.html</loc><lastmod>2026-09-22T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-033.html</loc><lastmod>2026-09-21T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-032.html</loc><lastmod>2026-09-21T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-031.html</loc><lastmod>2026-09-20T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-030.html</loc><lastmod>2026-09-18T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-029.html</loc><lastmod>2026-09-18T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-028.html</loc><lastmod>2026-09-18T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-027.html</loc><lastmod>2026-09-17T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-026.html</loc><lastmod>2026-09-17T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-025.html</loc><lastmod>2026-09-17T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-024.html</loc><lastmod>2026-09-17T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-023.html</loc><lastmod>2026-09-13T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-022.html</loc><lastmod>2026-09-11T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-021.html</loc><lastmod>2026-09-11T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-020.html</loc><lastmod>2026-09-11T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-019.html</loc><lastmod>2026-09-11T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-018.html</loc><lastmod>2026-09-11T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-017.html</loc><lastmod>2026-09-10T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-015.html</loc><lastmod>2026-09-10T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-014.html</loc><lastmod>2026-09-06T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-013.html</loc><lastmod>2026-09-03T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-012.html</loc><lastmod>2026-09-03T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-011.html</loc><lastmod>2026-09-03T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-010.html</loc><lastmod>2026-08-26T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-009.html</loc><lastmod>2026-08-26T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-008.html</loc><lastmod>2026-08-25T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-007.html</loc><lastmod>2026-08-24T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-001.html</loc><lastmod>2026-08-15T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-006.html</loc><lastmod>2026-08-23T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-005.html</loc><lastmod>2026-08-23T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-004.html</loc><lastmod>2026-05-08T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-003.html</loc><lastmod>2026-06-10T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hkdecor.online/post-002.html</loc><lastmod>2026-07-20T08:00:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
