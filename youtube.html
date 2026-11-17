@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://custom-api-cfg.vercel.app/youtube.html">
+<link rel="canonical" href="https://hkdecor.online/youtube.html">
 <meta property="og:title" content="YouTube 同步 · 萍踪侠影录 · 香港全屋定制師傅講古">
 <meta property="og:description" content="張丹楓、雲蕾香港全屋定制文章 YouTube 同步：每篇附 YouTube 標題、描述、hashtag、封面圖連結。半自動：助手生成草稿，海哥手動上傳。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://custom-api-cfg.vercel.app/youtube.html">
-<meta property="og:image" content="https://custom-api-cfg.vercel.app/images/post-030-hero.png">
+<meta property="og:url" content="https://hkdecor.online/youtube.html">
+<meta property="og:image" content="https://hkdecor.online/images/post-030-hero.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="author" content="張丹楓、雲蕾">
 <title>YouTube 同步 · 萍踪侠影录 · 香港全屋定制師傅講古</title>
@@ -522,7 +522,7 @@ footer p{margin:4px 0}
     const desc=c.querySelector('.xhs-desc').textContent.trim();
     const meta=c.querySelector('.xhs-meta').textContent.trim();
     const tags=Array.from(c.querySelectorAll('.xhs-tags span')).map(s=>s.textContent.trim()).join(' ');
-    txt[num]=[`【影片標題】${title}`,'',`【影片描述】`,desc,'',`【發佈資訊】${meta}`,'',`【hashtag】${tags}`,'','【章節】00:00 開場｜01:00 案例背景｜03:00 技術拆解｜08:00 價錢分享｜10:00 結尾','【封面圖】https://custom-api-cfg.vercel.app/images/post-'+num+'-hero.png','【獨立站連結】https://custom-api-cfg.vercel.app/post-'+num+'.html','','#香港全屋定制 #張丹楓 #雲蕾 #萍踪侠影录 #裝修教學'].join('\n');
+    txt[num]=[`【影片標題】${title}`,'',`【影片描述】`,desc,'',`【發佈資訊】${meta}`,'',`【hashtag】${tags}`,'','【章節】00:00 開場｜01:00 案例背景｜03:00 技術拆解｜08:00 價錢分享｜10:00 結尾','【封面圖】https://hkdecor.online/images/post-'+num+'-hero.png','【獨立站連結】https://hkdecor.online/post-'+num+'.html','','#香港全屋定制 #張丹楓 #雲蕾 #萍踪侠影录 #裝修教學'].join('\n');
   });
   function showToast(){
     const t=document.getElementById('toast');
